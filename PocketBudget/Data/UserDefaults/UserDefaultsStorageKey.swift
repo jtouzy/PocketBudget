@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-enum UserDefaultsStorageKey: String {
+enum UserDefaultsStorageKey: String, CaseIterable {
     case accounts
     case expenses
 }

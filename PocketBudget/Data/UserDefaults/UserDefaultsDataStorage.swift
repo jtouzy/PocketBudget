@@ -13,7 +13,7 @@ class UserDefaultsDataStorage: DataStorage {
     lazy var userDefaults = UserDefaults.standard
 
     func getRequiredExpenses(for accountId: String) -> Observable<[Expense]> {
-        return UserDefaults.standard.rx
+        return userDefaults.rx
             .observe(String.self, UserDefaultsStorageKey.expenses.rawValue)
             .compactMap { $0 }
             .flatMap { [weak self] jsonString -> Observable<[Expense]> in

@@ -24,12 +24,16 @@
 		5389CED323F74A6200990E88 /* UIIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CED223F74A6200990E88 /* UIIdentifiable.swift */; };
 		5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CED523F74B0000990E88 /* MockDataStorage.swift */; };
 		5389CEDA23F756B800990E88 /* Optional+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CED923F756B800990E88 /* Optional+extensions.swift */; };
+		5389CEDE23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEDD23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift */; };
+		5389CEE123F761C500990E88 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEE023F761C500990E88 /* UserDefaults+extensions.swift */; };
+		5389CEE223F7648A00990E88 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; };
+		5389CEE323F7648A00990E88 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; };
+		5389CEE423F7648A00990E88 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; };
 		53B7F03423F7221400700431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03323F7221400700431 /* AppDelegate.swift */; };
 		53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03523F7221400700431 /* SceneDelegate.swift */; };
 		53B7F03B23F7221400700431 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03923F7221400700431 /* Application.storyboard */; };
 		53B7F03D23F7221800700431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03C23F7221800700431 /* Assets.xcassets */; };
 		53B7F04023F7221800700431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03E23F7221800700431 /* LaunchScreen.storyboard */; };
-		53B7F04B23F7221800700431 /* PocketBudgetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F04A23F7221800700431 /* PocketBudgetTests.swift */; };
 		53B7F05723F722CB00700431 /* RequiredExpensesEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05623F722CB00700431 /* RequiredExpensesEditorView.swift */; };
 		53B7F05923F7235500700431 /* RequiredExpensesEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05823F7235500700431 /* RequiredExpensesEditorPresenter.swift */; };
 		53B7F06123F727E400700431 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; };
@@ -84,6 +88,8 @@
 		5389CED223F74A6200990E88 /* UIIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIdentifiable.swift; sourceTree = "<group>"; };
 		5389CED523F74B0000990E88 /* MockDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataStorage.swift; sourceTree = "<group>"; };
 		5389CED923F756B800990E88 /* Optional+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+extensions.swift"; sourceTree = "<group>"; };
+		5389CEDD23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaultsDataStorage+Tests.swift"; sourceTree = "<group>"; };
+		5389CEE023F761C500990E88 /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
 		53B7F03023F7221400700431 /* PocketBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B7F03323F7221400700431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53B7F03523F7221400700431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +98,6 @@
 		53B7F03F23F7221800700431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		53B7F04123F7221800700431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53B7F04623F7221800700431 /* PocketBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		53B7F04A23F7221800700431 /* PocketBudgetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBudgetTests.swift; sourceTree = "<group>"; };
 		53B7F04C23F7221800700431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53B7F05623F722CB00700431 /* RequiredExpensesEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredExpensesEditorView.swift; sourceTree = "<group>"; };
 		53B7F05823F7235500700431 /* RequiredExpensesEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredExpensesEditorPresenter.swift; sourceTree = "<group>"; };
@@ -116,6 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5389CEE223F7648A00990E88 /* RxCocoa.framework in Frameworks */,
+				5389CEE323F7648A00990E88 /* RxRelay.framework in Frameworks */,
+				5389CEE423F7648A00990E88 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +220,30 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		5389CEDB23F760BA00990E88 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5389CEDC23F760C200990E88 /* UserDefaults */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5389CEDC23F760C200990E88 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5389CEDD23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		5389CEDF23F761B100990E88 /* _TestUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				5389CEE023F761C500990E88 /* UserDefaults+extensions.swift */,
+			);
+			path = _TestUtilities;
+			sourceTree = "<group>";
+		};
 		53B7F02723F7221400700431 = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +285,9 @@
 		53B7F04923F7221800700431 /* PocketBudgetTests */ = {
 			isa = PBXGroup;
 			children = (
-				53B7F04A23F7221800700431 /* PocketBudgetTests.swift */,
 				53B7F04C23F7221800700431 /* Info.plist */,
+				5389CEDF23F761B100990E88 /* _TestUtilities */,
+				5389CEDB23F760BA00990E88 /* Data */,
 			);
 			path = PocketBudgetTests;
 			sourceTree = "<group>";
@@ -334,6 +367,7 @@
 					};
 					53B7F04523F7221800700431 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 						TestTargetID = 53B7F02F23F7221400700431;
 					};
 				};
@@ -410,7 +444,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53B7F04B23F7221800700431 /* PocketBudgetTests.swift in Sources */,
+				5389CEE123F761C500990E88 /* UserDefaults+extensions.swift in Sources */,
+				5389CEDE23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,8 +642,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23A3PS5QB5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PocketBudgetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,6 +658,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jtouzy.PocketBudgetTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PocketBudget.app/PocketBudget";
@@ -629,8 +670,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23A3PS5QB5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PocketBudgetTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
