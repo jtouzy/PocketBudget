@@ -8,12 +8,8 @@
 
 import UIKit
 
-extension UIViewController {
+extension UIViewController: UIIdentifiable {
     static let mainStoryboard = "Application"
-
-    static var identifier: String {
-        String(describing: self)
-    }
 
     static func load<T: UIViewController>() -> T? {
         let storyboard = UIStoryboard(name: mainStoryboard, bundle: .main)

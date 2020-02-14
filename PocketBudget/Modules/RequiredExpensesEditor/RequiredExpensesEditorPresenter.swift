@@ -13,6 +13,7 @@ import RxSwift
 // MARK: PRESENTER PROTOCOL
 //
 protocol RequiredExpensesEditorPresenter {
+    func getItemsDriver() -> Driver<[Expense]>
     var didTapAddRelay: PublishRelay<()> { get }
 }
 
@@ -22,6 +23,7 @@ protocol RequiredExpensesEditorPresenter {
 class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
     weak var view: RequiredExpensesEditorView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
+    lazy var interactor: RequiredExpensesEditorInteractor = RequiredExpensesEditorInteractorImpl()
 
     let didTapAddRelay = PublishRelay<()>()
     let disposeBag = DisposeBag()
@@ -30,16 +32,22 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
         self.view = view
         subscribeToDidTapAddRelay()
     }
+
+    func getItemsDriver() -> Driver<[Expense]> {
+        return interactor.getRequiredExpenses(for: "account_1").asDriver(onErrorJustReturn: [])
+    }
 }
 
 //
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
 extension RequiredExpensesEditorPresenterImpl {
-    func subscribeToDidTapAddRelay() {
+    private func subscribeToDidTapAddRelay() {
         didTapAddRelay
-            .subscribe(onNext: { _ in
-                print("next call")
+            .subscribe(onNext: { [weak self] _ in
+                self?.interactor.add(expense:
+                    Expense(id: "new_1", title: "new", accountId: "account_1")
+                )
             })
             .disposed(by: disposeBag)
     }
