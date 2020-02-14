@@ -1,0 +1,52 @@
+//
+//  ApplicationWireframe.swift
+//  PocketBudget
+//
+//  Created by Jérémy TOUZY on 14/02/2020.
+//  Copyright © 2020 jtouzy. All rights reserved.
+//
+
+import UIKit
+
+//
+// MARK: WIREFRAME PROTOCOL
+//
+protocol Wireframe {
+    func push(to module: ApplicationModule)
+    func present(module: ApplicationModule)
+}
+
+//
+// MARK: WIREFRAME IMPLEMENTATION
+//
+class ApplicationWireframe {
+    static let shared = ApplicationWireframe()
+    var presentedViewController: UIViewController?
+
+    func initializeWindow(with windowScene: UIWindowScene) -> UIWindow {
+        let window = UIWindow(windowScene: windowScene)
+        presentedViewController = ApplicationModule.requiredExpensesEditor.build()
+        window.rootViewController = presentedViewController
+        window.makeKeyAndVisible()
+        return window
+    }
+}
+
+//
+// MARK: WIREFRAME IMPLEMENTATION + PROTOCOL
+//
+extension ApplicationWireframe: Wireframe {
+    func push(to module: ApplicationModule) {
+        guard let viewController = module.build() else { return }
+        presentedViewController?.navigationController?.pushViewController(
+            viewController, animated: true
+        )
+        presentedViewController = viewController
+    }
+
+    func present(module: ApplicationModule) {
+        guard let viewController = module.build() else { return }
+        presentedViewController?.present(viewController, animated: true, completion: nil)
+        presentedViewController = viewController
+    }
+}

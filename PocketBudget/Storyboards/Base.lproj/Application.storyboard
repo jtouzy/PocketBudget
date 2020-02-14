@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Required Expenses Editor View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="RequiredExpensesEditorViewController" id="BYZ-38-t0r" customClass="RequiredExpensesEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bej-6Z-cH5">
+                                <rect key="frame" x="16" y="840" width="382" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xnK-zy-4Om"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ha-t5-ua1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="780"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5Ha-t5-ua1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7FS-2p-SFE"/>
+                            <constraint firstItem="bej-6Z-cH5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7s9-G3-AKo"/>
+                            <constraint firstItem="bej-6Z-cH5" firstAttribute="top" secondItem="5Ha-t5-ua1" secondAttribute="bottom" constant="16" id="F1W-3p-8kj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bej-6Z-cH5" secondAttribute="trailing" constant="16" id="GvH-9L-c5o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bej-6Z-cH5" secondAttribute="bottom" constant="-18" id="VAp-7y-2P8"/>
+                            <constraint firstItem="5Ha-t5-ua1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gau-xb-TSb"/>
+                            <constraint firstItem="5Ha-t5-ua1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uro-FV-CSw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="bej-6Z-cH5" id="uUo-9j-Wcz"/>
+                        <outlet property="tableView" destination="5Ha-t5-ua1" id="pF2-oo-4RY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="71.651785714285708"/>
+        </scene>
+    </scenes>
+</document>
