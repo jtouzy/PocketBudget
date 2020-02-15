@@ -55,9 +55,22 @@
                     <view key="view" contentMode="scaleToFill" id="Hq2-li-BG9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-G1-qaR">
+                                <rect key="frame" x="184" y="438" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LZx-G1-qaR" firstAttribute="centerX" secondItem="7uB-gh-cIi" secondAttribute="centerX" id="A32-wC-cE9"/>
+                            <constraint firstItem="LZx-G1-qaR" firstAttribute="centerY" secondItem="7uB-gh-cIi" secondAttribute="centerY" id="VL5-Ox-bhA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="7uB-gh-cIi"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="LZx-G1-qaR" id="Smd-bz-bdQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLh-Za-oDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

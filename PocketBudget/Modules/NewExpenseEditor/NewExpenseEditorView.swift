@@ -6,6 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import RxSwift
 import UIKit
 
 //
@@ -20,6 +21,7 @@ protocol NewExpenseEditorView: class {
 class NewExpenseEditorViewController: UIViewController {
     @IBOutlet weak var addButton: UIButton!
 
+    let disposeBag = DisposeBag()
     var presenter: NewExpenseEditorPresenter?
 
     override func viewDidLoad() {
@@ -33,6 +35,15 @@ class NewExpenseEditorViewController: UIViewController {
 //
 extension NewExpenseEditorViewController {
     private func createBindings() {
+        createAddButtonBinding()
+    }
+
+    private func createAddButtonBinding() {
+        guard let presenter = presenter else { return }
+        addButton.rx.tap
+            .asSignal()
+            .emit(to: presenter.didTapAddRelay)
+            .disposed(by: disposeBag)
     }
 }
 

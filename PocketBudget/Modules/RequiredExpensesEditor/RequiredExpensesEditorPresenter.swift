@@ -30,11 +30,18 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
 
     init(view: RequiredExpensesEditorView) {
         self.view = view
-        subscribeToDidTapAddRelay()
+        subscribeToNavigateToNewExpenseEditor(didTapAddRelay)
     }
 
     func getItemsDriver() -> Driver<[Expense]> {
-        return interactor.getRequiredExpenses(for: "account_1").asDriver(onErrorJustReturn: [])
+        return interactor.getRequiredExpenses(for: "account_1")
+            .asDriver(onErrorJustReturn: [])
+            .do(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.view?.evaluateEmptiness(for: $0) { actionSignal in
+                    actionSignal.emit(to: self.didTapAddRelay).disposed(by: self.disposeBag)
+                }
+            })
     }
 }
 
@@ -42,8 +49,8 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
 extension RequiredExpensesEditorPresenterImpl {
-    private func subscribeToDidTapAddRelay() {
-        didTapAddRelay
+    private func subscribeToNavigateToNewExpenseEditor(_ stream: PublishRelay<()>) {
+        stream
             .subscribe(onNext: { [weak self] _ in
                 self?.wireframe.present(module: .newExpenseEditor)
             })

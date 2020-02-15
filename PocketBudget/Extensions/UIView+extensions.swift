@@ -8,4 +8,20 @@
 
 import UIKit
 
-extension UIView: UIIdentifiable {}
+extension UIView: UIIdentifiable {
+    static func load<T: UIView>() -> T? {
+        return UINib(nibName: T.identifier, bundle: .main)
+            .instantiate(withOwner: self, options: nil).first as? T
+    }
+
+    func addTo(view: UIView) {
+        view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.topAnchor),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+}

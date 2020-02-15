@@ -13,7 +13,7 @@ import UIKit
 //
 // MARK: VIEW PROTOCOL
 //
-protocol RequiredExpensesEditorView: class {
+protocol RequiredExpensesEditorView: class, UIEmptiable {
 }
 
 //
@@ -28,6 +28,7 @@ class RequiredExpensesEditorViewController: UIViewController {
         }
     }
     @IBOutlet weak var addButton: UIButton!
+    var emptyView: EmptyView?
 
     let disposeBag = DisposeBag()
     var presenter: RequiredExpensesEditorPresenter?

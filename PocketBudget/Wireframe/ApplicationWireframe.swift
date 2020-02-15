@@ -14,6 +14,7 @@ import UIKit
 protocol Wireframe {
     func push(to module: ApplicationModule)
     func present(module: ApplicationModule)
+    func close()
 }
 
 //
@@ -49,6 +50,12 @@ extension ApplicationWireframe: Wireframe {
         presentedViewController?.present(viewController, animated: true, completion: nil)
         presentedViewController = viewController
         presentedViewController?.presentationController?.delegate = self
+    }
+
+    func close() {
+        let parentViewController = presentedViewController?.presentingViewController
+        presentedViewController?.dismiss(animated: true, completion: nil)
+        presentedViewController = parentViewController
     }
 }
 

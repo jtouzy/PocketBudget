@@ -7,5 +7,5 @@
 //
 
 class ApplicationStorage {
-    static var current: DataStorage = UserDefaultsDataStorage()
+    static var current: DataStorage = MockDataStorage()
 }
