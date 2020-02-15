@@ -16,3 +16,9 @@ extension Optional where Wrapped: Sequence {
         }
     }
 }
+
+extension Optional where Wrapped == String {
+    var orEmpty: String {
+        return self ?? ""
+    }
+}

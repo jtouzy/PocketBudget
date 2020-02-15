@@ -6,6 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import RxCocoa
 import RxSwift
 import UIKit
 
@@ -13,6 +14,8 @@ import UIKit
 // MARK: VIEW PROTOCOL
 //
 protocol NewExpenseEditorView: class {
+    var titleInputControlProperty: ControlProperty<String?> { get }
+    var amountInputControlProperty: ControlProperty<String?> { get }
 }
 
 //
@@ -30,6 +33,7 @@ class NewExpenseEditorViewController: ModalViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createBindings()
+        expenseTitleTextField.becomeFirstResponder()
     }
 }
 
@@ -38,14 +42,32 @@ class NewExpenseEditorViewController: ModalViewController {
 //
 extension NewExpenseEditorViewController {
     private func createBindings() {
-        createAddButtonBinding()
+        createAddButtonBindings()
     }
 
-    private func createAddButtonBinding() {
+    private func createAddButtonBindings() {
+        createAddButtonTapEventBinding()
+        createAddButtonActivationBinding()
+    }
+
+    private func createAddButtonTapEventBinding() {
         guard let presenter = presenter else { return }
         addButton.rx.tap
-            .asSignal()
+            .map {
+                NewExpenseFormModel(
+                    title: self.expenseTitleTextField.text.orEmpty,
+                    amount: self.expenseAmountTextField.text.orEmpty
+                )
+            }
+            .asSignal(onErrorJustReturn: (title: "", amount: ""))
             .emit(to: presenter.didTapAddRelay)
+            .disposed(by: disposeBag)
+    }
+
+    private func createAddButtonActivationBinding() {
+        guard let presenter = presenter else { return }
+        presenter.getButtonActivationConditionObservable()
+            .bind(to: addButton.rx.isEnabled)
             .disposed(by: disposeBag)
     }
 }
@@ -54,4 +76,10 @@ extension NewExpenseEditorViewController {
 // MARK: VIEW CONTROLLER + PROTOCOL
 //
 extension NewExpenseEditorViewController: NewExpenseEditorView {
+    var titleInputControlProperty: ControlProperty<String?> {
+        return expenseTitleTextField.rx.text
+    }
+    var amountInputControlProperty: ControlProperty<String?> {
+        return expenseAmountTextField.rx.text
+    }
 }
