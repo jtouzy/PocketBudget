@@ -12,10 +12,13 @@ import UIKit
 // MARK: APPLICATION MODULES
 //
 enum ApplicationModule {
+    case newExpenseEditor
     case requiredExpensesEditor
 
     func build() -> UIViewController? {
         switch self {
+        case .newExpenseEditor:
+            return assembleNewExpenseEditor()
         case .requiredExpensesEditor:
             return assembleRequiredExpensesEditor()
         }

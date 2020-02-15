@@ -13,8 +13,8 @@ import RxSwift
 // MARK: PRESENTER PROTOCOL
 //
 protocol RequiredExpensesEditorPresenter {
-    func getItemsDriver() -> Driver<[Expense]>
     var didTapAddRelay: PublishRelay<()> { get }
+    func getItemsDriver() -> Driver<[Expense]>
 }
 
 //
@@ -45,9 +45,7 @@ extension RequiredExpensesEditorPresenterImpl {
     private func subscribeToDidTapAddRelay() {
         didTapAddRelay
             .subscribe(onNext: { [weak self] _ in
-                self?.interactor.add(expense:
-                    Expense(id: "new_1", title: "new", accountId: "account_1")
-                )
+                self?.wireframe.present(module: .newExpenseEditor)
             })
             .disposed(by: disposeBag)
     }

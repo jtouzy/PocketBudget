@@ -19,7 +19,7 @@ protocol Wireframe {
 //
 // MARK: WIREFRAME IMPLEMENTATION
 //
-class ApplicationWireframe {
+class ApplicationWireframe: NSObject {
     static let shared = ApplicationWireframe()
     var presentedViewController: UIViewController?
 
@@ -48,5 +48,15 @@ extension ApplicationWireframe: Wireframe {
         guard let viewController = module.build() else { return }
         presentedViewController?.present(viewController, animated: true, completion: nil)
         presentedViewController = viewController
+        presentedViewController?.presentationController?.delegate = self
+    }
+}
+
+//
+// MARK: WIREFRAME EXTENSION FOR IOS 13 MODALS
+//
+extension ApplicationWireframe: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+        presentedViewController = presentationController.presentingViewController
     }
 }
