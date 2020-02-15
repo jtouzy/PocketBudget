@@ -18,7 +18,10 @@ protocol NewExpenseEditorView: class {
 //
 // MARK: VIEW CONTROLLER
 //
-class NewExpenseEditorViewController: UIViewController {
+class NewExpenseEditorViewController: ModalViewController {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var expenseTitleTextField: UITextField!
+    @IBOutlet weak var expenseAmountTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
 
     let disposeBag = DisposeBag()
