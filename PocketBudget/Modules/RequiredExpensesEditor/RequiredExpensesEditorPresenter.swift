@@ -14,6 +14,7 @@ import RxSwift
 //
 protocol RequiredExpensesEditorPresenter {
     var didTapAddRelay: PublishRelay<()> { get }
+    var didRemoveExpense: PublishRelay<Expense> { get }
     func getItemsDriver() -> Driver<[Expense]>
 }
 
@@ -26,11 +27,13 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
     lazy var interactor: RequiredExpensesEditorInteractor = RequiredExpensesEditorInteractorImpl()
 
     let didTapAddRelay = PublishRelay<()>()
+    let didRemoveExpense = PublishRelay<Expense>()
     let disposeBag = DisposeBag()
 
     init(view: RequiredExpensesEditorView) {
         self.view = view
-        subscribeToNavigateToNewExpenseEditor(didTapAddRelay)
+        subscribeForNavigateToNewExpenseEditor(didTapAddRelay)
+        subscribeForRemoveExpenseAction(didRemoveExpense)
     }
 
     func getItemsDriver() -> Driver<[Expense]> {
@@ -49,10 +52,18 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
 extension RequiredExpensesEditorPresenterImpl {
-    private func subscribeToNavigateToNewExpenseEditor(_ stream: PublishRelay<()>) {
+    private func subscribeForNavigateToNewExpenseEditor(_ stream: PublishRelay<()>) {
         stream
             .subscribe(onNext: { [weak self] _ in
                 self?.wireframe.present(module: .newExpenseEditor)
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func subscribeForRemoveExpenseAction(_ stream: PublishRelay<Expense>) {
+        stream
+            .subscribe(onNext: { [weak self] expense in
+                self?.interactor.remove(expense: expense)
             })
             .disposed(by: disposeBag)
     }

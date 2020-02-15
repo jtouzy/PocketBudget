@@ -27,6 +27,13 @@ class UserDefaultsDataStorage: DataStorage {
         expenses.append(expense)
         storeExpenses(expenses)
     }
+
+    func remove(expense: Expense) {
+        var expenses: [Expense] = findExpenses()
+        guard let index = expenses.firstIndex(where: { $0.id == expense.id }) else { return }
+        expenses.remove(at: index)
+        storeExpenses(expenses)
+    }
 }
 
 extension UserDefaultsDataStorage {

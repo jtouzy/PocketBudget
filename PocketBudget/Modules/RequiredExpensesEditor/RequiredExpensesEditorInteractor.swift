@@ -11,6 +11,7 @@ import RxSwift
 protocol RequiredExpensesEditorInteractor {
     func getRequiredExpenses(for accountId: String) -> Observable<[Expense]>
     func add(expense: Expense)
+    func remove(expense: Expense)
 }
 
 class RequiredExpensesEditorInteractorImpl {
@@ -27,5 +28,9 @@ extension RequiredExpensesEditorInteractorImpl: RequiredExpensesEditorInteractor
     
     func add(expense: Expense) {
         dataStorage.add(expense: expense)
+    }
+
+    func remove(expense: Expense) {
+        dataStorage.remove(expense: expense)
     }
 }

@@ -11,4 +11,5 @@ import RxSwift
 protocol DataStorage {
     func getRequiredExpenses(for accountId: String) -> Observable<[Expense]>
     func add(expense: Expense)
+    func remove(expense: Expense)
 }

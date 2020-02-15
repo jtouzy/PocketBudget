@@ -25,4 +25,13 @@ class MockDataStorage: DataStorage {
         value.append(expense)
         subject.onNext(value)
     }
+
+    func remove(expense: Expense) {
+        guard
+            var value = try? subject.value(),
+            let index = value.firstIndex(where: { $0.id == expense.id })
+        else { return }
+        value.remove(at: index)
+        subject.onNext(value)
+    }
 }

@@ -50,11 +50,17 @@ extension RequiredExpensesEditorViewController {
 
     private func createTableViewBinding() {
         guard let presenter = presenter else { return }
+        // Elements driving
         presenter.getItemsDriver()
             .drive(tableView.rx.items(cellIdentifier: "UITableViewCell",
                                       cellType: UITableViewCell.self)) { (_, expense, cell) in
                 cell.textLabel?.text = expense.title
             }
+            .disposed(by: disposeBag)
+        // Deleting signal
+        tableView.rx.modelDeleted(Expense.self)
+            .asSignal()
+            .emit(to: presenter.didRemoveExpense)
             .disposed(by: disposeBag)
     }
 
