@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-class Account: Codable {
+class Account: Codable, Identifiable {
     let id: String
     let title: String
 

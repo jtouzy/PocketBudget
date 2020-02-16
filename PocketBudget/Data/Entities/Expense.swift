@@ -6,7 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-class Expense: Codable, Equatable {
+class Expense: Codable, Equatable, Identifiable {
     let id: String
     let title: String
     let accountId: String

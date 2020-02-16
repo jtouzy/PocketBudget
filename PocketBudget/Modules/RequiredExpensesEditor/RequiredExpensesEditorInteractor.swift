@@ -20,7 +20,7 @@ class RequiredExpensesEditorInteractorImpl {
 
 extension RequiredExpensesEditorInteractorImpl: RequiredExpensesEditorInteractor {
     func getRequiredExpenses(for accountId: String) -> Observable<[Expense]> {
-        return dataStorage.getRequiredExpenses(for: accountId)
+        return dataStorage.get(by: ExpensesQuery(accountId: accountId))
             .flatMap {
                 Observable.just($0.sorted(by: { $0.title.compare($1.title) == .orderedAscending }))
             }
