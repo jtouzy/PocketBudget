@@ -44,7 +44,11 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.view?.evaluateEmptiness(for: $0) { actionSignal in
+                let emptyModel = EmptyViewModel(
+                    title: "expenses_editor_empty_title".localized,
+                    actionTitle: "expenses_editor_empty_action".localized
+                )
+                self.view?.evaluateEmptiness(for: $0, model: emptyModel) { actionSignal in
                     actionSignal.emit(to: self.didTapAddRelay).disposed(by: self.disposeBag)
                 }
             })

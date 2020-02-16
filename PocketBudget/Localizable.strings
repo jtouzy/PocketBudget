@@ -8,6 +8,8 @@
 
 // APP_MODULE: ACCOUNTS_EDITOR
 "accounts_editor_title" = "Gérez vos comptes";
+"accounts_editor_empty_title" = "Vous n'avez aucun compte";
+"accounts_editor_empty_action" = "Gérer mon premier compte";
 
 // APP_MODULE: ACCOUNT_SETTINGS
 "account_settings_required_expenses_title" = "Dépenses obligatoires";
@@ -15,6 +17,8 @@
 
 // APP_MODULE: EXPENSES_EDITOR
 "expenses_editor_add_action" = "Ajouter une dépense";
+"expenses_editor_empty_title" = "Aucune dépense pour ce compte";
+"expenses_editor_empty_action" = "Ajouter une dépense";
 
 // APP_MODULE: NEW_EXPENSE_EDITOR
 "new_expense_editor_title" = "Ajouter une dépense";

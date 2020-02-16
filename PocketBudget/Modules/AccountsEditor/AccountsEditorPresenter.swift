@@ -41,7 +41,11 @@ class AccountsEditorPresenterImpl: AccountsEditorPresenter {
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
-                self.view?.evaluateEmptiness(for: $0) { actionSignal in
+                let emptyModel = EmptyViewModel(
+                    title: "accounts_editor_empty_title".localized,
+                    actionTitle: "accounts_editor_empty_action".localized
+                )
+                self.view?.evaluateEmptiness(for: $0, model: emptyModel) { actionSignal in
                     // FIXME Add new account
                     //actionSignal.emit(to: self.didTapAddRelay).disposed(by: self.disposeBag)
                 }

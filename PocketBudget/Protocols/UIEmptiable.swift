@@ -13,11 +13,15 @@ typealias IfEmpty = (Signal<()>) -> Void
 
 protocol UIEmptiable {
     var emptyView: EmptyView? { get set }
-    mutating func evaluateEmptiness<T>(for data: T, ifEmpty: IfEmpty?) where T: Collection
+    mutating func evaluateEmptiness<T>(
+        for data: T, model: EmptyViewModel, ifEmpty: IfEmpty?
+    ) where T: Collection
 }
 
 extension UIEmptiable where Self: UIViewController {
-    mutating func evaluateEmptiness<T>(for data: T, ifEmpty: IfEmpty?) where T: Collection {
+    mutating func evaluateEmptiness<T>(
+        for data: T, model: EmptyViewModel, ifEmpty: IfEmpty?
+    ) where T: Collection {
         if data.isEmpty {
             guard
                 emptyView == nil,
@@ -25,7 +29,9 @@ extension UIEmptiable where Self: UIViewController {
             else {
                 return
             }
-            newEmptyView.addTo(view: self.view)
+            newEmptyView
+                .configure(with: model)
+                .addTo(view: self.view)
             ifEmpty?(newEmptyView.actionButtonSignal)
             emptyView = newEmptyView
         } else {
