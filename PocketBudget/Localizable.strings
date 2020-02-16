@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  PocketBudget
+
+  Created by Jérémy TOUZY on 16/02/2020.
+  Copyright © 2020 jtouzy. All rights reserved.
+*/
+
+// APP_MODULE: EXPENSES_EDITOR
+"expenses_editor_add_action" = "Ajouter une dépense";
+
+// APP_MODULE: NEW_EXPENSE_EDITOR
+"new_expense_editor_title" = "Ajouter une dépense";
+"new_expense_editor_add_action" = "Ajouter";

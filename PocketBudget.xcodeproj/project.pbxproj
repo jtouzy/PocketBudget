@@ -11,6 +11,7 @@
 		538422A923F8B332006CFB29 /* NewExpenseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422A823F8B332006CFB29 /* NewExpenseModels.swift */; };
 		538422E523F96D41006CFB29 /* ExtendedFoundations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; };
 		538422E623F96D41006CFB29 /* ExtendedFoundations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		538422EF23F972F7006CFB29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538422EE23F972F7006CFB29 /* Localizable.strings */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
 		5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift */; };
@@ -97,6 +98,7 @@
 		538422A423F8AD58006CFB29 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		538422A823F8B332006CFB29 /* NewExpenseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseModels.swift; sourceTree = "<group>"; };
 		538422D023F8BBC3006CFB29 /* ExtendedFoundations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExtendedFoundations.xcodeproj; path = ExtendedFoundations/ExtendedFoundations.xcodeproj; sourceTree = "<group>"; };
+		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationWireframe.swift; sourceTree = "<group>"; };
 		5389CEAD23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+RequiredExpensesEditor.swift"; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				53B7F04123F7221800700431 /* Info.plist */,
+				538422EE23F972F7006CFB29 /* Localizable.strings */,
 				53B7F03323F7221400700431 /* AppDelegate.swift */,
 				53B7F03523F7221400700431 /* SceneDelegate.swift */,
 				53B7F03C23F7221800700431 /* Assets.xcassets */,
@@ -506,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538422EF23F972F7006CFB29 /* Localizable.strings in Resources */,
 				5389CEEE23F7EA0B00990E88 /* EmptyView.xib in Resources */,
 				53B7F04023F7221800700431 /* LaunchScreen.storyboard in Resources */,
 				53B7F03D23F7221800700431 /* Assets.xcassets in Resources */,
