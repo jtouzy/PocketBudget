@@ -1,6 +1,6 @@
 //
 //  UIView+extensions.swift
-//  PocketBudget
+//  ExtendedFoundations
 //
 //  Created by Jérémy TOUZY on 14/02/2020.
 //  Copyright © 2020 jtouzy. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView: UIIdentifiable {
+public extension UIView {
     static func load<T: UIView>() -> T? {
         return UINib(nibName: T.identifier, bundle: .main)
             .instantiate(withOwner: self, options: nil).first as? T
@@ -25,3 +25,5 @@ extension UIView: UIIdentifiable {
         ])
     }
 }
+
+extension UIView: UIIdentifiable {}

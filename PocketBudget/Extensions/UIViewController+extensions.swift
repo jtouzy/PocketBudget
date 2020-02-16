@@ -1,14 +1,15 @@
 //
-//  UIViewController+extension.swift
+//  UIViewController+extensions.swift
 //  PocketBudget
 //
 //  Created by Jérémy TOUZY on 14/02/2020.
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import ExtendedFoundations
 import UIKit
 
-extension UIViewController: UIIdentifiable {
+extension UIViewController {
     static let mainStoryboard = "Application"
 
     static func load<T: UIViewController>() -> T? {
