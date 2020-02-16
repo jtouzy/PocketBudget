@@ -22,7 +22,12 @@ protocol Wireframe {
 //
 class ApplicationWireframe: NSObject {
     static let shared = ApplicationWireframe()
+
     var presentedViewController: UIViewController?
+    var topViewControllerInPresented: UIViewController? {
+        guard let presented = presentedViewController else { return nil }
+        return (presented as? UINavigationController)?.topViewController ?? presented
+    }
 
     func initializeWindow(with windowScene: UIWindowScene) -> UIWindow {
         let window = UIWindow(windowScene: windowScene)
@@ -38,16 +43,20 @@ class ApplicationWireframe: NSObject {
 //
 extension ApplicationWireframe: Wireframe {
     func push(to module: ApplicationModule) {
-        guard let viewController = module.build() else { return }
-        presentedViewController?.navigationController?.pushViewController(
-            viewController, animated: true
-        )
-        presentedViewController = viewController
+        guard
+            let viewController = module.build(),
+            let navigationController = presentedViewController as? UINavigationController
+        else {
+            return
+        }
+        navigationController.pushViewController(viewController, animated: true)
     }
 
     func present(module: ApplicationModule) {
-        guard let viewController = module.build() else { return }
-        presentedViewController?.present(viewController, animated: true, completion: nil)
+        guard let viewController = module.build() else {
+            return
+        }
+        topViewControllerInPresented?.present(viewController, animated: true, completion: nil)
         presentedViewController = viewController
         presentedViewController?.presentationController?.delegate = self
     }

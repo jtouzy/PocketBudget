@@ -47,8 +47,16 @@ extension AccountSettingsPresenterImpl {
     private func subscribeForSelectSettingsItemAction(_ stream: PublishRelay<AccountSettingsItem>) {
         stream
             .subscribe(onNext: { [weak self] item in
-                // FIXME Navigate
+                guard let self = self else { return }
+                self.wireframe.push(to: self.getModule(for: item))
             })
             .disposed(by: disposeBag)
+    }
+
+    private func getModule(for settingsItem: AccountSettingsItem) -> ApplicationModule {
+        switch settingsItem {
+        case .requiredExpenses:
+            return .requiredExpensesEditor(accountId: accountId)
+        }
     }
 }
