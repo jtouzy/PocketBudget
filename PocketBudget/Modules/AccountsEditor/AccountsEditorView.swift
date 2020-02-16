@@ -23,8 +23,6 @@ class AccountsEditorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
-            tableView.register(UITableViewCell.self,
-                               forCellReuseIdentifier: UITableViewCell.identifier)
         }
     }
     var emptyView: EmptyView?

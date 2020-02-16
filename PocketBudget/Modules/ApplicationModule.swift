@@ -13,7 +13,7 @@ import UIKit
 //
 enum EmbeddingType {
     case none
-    case navigation
+    case navigation(title: String)
 }
 
 //
@@ -25,15 +25,6 @@ enum ApplicationModule {
     case newExpenseEditor(accountId: String)
     case requiredExpensesEditor(accountId: String)
 
-    var embeddingType: EmbeddingType {
-        switch self {
-        case .accountsEditor:
-            return .navigation
-        case .accountSettings, .newExpenseEditor, .requiredExpensesEditor:
-            return .none
-        }
-    }
-
     func build() -> UIViewController? {
         guard let controller = buildController() else {
             return nil
@@ -41,11 +32,26 @@ enum ApplicationModule {
         switch embeddingType {
         case .none:
             return controller
-        case .navigation:
-            return UINavigationController(rootViewController: controller)
+        case .navigation(let title):
+            let navigationController = UINavigationController(rootViewController: controller)
+            controller.navigationItem.title = title
+            return navigationController
         }
     }
+}
 
+extension ApplicationModule {
+    var embeddingType: EmbeddingType {
+        switch self {
+        case .accountsEditor:
+            return .navigation(title: "accounts_editor_title".localized)
+        case .accountSettings, .newExpenseEditor, .requiredExpensesEditor:
+            return .none
+        }
+    }
+}
+
+extension ApplicationModule {
     private func buildController() -> UIViewController? {
         switch self {
         case .accountsEditor:
