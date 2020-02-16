@@ -10,12 +10,14 @@ import RxSwift
 
 protocol AccountStorage {
     func get(by query: AccountsQuery) -> Observable<[Account]>
+    func add(account: Account)
+    func removeAccount(identifiedBy id: String)
 }
 
 protocol ExpenseStorage {
     func get(by query: ExpensesQuery) -> Observable<[Expense]>
     func add(expense: Expense)
-    func remove(expense: Expense)
+    func removeExpense(identifiedBy id: String)
 }
 
 protocol DataStorage: AccountStorage, ExpenseStorage {

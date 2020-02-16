@@ -14,6 +14,7 @@ import RxSwift
 //
 protocol AccountsEditorPresenter {
     var didSelectAccount: PublishRelay<AccountUI> { get }
+    var didRemoveAccount: PublishRelay<AccountUI> { get }
     func getItemsDriver() -> Driver<[AccountUI]>
 }
 
@@ -26,11 +27,13 @@ class AccountsEditorPresenterImpl: AccountsEditorPresenter {
     lazy var interactor: AccountsEditorInteractor = AccountsEditorInteractorImpl()
 
     let didSelectAccount = PublishRelay<AccountUI>()
+    let didRemoveAccount = PublishRelay<AccountUI>()
     let disposeBag = DisposeBag()
 
     init(view: AccountsEditorView) {
         self.view = view
         subscribeForSelectAccountAction(didSelectAccount)
+        subscribeForRemoveAccountAction(didRemoveAccount)
     }
 
     func getItemsDriver() -> Driver<[AccountUI]> {
@@ -55,6 +58,14 @@ extension AccountsEditorPresenterImpl {
             .subscribe(onNext: { [weak self] item in
                 guard let self = self else { return }
                 self.wireframe.push(to: .accountSettings(accountId: item.id))
+            })
+            .disposed(by: disposeBag)
+    }
+
+    private func subscribeForRemoveAccountAction(_ stream: PublishRelay<AccountUI>) {
+        stream
+            .subscribe(onNext: { [weak self] item in
+                self?.interactor.remove(identifiedBy: item.id)
             })
             .disposed(by: disposeBag)
     }

@@ -50,8 +50,9 @@ extension AccountsEditorViewController {
         tableView.bindContent(with: presenter.getItemsDriver(), cell: UITableViewCell.self) {
             $1.textLabel?.text = $0.title
         }.disposed(by: disposeBag)
-        // Selection
+        // Actions
         tableView.bindSelection(to: presenter.didSelectAccount).disposed(by: disposeBag)
+        tableView.bindDeletion(to: presenter.didRemoveAccount).disposed(by: disposeBag)
     }
 }
 

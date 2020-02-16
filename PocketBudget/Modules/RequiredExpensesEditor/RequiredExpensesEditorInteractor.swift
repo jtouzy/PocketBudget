@@ -31,6 +31,6 @@ extension RequiredExpensesEditorInteractorImpl: RequiredExpensesEditorInteractor
     }
 
     func remove(expense: Expense) {
-        dataStorage.remove(expense: expense)
+        dataStorage.removeExpense(identifiedBy: expense.id)
     }
 }

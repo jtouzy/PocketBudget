@@ -54,7 +54,7 @@ extension RequiredExpensesEditorViewController {
         tableView.bindContent(with: presenter.getItemsDriver(), cell: UITableViewCell.self) {
             $1.textLabel?.text = $0.title
         }.disposed(by: disposeBag)
-        // Deletion
+        // Actions
         tableView.bindDeletion(to: presenter.didRemoveExpense).disposed(by: disposeBag)
     }
 

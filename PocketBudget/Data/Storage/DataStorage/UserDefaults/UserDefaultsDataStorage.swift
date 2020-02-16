@@ -20,6 +20,12 @@ extension UserDefaultsDataStorage {
     func get(by query: AccountsQuery) -> Observable<[Account]> {
         return getObservable(forKey: .accounts, by: query)
     }
+    func add(account: Account) {
+        add(account, forKey: .accounts)
+    }
+    func removeAccount(identifiedBy id: String) {
+        remove(identifiedBy: id, forKey: .accounts, type: Account.self)
+    }
 }
 
 //
@@ -32,8 +38,8 @@ extension UserDefaultsDataStorage {
     func add(expense: Expense) {
         add(expense, forKey: .expenses)
     }
-    func remove(expense: Expense) {
-        remove(expense, forKey: .expenses)
+    func removeExpense(identifiedBy id: String) {
+        remove(identifiedBy: id, forKey: .expenses, type: Expense.self)
     }
 }
 
@@ -62,11 +68,12 @@ extension UserDefaultsDataStorage {
     }
 
     private func remove<T>(
-        _ item: T,
-        forKey key: UserDefaultsStorageKey
+        identifiedBy id: String,
+        forKey key: UserDefaultsStorageKey,
+        type: T.Type
     ) where T: Codable & Identifiable {
         var data: [T] = find(forKey: key)
-        guard let index = data.firstIndex(where: { $0.id == item.id }) else { return }
+        guard let index = data.firstIndex(where: { $0.id == id }) else { return }
         data.remove(at: index)
         store(data, forKey: key)
     }

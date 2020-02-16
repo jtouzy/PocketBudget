@@ -10,6 +10,7 @@ import RxSwift
 
 protocol AccountsEditorInteractor {
     func getAccounts() -> Observable<[AccountUI]>
+    func remove(identifiedBy id: String)
 }
 
 class AccountsEditorInteractorImpl {
@@ -20,5 +21,8 @@ extension AccountsEditorInteractorImpl: AccountsEditorInteractor {
     func getAccounts() -> Observable<[AccountUI]> {
         return dataStorage.get(by: AccountsQuery())
             .map { $0.map { AccountUI(id: $0.id, title: $0.title) } }
+    }
+    func remove(identifiedBy id: String) {
+        dataStorage.removeAccount(identifiedBy: id)
     }
 }

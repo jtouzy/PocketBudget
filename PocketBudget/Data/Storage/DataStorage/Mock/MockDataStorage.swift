@@ -31,6 +31,12 @@ extension MockDataStorage {
     func get(by query: AccountsQuery) -> Observable<[Account]> {
         get(by: query, from: accountSubject)
     }
+    func add(account: Account) {
+        add(account, to: accountSubject)
+    }
+    func removeAccount(identifiedBy id: String) {
+        remove(identifiedBy: id, from: accountSubject)
+    }
 }
 
 //
@@ -43,8 +49,8 @@ extension MockDataStorage {
     func add(expense: Expense) {
         add(expense, to: expenseSubject)
     }
-    func remove(expense: Expense) {
-        remove(expense, to: expenseSubject)
+    func removeExpense(identifiedBy id: String) {
+        remove(identifiedBy: id, from: expenseSubject)
     }
 }
 
@@ -62,10 +68,11 @@ extension MockDataStorage {
         value.append(item)
         subject.onNext(value)
     }
-    private func remove<T>(_ item: T, to subject: BehaviorSubject<[T]>) where T: Identifiable {
+    private func remove<T>(identifiedBy id: String, from subject: BehaviorSubject<[T]>)
+    where T: Identifiable {
         guard
             var value = try? subject.value(),
-            let index = value.firstIndex(where: { $0.id == item.id })
+            let index = value.firstIndex(where: { $0.id == id })
         else { return }
         value.remove(at: index)
         subject.onNext(value)

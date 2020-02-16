@@ -50,7 +50,7 @@ extension AccountSettingsViewController {
             $1.textLabel?.text = $0.title
             $1.detailTextLabel?.text = $0.subtitle
         }.disposed(by: disposeBag)
-        // Selection
+        // Actions
         tableView.bindSelection(to: presenter.didSelectSettingsItem).disposed(by: disposeBag)
     }
 }
