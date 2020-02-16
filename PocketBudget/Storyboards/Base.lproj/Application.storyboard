@@ -189,7 +189,7 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-X4-hpH">
-                                <rect key="frame" x="0.0" y="665" width="414" height="231"/>
+                                <rect key="frame" x="0.0" y="589" width="414" height="307"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="at8-In-669">
                                         <rect key="frame" x="16" y="66" width="382" height="34"/>
@@ -197,7 +197,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-G1-qaR" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="166" width="382" height="33"/>
+                                        <rect key="frame" x="16" y="242" width="382" height="33"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <state key="normal" title="Button"/>
                                         <userDefinedRuntimeAttributes>
@@ -218,16 +218,26 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="new_expense_editor_title"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-3d-aCr" customClass="ColorSelector" customModule="PocketBudget" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="166" width="382" height="60"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="jBE-Sh-pL5"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="D1J-qp-q6Z" firstAttribute="leading" secondItem="at8-In-669" secondAttribute="leading" id="4mq-pv-vNk"/>
+                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="top" secondItem="D1J-qp-q6Z" secondAttribute="bottom" constant="16" id="8ww-8N-CAp"/>
                                     <constraint firstItem="at8-In-669" firstAttribute="leading" secondItem="LMB-Ox-HS0" secondAttribute="leading" id="9Hv-2d-EkJ"/>
+                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="trailing" secondItem="D1J-qp-q6Z" secondAttribute="trailing" id="Azb-eM-uNC"/>
                                     <constraint firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" constant="16" id="Cml-Hb-agp"/>
+                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="leading" secondItem="D1J-qp-q6Z" secondAttribute="leading" id="Gb7-uC-lL9"/>
                                     <constraint firstItem="LZx-G1-qaR" firstAttribute="leading" secondItem="D1J-qp-q6Z" secondAttribute="leading" id="Ihy-eQ-Jv5"/>
                                     <constraint firstItem="at8-In-669" firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" id="KoE-xg-UvD"/>
+                                    <constraint firstItem="LZx-G1-qaR" firstAttribute="top" secondItem="f5P-3d-aCr" secondAttribute="bottom" constant="16" id="Kv9-mS-bSD"/>
                                     <constraint firstItem="LZx-G1-qaR" firstAttribute="trailing" secondItem="D1J-qp-q6Z" secondAttribute="trailing" id="Nxq-xD-LtJ"/>
-                                    <constraint firstItem="LZx-G1-qaR" firstAttribute="top" secondItem="D1J-qp-q6Z" secondAttribute="bottom" constant="16" id="PNm-LD-XJO"/>
                                     <constraint firstItem="LMB-Ox-HS0" firstAttribute="top" secondItem="oYM-X4-hpH" secondAttribute="top" constant="16" id="RO5-Se-GGt"/>
                                     <constraint firstAttribute="bottom" secondItem="LZx-G1-qaR" secondAttribute="bottom" constant="32" id="Trh-IT-3P3" customClass="KeyboardLayoutConstraint" customModule="PocketBudget" customModuleProvider="target"/>
                                     <constraint firstItem="LMB-Ox-HS0" firstAttribute="leading" secondItem="oYM-X4-hpH" secondAttribute="leading" constant="16" id="VLo-RW-cPK"/>

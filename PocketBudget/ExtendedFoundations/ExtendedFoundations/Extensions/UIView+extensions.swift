@@ -10,11 +10,15 @@ import UIKit
 
 public extension UIView {
     static func load<T: UIView>() -> T? {
-        return UINib(nibName: T.identifier, bundle: .main)
+        return UINib(nibName: String(describing: self), bundle: .main)
             .instantiate(withOwner: self, options: nil).first as? T
     }
 
-    func addTo(view: UIView) {
+    func loadFromNib() {
+        Self.load()?.addTo(view: self)
+    }
+
+    func addTo(view: UIView, constant: CGFloat? = nil) {
         view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -23,6 +27,20 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
             bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+
+    @discardableResult
+    func addToCenter(of view: UIView, sized size: CGSize) -> [NSLayoutConstraint] {
+        view.addSubview(self)
+        translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            widthAnchor.constraint(equalToConstant: size.width),
+            heightAnchor.constraint(equalToConstant: size.height)
+        ]
+        NSLayoutConstraint.activate(constraints)
+        return constraints
     }
 }
 
