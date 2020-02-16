@@ -7,6 +7,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Accounts Editor View Controller-->
+        <scene sceneID="DCD-wg-8EO">
+            <objects>
+                <viewController storyboardIdentifier="AccountsEditorViewController" id="UrX-zC-jzP" customClass="AccountsEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4Y-9T-Lkp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uo4-9D-1qR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cnj-ED-gbI" firstAttribute="bottom" secondItem="Uo4-9D-1qR" secondAttribute="bottom" id="E3R-7h-kfT"/>
+                            <constraint firstItem="cnj-ED-gbI" firstAttribute="trailing" secondItem="Uo4-9D-1qR" secondAttribute="trailing" id="I7C-nx-6dc"/>
+                            <constraint firstItem="Uo4-9D-1qR" firstAttribute="leading" secondItem="cnj-ED-gbI" secondAttribute="leading" id="fZd-aN-l24"/>
+                            <constraint firstItem="Uo4-9D-1qR" firstAttribute="top" secondItem="cnj-ED-gbI" secondAttribute="top" id="rz5-wD-pZH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cnj-ED-gbI"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Uo4-9D-1qR" id="RCQ-s8-24G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j3x-aP-iYe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1635" y="72"/>
+        </scene>
         <!--Account Settings View Controller-->
         <scene sceneID="pKF-zh-rmq">
             <objects>

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		538422A523F8AD58006CFB29 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422A423F8AD58006CFB29 /* KeyboardLayoutConstraint.swift */; };
-		538422A923F8B332006CFB29 /* NewExpenseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422A823F8B332006CFB29 /* NewExpenseModels.swift */; };
+		538422A923F8B332006CFB29 /* NewExpenseEditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422A823F8B332006CFB29 /* NewExpenseEditorModels.swift */; };
 		538422E523F96D41006CFB29 /* ExtendedFoundations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; };
 		538422E623F96D41006CFB29 /* ExtendedFoundations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		538422EF23F972F7006CFB29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538422EE23F972F7006CFB29 /* Localizable.strings */; };
@@ -42,6 +42,10 @@
 		539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */; };
 		539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */; };
 		539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */; };
+		539CC5B523F9922400A908D3 /* ApplicationModule+AccountsEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5B423F9922400A908D3 /* ApplicationModule+AccountsEditor.swift */; };
+		539CC5B723F9924800A908D3 /* AccountsEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5B623F9924800A908D3 /* AccountsEditorView.swift */; };
+		539CC5B923F9925300A908D3 /* AccountsEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */; };
+		539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */; };
 		53B7F03423F7221400700431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03323F7221400700431 /* AppDelegate.swift */; };
 		53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03523F7221400700431 /* SceneDelegate.swift */; };
 		53B7F03B23F7221400700431 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03923F7221400700431 /* Application.storyboard */; };
@@ -55,6 +59,7 @@
 		53B7F06523F727E600700431 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53B7F06623F727E700700431 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; };
 		53B7F06723F727E700700431 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,7 +105,7 @@
 
 /* Begin PBXFileReference section */
 		538422A423F8AD58006CFB29 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		538422A823F8B332006CFB29 /* NewExpenseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseModels.swift; sourceTree = "<group>"; };
+		538422A823F8B332006CFB29 /* NewExpenseEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseEditorModels.swift; sourceTree = "<group>"; };
 		538422D023F8BBC3006CFB29 /* ExtendedFoundations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExtendedFoundations.xcodeproj; path = ExtendedFoundations/ExtendedFoundations.xcodeproj; sourceTree = "<group>"; };
 		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
@@ -130,6 +135,10 @@
 		539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPresenter.swift; sourceTree = "<group>"; };
 		539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+AccountSettings.swift"; sourceTree = "<group>"; };
 		539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModels.swift; sourceTree = "<group>"; };
+		539CC5B423F9922400A908D3 /* ApplicationModule+AccountsEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+AccountsEditor.swift"; sourceTree = "<group>"; };
+		539CC5B623F9924800A908D3 /* AccountsEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorView.swift; sourceTree = "<group>"; };
+		539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorPresenter.swift; sourceTree = "<group>"; };
+		539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorModels.swift; sourceTree = "<group>"; };
 		53B7F03023F7221400700431 /* PocketBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B7F03323F7221400700431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53B7F03523F7221400700431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +153,7 @@
 		53B7F05B23F727DD00700431 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		53B7F05C23F727DD00700431 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		53B7F05D23F727DD00700431 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEB123F7385300990E88 /* ApplicationModule.swift */,
+				539CC5B123F9920900A908D3 /* AccountsEditor */,
 				539CC5A523F97A7900A908D3 /* AccountSettings */,
 				5389CEE523F76AB200990E88 /* NewExpenseEditor */,
 				53B7F05523F7222A00700431 /* RequiredExpensesEditor */,
@@ -210,6 +221,7 @@
 		5389CEB323F738A100990E88 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */,
 				5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */,
 			);
 			path = Extensions;
@@ -306,9 +318,9 @@
 			isa = PBXGroup;
 			children = (
 				5389CEE623F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift */,
+				538422A823F8B332006CFB29 /* NewExpenseEditorModels.swift */,
 				5389CEEA23F76AF700990E88 /* NewExpenseEditorPresenter.swift */,
 				5389CEE823F76AEA00990E88 /* NewExpenseEditorView.swift */,
-				538422A823F8B332006CFB29 /* NewExpenseModels.swift */,
 			);
 			path = NewExpenseEditor;
 			sourceTree = "<group>";
@@ -348,6 +360,17 @@
 				539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */,
 			);
 			path = AccountSettings;
+			sourceTree = "<group>";
+		};
+		539CC5B123F9920900A908D3 /* AccountsEditor */ = {
+			isa = PBXGroup;
+			children = (
+				539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */,
+				539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */,
+				539CC5B623F9924800A908D3 /* AccountsEditorView.swift */,
+				539CC5B423F9922400A908D3 /* ApplicationModule+AccountsEditor.swift */,
+			);
+			path = AccountsEditor;
 			sourceTree = "<group>";
 		};
 		53B7F02723F7221400700431 = {
@@ -551,11 +574,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539CC5B523F9922400A908D3 /* ApplicationModule+AccountsEditor.swift in Sources */,
 				53B7F03423F7221400700431 /* AppDelegate.swift in Sources */,
 				5389CEC923F7443A00990E88 /* UserDefaultsStorageKey.swift in Sources */,
 				53B7F05923F7235500700431 /* RequiredExpensesEditorPresenter.swift in Sources */,
+				539CC5B923F9925300A908D3 /* AccountsEditorPresenter.swift in Sources */,
 				5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */,
 				539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */,
+				53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
@@ -571,11 +597,13 @@
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
-				538422A923F8B332006CFB29 /* NewExpenseModels.swift in Sources */,
+				539CC5B723F9924800A908D3 /* AccountsEditorView.swift in Sources */,
+				538422A923F8B332006CFB29 /* NewExpenseEditorModels.swift in Sources */,
 				53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */,
 				5389CEEB23F76AF700990E88 /* NewExpenseEditorPresenter.swift in Sources */,
 				5389CEBB23F7425600990E88 /* RequiredExpensesEditorInteractor.swift in Sources */,
 				5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */,
+				539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */,
 				53B7F05723F722CB00700431 /* RequiredExpensesEditorView.swift in Sources */,
 				539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */,
 				538422A523F8AD58006CFB29 /* KeyboardLayoutConstraint.swift in Sources */,

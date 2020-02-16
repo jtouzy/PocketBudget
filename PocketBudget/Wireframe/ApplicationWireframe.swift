@@ -31,7 +31,7 @@ class ApplicationWireframe: NSObject {
 
     func initializeWindow(with windowScene: UIWindowScene) -> UIWindow {
         let window = UIWindow(windowScene: windowScene)
-        presentedViewController = ApplicationModule.accountSettings(accountId: "account_1").build()
+        presentedViewController = ApplicationModule.accountsEditor.build()
         window.rootViewController = presentedViewController
         window.makeKeyAndVisible()
         return window

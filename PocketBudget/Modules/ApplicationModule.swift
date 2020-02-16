@@ -20,15 +20,16 @@ enum EmbeddingType {
 // MARK: APPLICATION MODULES
 //
 enum ApplicationModule {
+    case accountsEditor
     case accountSettings(accountId: String)
     case newExpenseEditor(accountId: String)
     case requiredExpensesEditor(accountId: String)
 
     var embeddingType: EmbeddingType {
         switch self {
-        case .accountSettings:
+        case .accountsEditor:
             return .navigation
-        case .newExpenseEditor, .requiredExpensesEditor:
+        case .accountSettings, .newExpenseEditor, .requiredExpensesEditor:
             return .none
         }
     }
@@ -47,6 +48,8 @@ enum ApplicationModule {
 
     private func buildController() -> UIViewController? {
         switch self {
+        case .accountsEditor:
+            return assembleAccountsEditor()
         case .accountSettings(let accountId):
             return assembleAccountSettings(for: accountId)
         case .newExpenseEditor(let accountId):

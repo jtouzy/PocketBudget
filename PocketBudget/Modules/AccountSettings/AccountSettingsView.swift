@@ -45,19 +45,13 @@ extension AccountSettingsViewController {
 
     private func createTableViewBinding() {
         guard let presenter = presenter else { return }
-        // Elements driving
-        presenter.itemsDriver
-            .drive(tableView.rx.items(cellIdentifier: "UITableViewCell",
-                                      cellType: UITableViewCell.self)) { (_, item, cell) in
-                cell.textLabel?.text = item.title
-                cell.detailTextLabel?.text = item.subtitle
-            }
-            .disposed(by: disposeBag)
-        // Deleting signal
-        tableView.rx.modelSelected(AccountSettingsItem.self)
-            .asSignal()
-            .emit(to: presenter.didSelectSettingsItem)
-            .disposed(by: disposeBag)
+        // Content driving
+        tableView.bindContent(with: presenter.itemsDriver, cell: UITableViewCell.self) {
+            $1.textLabel?.text = $0.title
+            $1.detailTextLabel?.text = $0.subtitle
+        }.disposed(by: disposeBag)
+        // Selection
+        tableView.bindSelection(to: presenter.didSelectSettingsItem).disposed(by: disposeBag)
     }
 }
 
