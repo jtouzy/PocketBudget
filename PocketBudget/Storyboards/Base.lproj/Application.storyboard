@@ -7,6 +7,62 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Account Settings View Controller-->
+        <scene sceneID="pKF-zh-rmq">
+            <objects>
+                <viewController storyboardIdentifier="AccountSettingsViewController" id="S5B-0f-Xbq" customClass="AccountSettingsViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hhX-Aw-fVP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ddp-DS-XOj">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="v43-sd-aZO" detailTextLabel="60P-an-sLm" style="IBUITableViewCellStyleSubtitle" id="DOt-v1-9Xw">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DOt-v1-9Xw" id="n0B-mc-V66">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v43-sd-aZO">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="60P-an-sLm">
+                                                    <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tTa-i2-CLe" firstAttribute="trailing" secondItem="ddp-DS-XOj" secondAttribute="trailing" id="SxL-aR-vxb"/>
+                            <constraint firstItem="ddp-DS-XOj" firstAttribute="leading" secondItem="tTa-i2-CLe" secondAttribute="leading" id="cn5-VU-Wul"/>
+                            <constraint firstItem="tTa-i2-CLe" firstAttribute="bottom" secondItem="ddp-DS-XOj" secondAttribute="bottom" id="lZy-So-qMv"/>
+                            <constraint firstItem="ddp-DS-XOj" firstAttribute="top" secondItem="tTa-i2-CLe" secondAttribute="top" id="y5F-9y-gGH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tTa-i2-CLe"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="ddp-DS-XOj" id="7PS-qe-MqJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd1-4a-M8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-783" y="72"/>
+        </scene>
         <!--Required Expenses Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

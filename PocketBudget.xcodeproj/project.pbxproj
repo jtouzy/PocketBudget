@@ -38,6 +38,10 @@
 		5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEF023F7EA5100990E88 /* EmptyView.swift */; };
 		5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEF223F7EEF000990E88 /* UIEmptiable.swift */; };
 		5389CEFA23F82FA400990E88 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEF923F82FA400990E88 /* ModalViewController.swift */; };
+		539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5A823F97AAC00A908D3 /* AccountSettingsView.swift */; };
+		539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */; };
+		539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */; };
+		539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */; };
 		53B7F03423F7221400700431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03323F7221400700431 /* AppDelegate.swift */; };
 		53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03523F7221400700431 /* SceneDelegate.swift */; };
 		53B7F03B23F7221400700431 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03923F7221400700431 /* Application.storyboard */; };
@@ -122,6 +126,10 @@
 		5389CEF023F7EA5100990E88 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		5389CEF223F7EEF000990E88 /* UIEmptiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEmptiable.swift; sourceTree = "<group>"; };
 		5389CEF923F82FA400990E88 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		539CC5A823F97AAC00A908D3 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsPresenter.swift; sourceTree = "<group>"; };
+		539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+AccountSettings.swift"; sourceTree = "<group>"; };
+		539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModels.swift; sourceTree = "<group>"; };
 		53B7F03023F7221400700431 /* PocketBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B7F03323F7221400700431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53B7F03523F7221400700431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEB123F7385300990E88 /* ApplicationModule.swift */,
+				539CC5A523F97A7900A908D3 /* AccountSettings */,
 				5389CEE523F76AB200990E88 /* NewExpenseEditor */,
 				53B7F05523F7222A00700431 /* RequiredExpensesEditor */,
 			);
@@ -328,6 +337,17 @@
 				5389CEF923F82FA400990E88 /* ModalViewController.swift */,
 			);
 			path = ModalViewController;
+			sourceTree = "<group>";
+		};
+		539CC5A523F97A7900A908D3 /* AccountSettings */ = {
+			isa = PBXGroup;
+			children = (
+				539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */,
+				539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */,
+				539CC5A823F97AAC00A908D3 /* AccountSettingsView.swift */,
+				539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */,
+			);
+			path = AccountSettings;
 			sourceTree = "<group>";
 		};
 		53B7F02723F7221400700431 = {
@@ -535,6 +555,8 @@
 				5389CEC923F7443A00990E88 /* UserDefaultsStorageKey.swift in Sources */,
 				53B7F05923F7235500700431 /* RequiredExpensesEditorPresenter.swift in Sources */,
 				5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */,
+				539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */,
+				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
 				5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */,
@@ -545,6 +567,7 @@
 				5389CEC223F7430800990E88 /* UserDefaultsDataStorage.swift in Sources */,
 				5389CECB23F7446700990E88 /* UserDefaults+extension.swift in Sources */,
 				5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */,
+				539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */,
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
@@ -554,6 +577,7 @@
 				5389CEBB23F7425600990E88 /* RequiredExpensesEditorInteractor.swift in Sources */,
 				5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */,
 				53B7F05723F722CB00700431 /* RequiredExpensesEditorView.swift in Sources */,
+				539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */,
 				538422A523F8AD58006CFB29 /* KeyboardLayoutConstraint.swift in Sources */,
 				5389CEFA23F82FA400990E88 /* ModalViewController.swift in Sources */,
 				5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */,
