@@ -23,6 +23,7 @@ protocol AccountsEditorPresenter {
 class AccountsEditorPresenterImpl: AccountsEditorPresenter {
     weak var view: AccountsEditorView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
+    lazy var interactor: AccountsEditorInteractor = AccountsEditorInteractorImpl()
 
     let didSelectAccount = PublishRelay<AccountUI>()
     let disposeBag = DisposeBag()
@@ -33,10 +34,7 @@ class AccountsEditorPresenterImpl: AccountsEditorPresenter {
     }
 
     func getItemsDriver() -> Driver<[AccountUI]> {
-        return
-            Observable.just([
-                AccountUI(id: "account_1", title: "Compte principal")
-            ])
+        return interactor.getAccounts()
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }

@@ -64,6 +64,7 @@
 		53E2EF6223F9A4E200138545 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6123F9A4E200138545 /* Query.swift */; };
 		53E2EF6423F9A73100138545 /* ExpensesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6323F9A73100138545 /* ExpensesQuery.swift */; };
 		53E2EF6623F9A99300138545 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6523F9A99300138545 /* Identifiable.swift */; };
+		53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,7 @@
 		53E2EF6123F9A4E200138545 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		53E2EF6323F9A73100138545 /* ExpensesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesQuery.swift; sourceTree = "<group>"; };
 		53E2EF6523F9A99300138545 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -372,6 +374,7 @@
 		539CC5B123F9920900A908D3 /* AccountsEditor */ = {
 			isa = PBXGroup;
 			children = (
+				53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */,
 				539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */,
 				539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */,
 				539CC5B623F9924800A908D3 /* AccountsEditorView.swift */,
@@ -629,6 +632,7 @@
 				53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */,
 				53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
+				53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */,
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
 				5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */,
