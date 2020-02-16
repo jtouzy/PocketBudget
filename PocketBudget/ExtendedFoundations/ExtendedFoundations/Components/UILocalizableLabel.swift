@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UILocalizableLabel: UILabel {
+open class UILocalizableLabel: UILabel {
     @IBInspectable var localizedKey: String? {
         didSet {
             text = localizedKey?.localized

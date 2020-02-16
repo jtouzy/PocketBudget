@@ -23,8 +23,6 @@ class RequiredExpensesEditorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
-            tableView.register(UITableViewCell.self,
-                               forCellReuseIdentifier: UITableViewCell.identifier)
         }
     }
     @IBOutlet weak var addButton: UIButton!

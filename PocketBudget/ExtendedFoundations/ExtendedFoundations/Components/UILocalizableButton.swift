@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class UILocalizableButton: UIButton {
+open class UILocalizableButton: UIButton {
     @IBInspectable var localizedKey: String? {
         didSet {
             setTitle(localizedKey?.localized, for: .normal)

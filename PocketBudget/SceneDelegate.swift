@@ -15,6 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        applyGlobalStyles()
         window = ApplicationWireframe.shared.initializeWindow(with: windowScene)
+    }
+}
+
+extension SceneDelegate {
+    func applyGlobalStyles() {
+        guard let bodyFont = AppFont.font(fromStyle: .body) else { return }
+        let bodyFontTextAttributes = [NSAttributedString.Key.font: bodyFont]
+        UINavigationBar.appearance().titleTextAttributes = bodyFontTextAttributes
+        UIBarButtonItem.appearance().setTitleTextAttributes(bodyFontTextAttributes, for: .normal)
     }
 }
