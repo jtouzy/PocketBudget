@@ -24,7 +24,11 @@ protocol NewExpenseEditorView: class {
 class NewExpenseEditorViewController: ModalViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var expenseTitleTextField: UITextField!
-    @IBOutlet weak var expenseAmountTextField: UITextField!
+    @IBOutlet weak var expenseAmountTextField: UITextField! {
+        didSet {
+            expenseAmountTextField.keyboardType = .decimalPad
+        }
+    }
     @IBOutlet weak var addButton: UIButton!
 
     let disposeBag = DisposeBag()

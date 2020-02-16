@@ -30,14 +30,17 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
     let didRemoveExpense = PublishRelay<Expense>()
     let disposeBag = DisposeBag()
 
-    init(view: RequiredExpensesEditorView) {
+    let accountId: String
+
+    init(view: RequiredExpensesEditorView, for accountId: String) {
         self.view = view
+        self.accountId = accountId
         subscribeForNavigateToNewExpenseEditor(didTapAddRelay)
         subscribeForRemoveExpenseAction(didRemoveExpense)
     }
 
     func getItemsDriver() -> Driver<[Expense]> {
-        return interactor.getRequiredExpenses(for: "account_1")
+        return interactor.getRequiredExpenses(for: accountId)
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
@@ -55,7 +58,8 @@ extension RequiredExpensesEditorPresenterImpl {
     private func subscribeForNavigateToNewExpenseEditor(_ stream: PublishRelay<()>) {
         stream
             .subscribe(onNext: { [weak self] _ in
-                self?.wireframe.present(module: .newExpenseEditor)
+                guard let self = self else { return }
+                self.wireframe.present(module: .newExpenseEditor(accountId: self.accountId))
             })
             .disposed(by: disposeBag)
     }

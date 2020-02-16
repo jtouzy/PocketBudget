@@ -27,8 +27,11 @@ class NewExpenseEditorPresenterImpl: NewExpenseEditorPresenter {
     let didTapAddRelay = PublishRelay<NewExpenseFormModel>()
     let disposeBag = DisposeBag()
 
-    init(view: NewExpenseEditorView) {
+    let accountId: String
+
+    init(view: NewExpenseEditorView, for accountId: String) {
         self.view = view
+        self.accountId = accountId
         subscribeToAddNewExpense(didTapAddRelay)
     }
 
@@ -47,10 +50,11 @@ class NewExpenseEditorPresenterImpl: NewExpenseEditorPresenter {
 extension NewExpenseEditorPresenterImpl {
     private func subscribeToAddNewExpense(_ stream: PublishRelay<NewExpenseFormModel>) {
         stream
-            .subscribe(onNext: { formModel in
+            .subscribe(onNext: { [weak self] formModel in
+                guard let self = self else { return }
                 // FIXME: Interactor + Real data
                 ApplicationStorage.current.add(expense:
-                    Expense(id: "", title: formModel.title, accountId: "account_1")
+                    Expense(id: "", title: formModel.title, accountId: self.accountId)
                 )
                 self.wireframe.close()
             })

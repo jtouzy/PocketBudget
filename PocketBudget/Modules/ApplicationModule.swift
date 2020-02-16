@@ -12,15 +12,15 @@ import UIKit
 // MARK: APPLICATION MODULES
 //
 enum ApplicationModule {
-    case newExpenseEditor
-    case requiredExpensesEditor
+    case newExpenseEditor(accountId: String)
+    case requiredExpensesEditor(accountId: String)
 
     func build() -> UIViewController? {
         switch self {
-        case .newExpenseEditor:
-            return assembleNewExpenseEditor()
-        case .requiredExpensesEditor:
-            return assembleRequiredExpensesEditor()
+        case .newExpenseEditor(let accountId):
+            return assembleNewExpenseEditor(for: accountId)
+        case .requiredExpensesEditor(let accountId):
+            return assembleRequiredExpensesEditor(for: accountId)
         }
     }
 }

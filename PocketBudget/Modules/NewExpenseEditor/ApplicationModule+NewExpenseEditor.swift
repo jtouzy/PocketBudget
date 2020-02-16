@@ -12,11 +12,11 @@ import UIKit
 // MARK: APPLICATION MODULE EXTENSION FOR NEW-EXPENSE-EDITOR MODULE
 //
 extension ApplicationModule {
-    func assembleNewExpenseEditor() -> NewExpenseEditorViewController? {
+    func assembleNewExpenseEditor(for accountId: String) -> NewExpenseEditorViewController? {
         guard let view: NewExpenseEditorViewController = UIViewController.load() else {
             return nil
         }
-        view.presenter = NewExpenseEditorPresenterImpl(view: view)
+        view.presenter = NewExpenseEditorPresenterImpl(view: view, for: accountId)
         return view
     }
 }
