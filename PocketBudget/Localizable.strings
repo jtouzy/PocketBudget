@@ -22,4 +22,6 @@
 
 // APP_MODULE: NEW_EXPENSE_EDITOR
 "new_expense_editor_title" = "Ajouter une dépense";
+"new_expense_editor_title_field" = "Définissez un nom";
+"new_expense_editor_amount_field" = "Définissez un montant";
 "new_expense_editor_add_action" = "Ajouter";

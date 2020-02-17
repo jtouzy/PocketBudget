@@ -26,5 +26,6 @@ extension SceneDelegate {
         let bodyFontTextAttributes = [NSAttributedString.Key.font: bodyFont]
         UINavigationBar.appearance().titleTextAttributes = bodyFontTextAttributes
         UIBarButtonItem.appearance().setTitleTextAttributes(bodyFontTextAttributes, for: .normal)
+        TextField.appearance().font = bodyFont
     }
 }
