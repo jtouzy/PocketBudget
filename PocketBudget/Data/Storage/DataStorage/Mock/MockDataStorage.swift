@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import UIKit
 
 class MockDataStorage: DataStorage {
     let accountSubject = BehaviorSubject<[Account]>(value: [
@@ -19,6 +20,7 @@ class MockDataStorage: DataStorage {
         Expense(
             id: "expense_1",
             title: "Expense 1",
+            color: UIColor.yellow.asColor,
             accountId: "account_1"
         )
     ])

@@ -54,7 +54,12 @@ extension NewExpenseEditorPresenterImpl {
                 guard let self = self else { return }
                 // FIXME: Interactor + Real data
                 ApplicationStorage.current.add(expense:
-                    Expense(id: "", title: formModel.title, accountId: self.accountId)
+                    Expense(
+                        id: "",
+                        title: formModel.title,
+                        color: formModel.color.asColor,
+                        accountId: self.accountId
+                    )
                 )
                 self.wireframe.close()
             })

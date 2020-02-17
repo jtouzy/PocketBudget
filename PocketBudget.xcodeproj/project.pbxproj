@@ -81,6 +81,8 @@
 		53E2EF8C23F9D7EA00138545 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF8B23F9D7EA00138545 /* Button.swift */; };
 		53E2EF8F23F9DE2400138545 /* ColorSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF8E23F9DE2400138545 /* ColorSelector.swift */; };
 		53E2EF9723F9F60C00138545 /* ColorSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF9623F9F60C00138545 /* ColorSelectorCell.swift */; };
+		53E2EF9D23FA0DF700138545 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF9C23FA0DF700138545 /* Color.swift */; };
+		53E2EF9F23FA0E5B00138545 /* UIColor+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF9E23FA0E5B00138545 /* UIColor+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +198,8 @@
 		53E2EF8B23F9D7EA00138545 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		53E2EF8E23F9DE2400138545 /* ColorSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelector.swift; sourceTree = "<group>"; };
 		53E2EF9623F9F60C00138545 /* ColorSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectorCell.swift; sourceTree = "<group>"; };
+		53E2EF9C23FA0DF700138545 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		53E2EF9E23FA0E5B00138545 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,7 @@
 		5389CEB323F738A100990E88 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				53E2EF9E23FA0E5B00138545 /* UIColor+extensions.swift */,
 				53E2EF6C23F9CA2400138545 /* UIFontTextStyle+extensions.swift */,
 				53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */,
 				5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */,
@@ -283,6 +288,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEB623F741A000990E88 /* Account.swift */,
+				53E2EF9C23FA0DF700138545 /* Color.swift */,
 				5389CEB823F741F400990E88 /* Expense.swift */,
 			);
 			path = Entities;
@@ -738,12 +744,14 @@
 				53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */,
 				53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */,
 				53E2EF8A23F9D4CC00138545 /* AppFont.swift in Sources */,
+				53E2EF9F23FA0E5B00138545 /* UIColor+extensions.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
 				53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */,
 				53E2EF8F23F9DE2400138545 /* ColorSelector.swift in Sources */,
 				53E2EF6D23F9CA2400138545 /* UIFontTextStyle+extensions.swift in Sources */,
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
+				53E2EF9D23FA0DF700138545 /* Color.swift in Sources */,
 				5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */,
 				5389CEB923F741F400990E88 /* Expense.swift in Sources */,
 				5389CEE923F76AEA00990E88 /* NewExpenseEditorView.swift in Sources */,

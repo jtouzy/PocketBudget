@@ -9,11 +9,13 @@
 class Expense: Codable, Equatable, Identifiable {
     let id: String
     let title: String
+    let color: Color
     let accountId: String
 
-    init(id: String, title: String, accountId: String) {
+    init(id: String, title: String, color: Color, accountId: String) {
         self.id = id
         self.title = title
+        self.color = color
         self.accountId = accountId
     }
 

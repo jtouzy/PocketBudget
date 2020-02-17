@@ -29,6 +29,7 @@ class NewExpenseEditorViewController: ModalViewController {
             expenseAmountTextField.keyboardType = .decimalPad
         }
     }
+    @IBOutlet weak var colorSelector: ColorSelector!
     @IBOutlet weak var addButton: UIButton!
 
     let disposeBag = DisposeBag()
@@ -60,10 +61,11 @@ extension NewExpenseEditorViewController {
             .map {
                 NewExpenseFormModel(
                     title: self.expenseTitleTextField.text.orEmpty,
-                    amount: self.expenseAmountTextField.text.orEmpty
+                    amount: self.expenseAmountTextField.text.orEmpty,
+                    color: self.colorSelector.selectedColorRelay.value
                 )
             }
-            .asSignal(onErrorJustReturn: (title: "", amount: ""))
+            .asSignal(onErrorJustReturn: (title: "", amount: "", color: .clear))
             .emit(to: presenter.didTapAddRelay)
             .disposed(by: disposeBag)
     }

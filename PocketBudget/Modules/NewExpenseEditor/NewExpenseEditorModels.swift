@@ -6,4 +6,6 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
-typealias NewExpenseFormModel = (title: String, amount: String)
+import UIKit
+
+typealias NewExpenseFormModel = (title: String, amount: String, color: UIColor)

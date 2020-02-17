@@ -260,6 +260,7 @@
                     </view>
                     <connections>
                         <outlet property="addButton" destination="LZx-G1-qaR" id="Smd-bz-bdQ"/>
+                        <outlet property="colorSelector" destination="f5P-3d-aCr" id="KQ2-9G-5pQ"/>
                         <outlet property="contentView" destination="oYM-X4-hpH" id="KFe-6Q-6m4"/>
                         <outlet property="expenseAmountTextField" destination="D1J-qp-q6Z" id="hvz-b2-8Rj"/>
                         <outlet property="expenseTitleTextField" destination="at8-In-669" id="y0u-vT-1ge"/>
