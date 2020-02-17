@@ -6,6 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import ExtendedFoundations
 import Foundation
 import RxSwift
 
@@ -55,7 +56,7 @@ extension UserDefaultsDataStorage {
                 guard let self = self else { return GenericError.selfIsNil.asObservable() }
                 return Observable.just(self.decode(from: jsonString))
             }
-            .flatMap { Observable.just(query.filter(from: $0)) }
+            .flatMap { Observable.just(query.filter(items: $0)) }
     }
 
     private func add<T>(

@@ -6,6 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import ExtendedFoundations
 import RxSwift
 import UIKit
 
@@ -62,7 +63,7 @@ extension MockDataStorage {
 extension MockDataStorage {
     private func get<T>(by query: Query<T>, from subject: BehaviorSubject<[T]>) -> Observable<[T]> {
         return subject.flatMap {
-            Observable.just(query.filter(from: $0))
+            Observable.just(query.filter(items: $0))
         }
     }
     private func add<T>(_ item: T, to subject: BehaviorSubject<[T]>) {

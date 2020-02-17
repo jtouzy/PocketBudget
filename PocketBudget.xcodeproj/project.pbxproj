@@ -61,7 +61,6 @@
 		53B7F06723F727E700700431 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */; };
 		53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF5D23F9A4A500138545 /* AccountsQuery.swift */; };
-		53E2EF6223F9A4E200138545 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6123F9A4E200138545 /* Query.swift */; };
 		53E2EF6423F9A73100138545 /* ExpensesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6323F9A73100138545 /* ExpensesQuery.swift */; };
 		53E2EF6623F9A99300138545 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6523F9A99300138545 /* Identifiable.swift */; };
 		53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */; };
@@ -178,7 +177,6 @@
 		53B7F05D23F727DD00700431 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
 		53E2EF5D23F9A4A500138545 /* AccountsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsQuery.swift; sourceTree = "<group>"; };
-		53E2EF6123F9A4E200138545 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		53E2EF6323F9A73100138545 /* ExpensesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesQuery.swift; sourceTree = "<group>"; };
 		53E2EF6523F9A99300138545 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
 		53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorInteractor.swift; sourceTree = "<group>"; };
@@ -521,7 +519,6 @@
 		53E2EF5C23F9A48200138545 /* Queries */ = {
 			isa = PBXGroup;
 			children = (
-				53E2EF6123F9A4E200138545 /* Query.swift */,
 				53E2EF5F23F9A4CD00138545 /* Entities */,
 			);
 			path = Queries;
@@ -762,7 +759,6 @@
 				5389CECB23F7446700990E88 /* UserDefaults+extension.swift in Sources */,
 				5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */,
 				539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */,
-				53E2EF6223F9A4E200138545 /* Query.swift in Sources */,
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
