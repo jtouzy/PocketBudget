@@ -2,13 +2,13 @@
 
 VIPER clean architecture for a mini budget app example.
 
-# The ExtendedFoundations framework
+## ExtendedFoundations framework
 
 A separate framework is included in the project, which can be reused in other applications, containing new simple classes and common extensions of UIKit & Foundations.
 
-## Main features
+### Main features
 
-### Load your views easily
+#### Load your views easily
 
 [An extension of UIViewController](https://github.com/jtouzy/PocketBudget/blob/master/PocketBudget/ExtendedFoundations/ExtendedFoundations/Extensions/UIViewController%2Bextensions.swift) provides a way to easily create a new `UIViewController`, from a given storyboard, with a single line of code.
 
@@ -30,3 +30,9 @@ tableView.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell
 // Dequeueing a cell
 tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
 ```
+
+#### Improve localization
+
+[UILocalizableLabel](https://github.com/jtouzy/PocketBudget/blob/master/PocketBudget/ExtendedFoundations/ExtendedFoundations/Components/UILocalizableLabel.swift) & [UILocalizableButton](https://github.com/jtouzy/PocketBudget/blob/master/PocketBudget/ExtendedFoundations/ExtendedFoundations/Components/UILocalizableButton.swift) are respectively `UILabel` and `UIButton` subclasses, which provides `@IBInspectable` property called `localizedKey`.
+
+When you define it in a view controller from a storyboard, the `text` of the displayed label will be calculated as an `NSLocalizedString`. This enables you to easily use localized strings from Interface Builder.
