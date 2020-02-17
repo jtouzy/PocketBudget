@@ -13,11 +13,7 @@ import UIKit
 class ColorSelector: UIView {
     var collectionView: UICollectionView?
 
-    let colors: [UIColor] = [
-        .black, .blue, .brown, .cyan, .darkGray, .gray, .green, .lightGray,
-        .magenta, .orange, .purple, .red, .yellow
-    ]
-    let selectedColorRelay = BehaviorRelay<UIColor>(value: .blue)
+    let selectedColorRelay = BehaviorRelay<UIColor>(value: UIColor.materialColors.first ?? .clear)
     let disposeBag = DisposeBag()
 
     required init?(coder: NSCoder) {
@@ -45,7 +41,7 @@ class ColorSelector: UIView {
     private func configureBindings(for collectionView: UICollectionView) {
         // Cell contents
         selectedColorRelay.asObservable()
-            .withLatestFrom(Observable.just(colors)) { selected, colors in
+            .withLatestFrom(Observable.just(UIColor.materialColors)) { selected, colors in
                 return colors.map {
                     ColorSelectorCell.Model(color: $0, isSelected: $0 == selected)
                 }
