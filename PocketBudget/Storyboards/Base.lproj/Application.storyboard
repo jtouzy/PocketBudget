@@ -177,106 +177,85 @@
             <point key="canvasLocation" x="57.971014492753625" y="71.651785714285708"/>
         </scene>
         <!--New Expense Editor View Controller-->
-        <scene sceneID="Vdw-eM-5x1">
+        <scene sceneID="8RA-sW-RtY">
             <objects>
-                <viewController storyboardIdentifier="NewExpenseEditorViewController" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="overCurrentContext" id="oRl-Wd-gLq" customClass="NewExpenseEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Hq2-li-BG9">
+                <viewController storyboardIdentifier="NewExpenseEditorViewController" id="Gca-E6-vJ3" customClass="NewExpenseEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HxN-Ae-LoK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9t-JT-70y">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oYM-X4-hpH">
-                                <rect key="frame" x="0.0" y="573" width="414" height="323"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="at8-In-669" customClass="TextField" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="66" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="new_expense_editor_title_field"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-G1-qaR" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="258" width="382" height="33"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <state key="normal" title="Button"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="new_expense_editor_add_action"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1J-qp-q6Z" customClass="TextField" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="116" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="new_expense_editor_amount_field"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-Ox-HS0" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="16" width="382" height="34"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="new_expense_editor_title"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-3d-aCr" customClass="ColorSelector" customModule="PocketBudget" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="174" width="382" height="60"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="jBE-Sh-pL5"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LMB-Ox-HS0" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="76" width="382" height="34"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="new_expense_editor_title"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="at8-In-669" customClass="TextField" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="142" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="new_expense_editor_title_field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZx-G1-qaR" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="813" width="382" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="new_expense_editor_add_action"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D1J-qp-q6Z" customClass="TextField" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="208" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholderLocalizedKey" value="new_expense_editor_amount_field"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5P-3d-aCr" customClass="ColorSelector" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="274" width="382" height="60"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="D1J-qp-q6Z" firstAttribute="leading" secondItem="at8-In-669" secondAttribute="leading" id="4mq-pv-vNk"/>
-                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="top" secondItem="D1J-qp-q6Z" secondAttribute="bottom" constant="24" id="8ww-8N-CAp"/>
-                                    <constraint firstItem="at8-In-669" firstAttribute="leading" secondItem="LMB-Ox-HS0" secondAttribute="leading" id="9Hv-2d-EkJ"/>
-                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="trailing" secondItem="D1J-qp-q6Z" secondAttribute="trailing" id="Azb-eM-uNC"/>
-                                    <constraint firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" constant="16" id="Cml-Hb-agp"/>
-                                    <constraint firstItem="f5P-3d-aCr" firstAttribute="leading" secondItem="D1J-qp-q6Z" secondAttribute="leading" id="Gb7-uC-lL9"/>
-                                    <constraint firstItem="LZx-G1-qaR" firstAttribute="leading" secondItem="D1J-qp-q6Z" secondAttribute="leading" id="Ihy-eQ-Jv5"/>
-                                    <constraint firstItem="at8-In-669" firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" id="KoE-xg-UvD"/>
-                                    <constraint firstItem="LZx-G1-qaR" firstAttribute="top" secondItem="f5P-3d-aCr" secondAttribute="bottom" constant="24" id="Kv9-mS-bSD"/>
-                                    <constraint firstItem="LZx-G1-qaR" firstAttribute="trailing" secondItem="D1J-qp-q6Z" secondAttribute="trailing" id="Nxq-xD-LtJ"/>
-                                    <constraint firstItem="LMB-Ox-HS0" firstAttribute="top" secondItem="oYM-X4-hpH" secondAttribute="top" constant="16" id="RO5-Se-GGt"/>
-                                    <constraint firstAttribute="bottom" secondItem="LZx-G1-qaR" secondAttribute="bottom" constant="32" id="Trh-IT-3P3" customClass="KeyboardLayoutConstraint" customModule="PocketBudget" customModuleProvider="target"/>
-                                    <constraint firstItem="LMB-Ox-HS0" firstAttribute="leading" secondItem="oYM-X4-hpH" secondAttribute="leading" constant="16" id="VLo-RW-cPK"/>
-                                    <constraint firstItem="at8-In-669" firstAttribute="top" secondItem="LMB-Ox-HS0" secondAttribute="bottom" constant="16" id="pfF-UP-SUB"/>
-                                    <constraint firstItem="D1J-qp-q6Z" firstAttribute="trailing" secondItem="at8-In-669" secondAttribute="trailing" id="sLC-9y-8Jk"/>
-                                    <constraint firstItem="D1J-qp-q6Z" firstAttribute="top" secondItem="at8-In-669" secondAttribute="bottom" constant="16" id="wCi-P1-KFu"/>
+                                    <constraint firstAttribute="height" constant="60" id="jBE-Sh-pL5"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="7uB-gh-cIi" firstAttribute="trailing" secondItem="O9t-JT-70y" secondAttribute="trailing" id="6gT-8W-RdR"/>
-                            <constraint firstAttribute="bottom" secondItem="oYM-X4-hpH" secondAttribute="bottom" id="N4e-9Y-xCV"/>
-                            <constraint firstItem="oYM-X4-hpH" firstAttribute="leading" secondItem="7uB-gh-cIi" secondAttribute="leading" id="Psj-T4-cx9"/>
-                            <constraint firstItem="7uB-gh-cIi" firstAttribute="trailing" secondItem="oYM-X4-hpH" secondAttribute="trailing" id="Qb3-tp-tQB"/>
-                            <constraint firstAttribute="bottom" secondItem="O9t-JT-70y" secondAttribute="bottom" id="STY-LZ-ks9"/>
-                            <constraint firstItem="O9t-JT-70y" firstAttribute="leading" secondItem="7uB-gh-cIi" secondAttribute="leading" id="iaS-gc-sUW"/>
-                            <constraint firstItem="O9t-JT-70y" firstAttribute="top" secondItem="Hq2-li-BG9" secondAttribute="top" id="kkc-ha-Dtk"/>
+                            <constraint firstItem="LMB-Ox-HS0" firstAttribute="top" secondItem="5ak-Ha-L19" secondAttribute="top" constant="32" id="4oN-Lk-e04"/>
+                            <constraint firstItem="5ak-Ha-L19" firstAttribute="trailing" secondItem="LZx-G1-qaR" secondAttribute="trailing" constant="16" id="84l-5D-8BR"/>
+                            <constraint firstItem="f5P-3d-aCr" firstAttribute="leading" secondItem="D1J-qp-q6Z" secondAttribute="leading" id="FBe-Kg-15r"/>
+                            <constraint firstItem="LMB-Ox-HS0" firstAttribute="leading" secondItem="5ak-Ha-L19" secondAttribute="leading" constant="16" id="HGh-WX-qHL"/>
+                            <constraint firstItem="LZx-G1-qaR" firstAttribute="leading" secondItem="5ak-Ha-L19" secondAttribute="leading" constant="16" id="Ha8-Xw-AGj"/>
+                            <constraint firstItem="at8-In-669" firstAttribute="top" secondItem="LMB-Ox-HS0" secondAttribute="bottom" constant="32" id="IG8-Si-3Pw"/>
+                            <constraint firstItem="5ak-Ha-L19" firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" constant="16" id="JCT-bl-tjK"/>
+                            <constraint firstItem="f5P-3d-aCr" firstAttribute="trailing" secondItem="D1J-qp-q6Z" secondAttribute="trailing" id="K5C-x1-2Va"/>
+                            <constraint firstItem="at8-In-669" firstAttribute="trailing" secondItem="LMB-Ox-HS0" secondAttribute="trailing" id="MGr-jJ-mQ8"/>
+                            <constraint firstItem="f5P-3d-aCr" firstAttribute="top" secondItem="D1J-qp-q6Z" secondAttribute="bottom" constant="32" id="Nze-gF-HMF"/>
+                            <constraint firstItem="D1J-qp-q6Z" firstAttribute="trailing" secondItem="at8-In-669" secondAttribute="trailing" id="a0D-Ze-9Fl"/>
+                            <constraint firstItem="at8-In-669" firstAttribute="leading" secondItem="LMB-Ox-HS0" secondAttribute="leading" id="fES-dh-rS9"/>
+                            <constraint firstItem="D1J-qp-q6Z" firstAttribute="top" secondItem="at8-In-669" secondAttribute="bottom" constant="32" id="g3J-nh-myP"/>
+                            <constraint firstItem="D1J-qp-q6Z" firstAttribute="leading" secondItem="at8-In-669" secondAttribute="leading" id="x1g-xm-5YU"/>
+                            <constraint firstItem="5ak-Ha-L19" firstAttribute="bottom" secondItem="LZx-G1-qaR" secondAttribute="bottom" constant="16" id="zck-az-z8f" customClass="KeyboardLayoutConstraint" customModule="PocketBudget" customModuleProvider="target"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7uB-gh-cIi"/>
+                        <viewLayoutGuide key="safeArea" id="5ak-Ha-L19"/>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="LZx-G1-qaR" id="Smd-bz-bdQ"/>
-                        <outlet property="colorSelector" destination="f5P-3d-aCr" id="KQ2-9G-5pQ"/>
-                        <outlet property="contentView" destination="oYM-X4-hpH" id="KFe-6Q-6m4"/>
-                        <outlet property="expenseAmountTextField" destination="D1J-qp-q6Z" id="hvz-b2-8Rj"/>
-                        <outlet property="expenseTitleTextField" destination="at8-In-669" id="y0u-vT-1ge"/>
-                        <outlet property="layerView" destination="O9t-JT-70y" id="5PE-sV-wbL"/>
-                        <outlet property="titleLabel" destination="LMB-Ox-HS0" id="rxX-3T-8WJ"/>
+                        <outlet property="addButton" destination="LZx-G1-qaR" id="Q9i-fI-gcz"/>
+                        <outlet property="colorSelector" destination="f5P-3d-aCr" id="Ioh-dn-ipo"/>
+                        <outlet property="expenseAmountTextField" destination="D1J-qp-q6Z" id="rQo-aa-61M"/>
+                        <outlet property="expenseTitleTextField" destination="at8-In-669" id="ybi-cn-5nL"/>
+                        <outlet property="titleLabel" destination="LMB-Ox-HS0" id="n65-bY-JDd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vLh-Za-oDp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ax9-78-6lC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="71.651785714285708"/>
+            <point key="canvasLocation" x="900" y="72"/>
         </scene>
     </scenes>
 </document>

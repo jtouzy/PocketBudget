@@ -21,7 +21,7 @@ protocol NewExpenseEditorView: class {
 //
 // MARK: VIEW CONTROLLER
 //
-class NewExpenseEditorViewController: ModalViewController {
+class NewExpenseEditorViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var expenseTitleTextField: UITextField!
     @IBOutlet weak var expenseAmountTextField: UITextField! {
