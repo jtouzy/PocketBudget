@@ -12,11 +12,11 @@ import UIKit
 // MARK: APPLICATION MODULE EXTENSION FOR ACCOUNT-SETTINGS MODULE
 //
 extension ApplicationModule {
-    func assembleAccountSettings(for accountId: String) -> AccountSettingsViewController? {
+    func assembleAccountSettings(with input: AccountSettingsModuleInput) -> AccountSettingsViewController? {
         guard let view: AccountSettingsViewController = UIViewController.load() else {
             return nil
         }
-        view.presenter = AccountSettingsPresenterImpl(view: view, for: accountId)
+        view.presenter = AccountSettingsPresenterImpl(view: view, with: input)
         return view
     }
 }

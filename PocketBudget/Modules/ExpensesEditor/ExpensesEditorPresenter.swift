@@ -26,23 +26,21 @@ class ExpensesEditorPresenterImpl: ExpensesEditorPresenter {
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
     lazy var interactor: ExpensesEditorInteractor = ExpensesEditorInteractorImpl()
 
+    let input: ExpensesEditorModuleInput
+
     let didTapAddRelay = PublishRelay<()>()
     let didRemoveExpense = PublishRelay<Expense>()
     let disposeBag = DisposeBag()
 
-    let type: ExpenseType
-    let accountId: String
-
-    init(view: ExpensesEditorView, for accountId: String, of type: ExpenseType) {
+    init(view: ExpensesEditorView, with input: ExpensesEditorModuleInput) {
         self.view = view
-        self.type = type
-        self.accountId = accountId
+        self.input = input
         subscribeForNavigateToNewExpenseEditor(didTapAddRelay)
         subscribeForRemoveExpenseAction(didRemoveExpense)
     }
 
     func getItemsDriver() -> Driver<[Expense]> {
-        return interactor.getExpenses(for: accountId, of: type)
+        return interactor.getExpenses(for: input.accountId, of: input.type)
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
@@ -66,7 +64,12 @@ extension ExpensesEditorPresenterImpl {
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.wireframe.present(
-                    module: .newExpenseEditor(accountId: self.accountId, type: self.type)
+                    module: .newExpenseEditor(
+                        input: NewExpenseEditorModuleInput(
+                            accountId: self.input.accountId,
+                            type: self.input.type
+                        )
+                    )
                 )
             })
             .disposed(by: disposeBag)

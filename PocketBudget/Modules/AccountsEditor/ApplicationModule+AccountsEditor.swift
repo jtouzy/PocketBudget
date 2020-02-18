@@ -12,11 +12,11 @@ import UIKit
 // MARK: APPLICATION MODULE EXTENSION FOR ACCOUNTS-EDITOR MODULE
 //
 extension ApplicationModule {
-    func assembleAccountsEditor() -> AccountsEditorViewController? {
+    func assembleAccountsEditor(with input: AccountsEditorModuleInput) -> AccountsEditorViewController? {
         guard let view: AccountsEditorViewController = UIViewController.load() else {
             return nil
         }
-        view.presenter = AccountsEditorPresenterImpl(view: view)
+        view.presenter = AccountsEditorPresenterImpl(view: view, with: input)
         return view
     }
 }

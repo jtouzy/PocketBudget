@@ -86,6 +86,10 @@
 		53F2BC5D23FB0D99005D0433 /* MaterialTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */; };
 		53F2BC5E23FB0D99005D0433 /* MaterialTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53F2BC6023FBF173005D0433 /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5F23FBF173005D0433 /* ExpenseType.swift */; };
+		53F2BC6223FBFCA2005D0433 /* AccountsEditorModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6123FBFCA2005D0433 /* AccountsEditorModuleInput.swift */; };
+		53F2BC6423FBFCC9005D0433 /* AccountSettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6323FBFCC9005D0433 /* AccountSettingsModuleInput.swift */; };
+		53F2BC6623FBFCFE005D0433 /* ExpensesEditorModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6523FBFCFE005D0433 /* ExpensesEditorModuleInput.swift */; };
+		53F2BC6823FBFD47005D0433 /* NewExpenseEditorModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6723FBFD47005D0433 /* NewExpenseEditorModuleInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +210,10 @@
 		53F2BC5923FB0D7E005D0433 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialTextField.framework; path = Carthage/Build/iOS/MaterialTextField.framework; sourceTree = "<group>"; };
 		53F2BC5F23FBF173005D0433 /* ExpenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
+		53F2BC6123FBFCA2005D0433 /* AccountsEditorModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorModuleInput.swift; sourceTree = "<group>"; };
+		53F2BC6323FBFCC9005D0433 /* AccountSettingsModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsModuleInput.swift; sourceTree = "<group>"; };
+		53F2BC6523FBFCFE005D0433 /* ExpensesEditorModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorModuleInput.swift; sourceTree = "<group>"; };
+		53F2BC6723FBFD47005D0433 /* NewExpenseEditorModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseEditorModuleInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,6 +383,7 @@
 			children = (
 				5389CEE623F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift */,
 				538422A823F8B332006CFB29 /* NewExpenseEditorModels.swift */,
+				53F2BC6723FBFD47005D0433 /* NewExpenseEditorModuleInput.swift */,
 				5389CEEA23F76AF700990E88 /* NewExpenseEditorPresenter.swift */,
 				5389CEE823F76AEA00990E88 /* NewExpenseEditorView.swift */,
 			);
@@ -415,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				539CC5AE23F97AE400A908D3 /* AccountSettingsModels.swift */,
+				53F2BC6323FBFCC9005D0433 /* AccountSettingsModuleInput.swift */,
 				539CC5AA23F97AB900A908D3 /* AccountSettingsPresenter.swift */,
 				539CC5A823F97AAC00A908D3 /* AccountSettingsView.swift */,
 				539CC5AC23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift */,
@@ -427,6 +437,7 @@
 			children = (
 				53E2EF6723F9AE8100138545 /* AccountsEditorInteractor.swift */,
 				539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */,
+				53F2BC6123FBFCA2005D0433 /* AccountsEditorModuleInput.swift */,
 				539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */,
 				539CC5B623F9924800A908D3 /* AccountsEditorView.swift */,
 				539CC5B423F9922400A908D3 /* ApplicationModule+AccountsEditor.swift */,
@@ -491,6 +502,7 @@
 			children = (
 				5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */,
 				5389CEBA23F7425600990E88 /* ExpensesEditorInteractor.swift */,
+				53F2BC6523FBFCFE005D0433 /* ExpensesEditorModuleInput.swift */,
 				53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */,
 				53B7F05623F722CB00700431 /* ExpensesEditorView.swift */,
 			);
@@ -750,6 +762,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F2BC6423FBFCC9005D0433 /* AccountSettingsModuleInput.swift in Sources */,
 				539CC5B523F9922400A908D3 /* ApplicationModule+AccountsEditor.swift in Sources */,
 				53E2EF6423F9A73100138545 /* ExpensesQuery.swift in Sources */,
 				53B7F03423F7221400700431 /* AppDelegate.swift in Sources */,
@@ -779,8 +792,10 @@
 				53E2EF6623F9A99300138545 /* Identifiable.swift in Sources */,
 				5389CECB23F7446700990E88 /* UserDefaults+extension.swift in Sources */,
 				5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */,
+				53F2BC6623FBFCFE005D0433 /* ExpensesEditorModuleInput.swift in Sources */,
 				539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */,
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
+				53F2BC6223FBFCA2005D0433 /* AccountsEditorModuleInput.swift in Sources */,
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
 				53F2BC6023FBF173005D0433 /* ExpenseType.swift in Sources */,
@@ -790,6 +805,7 @@
 				53E2EF9723F9F60C00138545 /* ColorSelectorCell.swift in Sources */,
 				53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */,
 				5389CEEB23F76AF700990E88 /* NewExpenseEditorPresenter.swift in Sources */,
+				53F2BC6823FBFD47005D0433 /* NewExpenseEditorModuleInput.swift in Sources */,
 				5389CEBB23F7425600990E88 /* ExpensesEditorInteractor.swift in Sources */,
 				5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */,
 				539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */,

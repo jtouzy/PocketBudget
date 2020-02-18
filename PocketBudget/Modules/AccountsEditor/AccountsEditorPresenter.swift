@@ -26,12 +26,15 @@ class AccountsEditorPresenterImpl: AccountsEditorPresenter {
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
     lazy var interactor: AccountsEditorInteractor = AccountsEditorInteractorImpl()
 
+    let input: AccountsEditorModuleInput
+
     let didSelectAccount = PublishRelay<AccountUI>()
     let didRemoveAccount = PublishRelay<AccountUI>()
     let disposeBag = DisposeBag()
 
-    init(view: AccountsEditorView) {
+    init(view: AccountsEditorView, with input: AccountsEditorModuleInput) {
         self.view = view
+        self.input = input
         subscribeForSelectAccountAction(didSelectAccount)
         subscribeForRemoveAccountAction(didRemoveAccount)
     }
@@ -61,7 +64,9 @@ extension AccountsEditorPresenterImpl {
         stream
             .subscribe(onNext: { [weak self] item in
                 guard let self = self else { return }
-                self.wireframe.push(to: .accountSettings(accountId: item.id))
+                self.wireframe.push(
+                    to: .accountSettings(input: AccountSettingsModuleInput(accountId: item.id))
+                )
             })
             .disposed(by: disposeBag)
     }

@@ -24,16 +24,14 @@ class NewExpenseEditorPresenterImpl: NewExpenseEditorPresenter {
     weak var view: NewExpenseEditorView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
 
+    let input: NewExpenseEditorModuleInput
+
     let didTapAddRelay = PublishRelay<NewExpenseFormModel>()
     let disposeBag = DisposeBag()
 
-    let type: ExpenseType
-    let accountId: String
-
-    init(view: NewExpenseEditorView, for accountId: String, of type: ExpenseType) {
+    init(view: NewExpenseEditorView, with input: NewExpenseEditorModuleInput) {
         self.view = view
-        self.type = type
-        self.accountId = accountId
+        self.input = input
         subscribeToAddNewExpense(didTapAddRelay)
     }
 
@@ -60,8 +58,8 @@ extension NewExpenseEditorPresenterImpl {
                         id: "",
                         title: formModel.title,
                         color: formModel.color.asColor,
-                        type: self.type,
-                        accountId: self.accountId
+                        type: self.input.type,
+                        accountId: self.input.accountId
                     )
                 )
                 self.wireframe.close()

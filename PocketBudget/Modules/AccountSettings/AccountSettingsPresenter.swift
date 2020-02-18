@@ -24,6 +24,8 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
     weak var view: AccountSettingsView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
 
+    let input: AccountSettingsModuleInput
+
     let didSelectSettingsItem = PublishRelay<AccountSettingsItem>()
     var itemsDriver: Driver<[AccountSettingsItem]> { settingItemsRelay.asDriver() }
     let settingItemsRelay = BehaviorRelay<[AccountSettingsItem]>(value: [
@@ -31,11 +33,9 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
     ])
     let disposeBag = DisposeBag()
 
-    let accountId: String
-
-    init(view: AccountSettingsView, for accountId: String) {
+    init(view: AccountSettingsView, with input: AccountSettingsModuleInput) {
         self.view = view
-        self.accountId = accountId
+        self.input = input
         subscribeForSelectSettingsItemAction(didSelectSettingsItem)
     }
 }
@@ -56,9 +56,13 @@ extension AccountSettingsPresenterImpl {
     private func getModule(for settingsItem: AccountSettingsItem) -> ApplicationModule {
         switch settingsItem {
         case .optionalExpenses:
-            return .expensesEditor(accountId: accountId, type: .optional)
+            return .expensesEditor(
+                input: ExpensesEditorModuleInput(accountId: input.accountId, type: .optional)
+            )
         case .requiredExpenses:
-            return .expensesEditor(accountId: accountId, type: .required)
+            return .expensesEditor(
+                input: ExpensesEditorModuleInput(accountId: input.accountId, type: .required)
+            )
         }
     }
 }
