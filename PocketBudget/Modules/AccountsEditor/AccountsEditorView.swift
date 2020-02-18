@@ -48,6 +48,8 @@ extension AccountsEditorViewController {
         guard let presenter = presenter else { return }
         // Content driving
         tableView.bindContent(with: presenter.getItemsDriver(), cell: UITableViewCell.self) {
+            $1.imageView?.image = UIImage(systemName: "eurosign.circle.fill")
+            $1.imageView?.tintColor = .materialTeal
             $1.textLabel?.text = $0.title
         }.disposed(by: disposeBag)
         // Actions
