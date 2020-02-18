@@ -27,7 +27,7 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
     let didSelectSettingsItem = PublishRelay<AccountSettingsItem>()
     var itemsDriver: Driver<[AccountSettingsItem]> { settingItemsRelay.asDriver() }
     let settingItemsRelay = BehaviorRelay<[AccountSettingsItem]>(value: [
-        .requiredExpenses
+        .requiredExpenses, .optionalExpenses
     ])
     let disposeBag = DisposeBag()
 
@@ -55,8 +55,10 @@ extension AccountSettingsPresenterImpl {
 
     private func getModule(for settingsItem: AccountSettingsItem) -> ApplicationModule {
         switch settingsItem {
+        case .optionalExpenses:
+            return .expensesEditor(accountId: accountId, type: .optional)
         case .requiredExpenses:
-            return .requiredExpensesEditor(accountId: accountId)
+            return .expensesEditor(accountId: accountId, type: .required)
         }
     }
 }

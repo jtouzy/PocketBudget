@@ -22,6 +22,7 @@ class MockDataStorage: DataStorage {
             id: "expense_1",
             title: "Expense 1",
             color: UIColor.yellow.asColor,
+            type: .required,
             accountId: "account_1"
         )
     ])

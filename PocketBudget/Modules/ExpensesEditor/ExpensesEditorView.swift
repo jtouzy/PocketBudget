@@ -1,5 +1,5 @@
 //
-//  RequiredExpensesEditorView.swift
+//  ExpensesEditorView.swift
 //  PocketBudget
 //
 //  Created by Jérémy TOUZY on 14/02/2020.
@@ -13,13 +13,13 @@ import UIKit
 //
 // MARK: VIEW PROTOCOL
 //
-protocol RequiredExpensesEditorView: class, UIEmptiable {
+protocol ExpensesEditorView: class, UIEmptiable {
 }
 
 //
 // MARK: VIEW CONTROLLER
 //
-class RequiredExpensesEditorViewController: UIViewController {
+class ExpensesEditorViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.tableFooterView = UIView()
@@ -29,7 +29,7 @@ class RequiredExpensesEditorViewController: UIViewController {
     var emptyView: EmptyView?
 
     let disposeBag = DisposeBag()
-    var presenter: RequiredExpensesEditorPresenter?
+    var presenter: ExpensesEditorPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class RequiredExpensesEditorViewController: UIViewController {
 //
 // MARK: PRIVATE BINDINGS CREATION FUNCTIONS
 //
-extension RequiredExpensesEditorViewController {
+extension ExpensesEditorViewController {
     private func createBindings() {
         createTableViewBinding()
         createAddButtonBinding()
@@ -70,5 +70,5 @@ extension RequiredExpensesEditorViewController {
 //
 // MARK: VIEW CONTROLLER + PROTOCOL
 //
-extension RequiredExpensesEditorViewController: RequiredExpensesEditorView {
+extension ExpensesEditorViewController: ExpensesEditorView {
 }

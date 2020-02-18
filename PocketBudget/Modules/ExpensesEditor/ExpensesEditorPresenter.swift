@@ -1,5 +1,5 @@
 //
-//  RequiredExpensesEditorPresenter.swift
+//  ExpensesEditorPresenter.swift
 //  PocketBudget
 //
 //  Created by Jérémy TOUZY on 14/02/2020.
@@ -12,7 +12,7 @@ import RxSwift
 //
 // MARK: PRESENTER PROTOCOL
 //
-protocol RequiredExpensesEditorPresenter {
+protocol ExpensesEditorPresenter {
     var didTapAddRelay: PublishRelay<()> { get }
     var didRemoveExpense: PublishRelay<Expense> { get }
     func getItemsDriver() -> Driver<[Expense]>
@@ -21,26 +21,28 @@ protocol RequiredExpensesEditorPresenter {
 //
 // MARK: PRESENTER IMPLEMENTATION
 //
-class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
-    weak var view: RequiredExpensesEditorView?
+class ExpensesEditorPresenterImpl: ExpensesEditorPresenter {
+    weak var view: ExpensesEditorView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
-    lazy var interactor: RequiredExpensesEditorInteractor = RequiredExpensesEditorInteractorImpl()
+    lazy var interactor: ExpensesEditorInteractor = ExpensesEditorInteractorImpl()
 
     let didTapAddRelay = PublishRelay<()>()
     let didRemoveExpense = PublishRelay<Expense>()
     let disposeBag = DisposeBag()
 
+    let type: ExpenseType
     let accountId: String
 
-    init(view: RequiredExpensesEditorView, for accountId: String) {
+    init(view: ExpensesEditorView, for accountId: String, of type: ExpenseType) {
         self.view = view
+        self.type = type
         self.accountId = accountId
         subscribeForNavigateToNewExpenseEditor(didTapAddRelay)
         subscribeForRemoveExpenseAction(didRemoveExpense)
     }
 
     func getItemsDriver() -> Driver<[Expense]> {
-        return interactor.getRequiredExpenses(for: accountId)
+        return interactor.getExpenses(for: accountId, of: type)
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
@@ -58,12 +60,14 @@ class RequiredExpensesEditorPresenterImpl: RequiredExpensesEditorPresenter {
 //
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
-extension RequiredExpensesEditorPresenterImpl {
+extension ExpensesEditorPresenterImpl {
     private func subscribeForNavigateToNewExpenseEditor(_ stream: PublishRelay<()>) {
         stream
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.wireframe.present(module: .newExpenseEditor(accountId: self.accountId))
+                self.wireframe.present(
+                    module: .newExpenseEditor(accountId: self.accountId, type: self.type)
+                )
             })
             .disposed(by: disposeBag)
     }

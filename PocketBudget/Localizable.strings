@@ -14,6 +14,8 @@
 // APP_MODULE: ACCOUNT_SETTINGS
 "account_settings_required_expenses_title" = "Dépenses obligatoires";
 "account_settings_required_expenses_description" = "Gérez ici les dépenses obligatoires pour votre compte.";
+"account_settings_optional_expenses_title" = "Dépenses facultatives";
+"account_settings_optional_expenses_description" = "Gérez ici les dépenses facultatives pour votre compte.";
 
 // APP_MODULE: EXPENSES_EDITOR
 "expenses_editor_add_action" = "Ajouter une dépense";

@@ -22,8 +22,8 @@ enum EmbeddingType {
 enum ApplicationModule {
     case accountsEditor
     case accountSettings(accountId: String)
-    case newExpenseEditor(accountId: String)
-    case requiredExpensesEditor(accountId: String)
+    case expensesEditor(accountId: String, type: ExpenseType)
+    case newExpenseEditor(accountId: String, type: ExpenseType)
 
     func build() -> UIViewController? {
         guard let controller = buildController() else {
@@ -45,7 +45,7 @@ extension ApplicationModule {
         switch self {
         case .accountsEditor:
             return .navigation(title: "accounts_editor_title".localized)
-        case .accountSettings, .newExpenseEditor, .requiredExpensesEditor:
+        case .accountSettings, .expensesEditor, .newExpenseEditor:
             return .none
         }
     }
@@ -58,10 +58,10 @@ extension ApplicationModule {
             return assembleAccountsEditor()
         case .accountSettings(let accountId):
             return assembleAccountSettings(for: accountId)
-        case .newExpenseEditor(let accountId):
-            return assembleNewExpenseEditor(for: accountId)
-        case .requiredExpensesEditor(let accountId):
-            return assembleRequiredExpensesEditor(for: accountId)
+        case .expensesEditor(let accountId, let type):
+            return assembleExpensesEditor(for: accountId, of: type)
+        case .newExpenseEditor(let accountId, let type):
+            return assembleNewExpenseEditor(for: accountId, of: type)
         }
     }
 }

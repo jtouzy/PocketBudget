@@ -27,10 +27,12 @@ class NewExpenseEditorPresenterImpl: NewExpenseEditorPresenter {
     let didTapAddRelay = PublishRelay<NewExpenseFormModel>()
     let disposeBag = DisposeBag()
 
+    let type: ExpenseType
     let accountId: String
 
-    init(view: NewExpenseEditorView, for accountId: String) {
+    init(view: NewExpenseEditorView, for accountId: String, of type: ExpenseType) {
         self.view = view
+        self.type = type
         self.accountId = accountId
         subscribeToAddNewExpense(didTapAddRelay)
     }
@@ -58,6 +60,7 @@ extension NewExpenseEditorPresenterImpl {
                         id: "",
                         title: formModel.title,
                         color: formModel.color.asColor,
+                        type: self.type,
                         accountId: self.accountId
                     )
                 )

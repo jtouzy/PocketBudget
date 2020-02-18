@@ -14,11 +14,11 @@
 		538422EF23F972F7006CFB29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538422EE23F972F7006CFB29 /* Localizable.strings */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
-		5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift */; };
+		5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */; };
 		5389CEB223F7385300990E88 /* ApplicationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEB123F7385300990E88 /* ApplicationModule.swift */; };
 		5389CEB723F741A000990E88 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEB623F741A000990E88 /* Account.swift */; };
 		5389CEB923F741F400990E88 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEB823F741F400990E88 /* Expense.swift */; };
-		5389CEBB23F7425600990E88 /* RequiredExpensesEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEBA23F7425600990E88 /* RequiredExpensesEditorInteractor.swift */; };
+		5389CEBB23F7425600990E88 /* ExpensesEditorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEBA23F7425600990E88 /* ExpensesEditorInteractor.swift */; };
 		5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEBD23F7429400990E88 /* DataStorage.swift */; };
 		5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEBF23F742BE00990E88 /* ApplicationStorage.swift */; };
 		5389CEC223F7430800990E88 /* UserDefaultsDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEC123F7430800990E88 /* UserDefaultsDataStorage.swift */; };
@@ -51,8 +51,8 @@
 		53B7F03B23F7221400700431 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03923F7221400700431 /* Application.storyboard */; };
 		53B7F03D23F7221800700431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03C23F7221800700431 /* Assets.xcassets */; };
 		53B7F04023F7221800700431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03E23F7221800700431 /* LaunchScreen.storyboard */; };
-		53B7F05723F722CB00700431 /* RequiredExpensesEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05623F722CB00700431 /* RequiredExpensesEditorView.swift */; };
-		53B7F05923F7235500700431 /* RequiredExpensesEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05823F7235500700431 /* RequiredExpensesEditorPresenter.swift */; };
+		53B7F05723F722CB00700431 /* ExpensesEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05623F722CB00700431 /* ExpensesEditorView.swift */; };
+		53B7F05923F7235500700431 /* ExpensesEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */; };
 		53B7F06123F727E400700431 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; };
 		53B7F06223F727E400700431 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53B7F06423F727E600700431 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; };
@@ -85,6 +85,7 @@
 		53F2BC5A23FB0D7E005D0433 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5923FB0D7E005D0433 /* TextField.swift */; };
 		53F2BC5D23FB0D99005D0433 /* MaterialTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */; };
 		53F2BC5E23FB0D99005D0433 /* MaterialTextField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		53F2BC6023FBF173005D0433 /* ExpenseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5F23FBF173005D0433 /* ExpenseType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,11 +137,11 @@
 		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationWireframe.swift; sourceTree = "<group>"; };
-		5389CEAD23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+RequiredExpensesEditor.swift"; sourceTree = "<group>"; };
+		5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+ExpensesEditor.swift"; sourceTree = "<group>"; };
 		5389CEB123F7385300990E88 /* ApplicationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModule.swift; sourceTree = "<group>"; };
 		5389CEB623F741A000990E88 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		5389CEB823F741F400990E88 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
-		5389CEBA23F7425600990E88 /* RequiredExpensesEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredExpensesEditorInteractor.swift; sourceTree = "<group>"; };
+		5389CEBA23F7425600990E88 /* ExpensesEditorInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorInteractor.swift; sourceTree = "<group>"; };
 		5389CEBD23F7429400990E88 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		5389CEBF23F742BE00990E88 /* ApplicationStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStorage.swift; sourceTree = "<group>"; };
 		5389CEC123F7430800990E88 /* UserDefaultsDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsDataStorage.swift; sourceTree = "<group>"; };
@@ -174,8 +175,8 @@
 		53B7F04123F7221800700431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53B7F04623F7221800700431 /* PocketBudgetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketBudgetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B7F04C23F7221800700431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53B7F05623F722CB00700431 /* RequiredExpensesEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredExpensesEditorView.swift; sourceTree = "<group>"; };
-		53B7F05823F7235500700431 /* RequiredExpensesEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequiredExpensesEditorPresenter.swift; sourceTree = "<group>"; };
+		53B7F05623F722CB00700431 /* ExpensesEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorView.swift; sourceTree = "<group>"; };
+		53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorPresenter.swift; sourceTree = "<group>"; };
 		53B7F05B23F727DD00700431 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		53B7F05C23F727DD00700431 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		53B7F05D23F727DD00700431 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
@@ -204,6 +205,7 @@
 		53E2EF9E23FA0E5B00138545 /* UIColor+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC5923FB0D7E005D0433 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialTextField.framework; path = Carthage/Build/iOS/MaterialTextField.framework; sourceTree = "<group>"; };
+		53F2BC5F23FBF173005D0433 /* ExpenseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,8 +257,8 @@
 				5389CEB123F7385300990E88 /* ApplicationModule.swift */,
 				539CC5B123F9920900A908D3 /* AccountsEditor */,
 				539CC5A523F97A7900A908D3 /* AccountSettings */,
+				53B7F05523F7222A00700431 /* ExpensesEditor */,
 				5389CEE523F76AB200990E88 /* NewExpenseEditor */,
-				53B7F05523F7222A00700431 /* RequiredExpensesEditor */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -295,6 +297,7 @@
 				5389CEB623F741A000990E88 /* Account.swift */,
 				53E2EF9C23FA0DF700138545 /* Color.swift */,
 				5389CEB823F741F400990E88 /* Expense.swift */,
+				53F2BC5F23FBF173005D0433 /* ExpenseType.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -483,15 +486,15 @@
 			path = PocketBudgetTests;
 			sourceTree = "<group>";
 		};
-		53B7F05523F7222A00700431 /* RequiredExpensesEditor */ = {
+		53B7F05523F7222A00700431 /* ExpensesEditor */ = {
 			isa = PBXGroup;
 			children = (
-				5389CEAD23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift */,
-				5389CEBA23F7425600990E88 /* RequiredExpensesEditorInteractor.swift */,
-				53B7F05823F7235500700431 /* RequiredExpensesEditorPresenter.swift */,
-				53B7F05623F722CB00700431 /* RequiredExpensesEditorView.swift */,
+				5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */,
+				5389CEBA23F7425600990E88 /* ExpensesEditorInteractor.swift */,
+				53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */,
+				53B7F05623F722CB00700431 /* ExpensesEditorView.swift */,
 			);
-			path = RequiredExpensesEditor;
+			path = ExpensesEditor;
 			sourceTree = "<group>";
 		};
 		53B7F05A23F724A700700431 /* Frameworks */ = {
@@ -752,7 +755,7 @@
 				53B7F03423F7221400700431 /* AppDelegate.swift in Sources */,
 				53F2BC5A23FB0D7E005D0433 /* TextField.swift in Sources */,
 				5389CEC923F7443A00990E88 /* UserDefaultsStorageKey.swift in Sources */,
-				53B7F05923F7235500700431 /* RequiredExpensesEditorPresenter.swift in Sources */,
+				53B7F05923F7235500700431 /* ExpensesEditorPresenter.swift in Sources */,
 				539CC5B923F9925300A908D3 /* AccountsEditorPresenter.swift in Sources */,
 				5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */,
 				539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */,
@@ -767,7 +770,7 @@
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
 				53E2EF9D23FA0DF700138545 /* Color.swift in Sources */,
-				5389CEAE23F7356E00990E88 /* ApplicationModule+RequiredExpensesEditor.swift in Sources */,
+				5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */,
 				5389CEB923F741F400990E88 /* Expense.swift in Sources */,
 				5389CEE923F76AEA00990E88 /* NewExpenseEditorView.swift in Sources */,
 				5389CECE23F745D700990E88 /* GenericError.swift in Sources */,
@@ -780,16 +783,17 @@
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
+				53F2BC6023FBF173005D0433 /* ExpenseType.swift in Sources */,
 				539CC5B723F9924800A908D3 /* AccountsEditorView.swift in Sources */,
 				53E2EF6B23F9C83B00138545 /* Label.swift in Sources */,
 				538422A923F8B332006CFB29 /* NewExpenseEditorModels.swift in Sources */,
 				53E2EF9723F9F60C00138545 /* ColorSelectorCell.swift in Sources */,
 				53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */,
 				5389CEEB23F76AF700990E88 /* NewExpenseEditorPresenter.swift in Sources */,
-				5389CEBB23F7425600990E88 /* RequiredExpensesEditorInteractor.swift in Sources */,
+				5389CEBB23F7425600990E88 /* ExpensesEditorInteractor.swift in Sources */,
 				5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */,
 				539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */,
-				53B7F05723F722CB00700431 /* RequiredExpensesEditorView.swift in Sources */,
+				53B7F05723F722CB00700431 /* ExpensesEditorView.swift in Sources */,
 				539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */,
 				538422A523F8AD58006CFB29 /* KeyboardLayoutConstraint.swift in Sources */,
 				5389CEFA23F82FA400990E88 /* ModalViewController.swift in Sources */,

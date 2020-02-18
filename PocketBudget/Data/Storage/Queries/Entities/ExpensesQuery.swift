@@ -10,10 +10,12 @@ import ExtendedFoundations
 
 class ExpensesQuery: Query<Expense> {
     let id: String?
+    let type: ExpenseType?
     let accountId: String?
 
-    init(id: String? = nil, accountId: String? = nil) {
+    init(id: String? = nil, type: ExpenseType? = nil, accountId: String? = nil) {
         self.id = id
+        self.type = type
         self.accountId = accountId
         super.init()
     }

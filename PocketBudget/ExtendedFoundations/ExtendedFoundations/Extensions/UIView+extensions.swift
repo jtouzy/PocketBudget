@@ -10,7 +10,7 @@ import UIKit
 
 public extension UIView {
     static func load<T: UIView>() -> T? {
-        return UINib(nibName: String(describing: self), bundle: .main)
+        return UINib(nibName: T.identifier, bundle: .main)
             .instantiate(withOwner: self, options: nil).first as? T
     }
 

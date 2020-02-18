@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-783" y="72"/>
         </scene>
-        <!--Required Expenses Editor View Controller-->
+        <!--Expenses Editor View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="RequiredExpensesEditorViewController" id="BYZ-38-t0r" customClass="RequiredExpensesEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpensesEditorViewController" id="BYZ-38-t0r" customClass="ExpensesEditorViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
