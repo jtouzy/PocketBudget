@@ -19,6 +19,8 @@
 		53E2EF9B23FA00E900138545 /* CGSize+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */; };
 		53F2BC5223FAFE08005D0433 /* Mirror+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */; };
 		53F2BC5523FAFE69005D0433 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5423FAFE69005D0433 /* Query.swift */; };
+		53F2BC7223FC332F005D0433 /* NumberFormatter+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7123FC332F005D0433 /* NumberFormatter+extensions.swift */; };
+		53F2BC7423FC377B005D0433 /* Locale+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7323FC377B005D0433 /* Locale+extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC5423FAFE69005D0433 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		53F2BC7123FC332F005D0433 /* NumberFormatter+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+extensions.swift"; sourceTree = "<group>"; };
+		53F2BC7323FC377B005D0433 /* Locale+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */,
+				53F2BC7323FC377B005D0433 /* Locale+extensions.swift */,
 				53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */,
+				53F2BC7123FC332F005D0433 /* NumberFormatter+extensions.swift */,
 				538422DC23F96C3F006CFB29 /* Optional+extensions.swift */,
 				538422EC23F971A0006CFB29 /* String+extensions.swift */,
 				538422DE23F96C7E006CFB29 /* UIView+extensions.swift */,
@@ -255,11 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F2BC5523FAFE69005D0433 /* Query.swift in Sources */,
+				53F2BC7423FC377B005D0433 /* Locale+extensions.swift in Sources */,
 				538422DF23F96C7E006CFB29 /* UIView+extensions.swift in Sources */,
 				538422EB23F970E4006CFB29 /* UILocalizableLabel.swift in Sources */,
 				53E2EF9B23FA00E900138545 /* CGSize+extensions.swift in Sources */,
 				538422F123F97350006CFB29 /* UILocalizableButton.swift in Sources */,
 				538422E423F96CE5006CFB29 /* UIIdentifiable.swift in Sources */,
+				53F2BC7223FC332F005D0433 /* NumberFormatter+extensions.swift in Sources */,
 				53F2BC5223FAFE08005D0433 /* Mirror+extensions.swift in Sources */,
 				538422DD23F96C3F006CFB29 /* Optional+extensions.swift in Sources */,
 				538422ED23F971A0006CFB29 /* String+extensions.swift in Sources */,

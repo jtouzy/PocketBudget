@@ -15,7 +15,7 @@ import RxSwift
 protocol ExpensesEditorPresenter {
     var didTapAddRelay: PublishRelay<()> { get }
     var didRemoveExpense: PublishRelay<Expense> { get }
-    func getItemsDriver() -> Driver<[Expense]>
+    func getItemsDriver() -> Driver<[ExpenseUI]>
 }
 
 //
@@ -46,7 +46,7 @@ class ExpensesEditorPresenterImpl: ExpensesEditorPresenter {
         subscribeForRemoveExpenseAction(didRemoveExpense)
     }
 
-    func getItemsDriver() -> Driver<[Expense]> {
+    func getItemsDriver() -> Driver<[ExpenseUI]> {
         return interactor.getExpenses(for: input.accountId, of: input.type)
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in

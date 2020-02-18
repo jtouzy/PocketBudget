@@ -52,7 +52,8 @@ extension ExpensesEditorViewController {
         tableView.bindContent(with: presenter.getItemsDriver(), cell: UITableViewCell.self) {
             $1.textLabel?.text = $0.title
             $1.imageView?.image = UIImage(systemName: "number.circle.fill")
-            $1.imageView?.tintColor = UIColor.fromColor($0.color)
+            $1.imageView?.tintColor = $0.color
+            $1.detailTextLabel?.text = $0.amount
         }.disposed(by: disposeBag)
         // Actions
         tableView.bindDeletion(to: presenter.didRemoveExpense).disposed(by: disposeBag)

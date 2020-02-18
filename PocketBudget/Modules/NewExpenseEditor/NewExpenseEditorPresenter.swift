@@ -57,6 +57,7 @@ extension NewExpenseEditorPresenterImpl {
                     Expense(
                         id: "",
                         title: formModel.title,
+                        amount: Double(formModel.amount) ?? 0,
                         color: formModel.color.asColor,
                         type: self.input.type,
                         accountId: self.input.accountId
