@@ -13,24 +13,28 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-NJ-QTQ" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
-                    <rect key="frame" x="174" y="420.5" width="66.5" height="33.5"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-fK-KEj" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
-                    <rect key="frame" x="181.5" y="452.5" width="51" height="33"/>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                    <state key="normal" title="Button"/>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="E5L-by-Cza">
+                    <rect key="frame" x="16" y="412" width="382" height="82.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-NJ-QTQ" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-fK-KEj" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="49.5" width="382" height="33"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <state key="normal" title="Button"/>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="7o2-fK-KEj" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="2zW-sV-D4P"/>
-                <constraint firstItem="7o2-fK-KEj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="16" id="JuR-Eh-5RI"/>
-                <constraint firstItem="Tja-NJ-QTQ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" constant="-16" id="gES-wR-Unh"/>
-                <constraint firstItem="Tja-NJ-QTQ" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="tdX-qr-Z3T"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="E5L-by-Cza" secondAttribute="trailing" constant="16" id="9D9-Yo-g7v"/>
+                <constraint firstItem="E5L-by-Cza" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ERY-gJ-v3k"/>
+                <constraint firstItem="E5L-by-Cza" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ibu-OA-I7C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

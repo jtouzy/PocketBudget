@@ -22,7 +22,7 @@ class AppFont {
     }
 
     static func font(fromStyle textStyle: UIFont.TextStyle) -> UIFont? {
-        guard let appFont = UIFont(name: "Lato-Regular", size: textStyle.sizeForStyle) else {
+        guard let appFont = textStyle.fontForStyle else {
             return nil
         }
         let fontMetrics = UIFontMetrics(forTextStyle: textStyle)

@@ -19,8 +19,10 @@
 
 // APP_MODULE: EXPENSES_EDITOR
 "expenses_editor_add_action" = "Ajouter une dépense";
-"expenses_editor_empty_title" = "Aucune dépense pour ce compte";
-"expenses_editor_empty_action" = "Ajouter une dépense";
+"expenses_editor_optional_empty_title" = "Aucune dépense facultative pour ce compte";
+"expenses_editor_optional_empty_action" = "Ajouter une dépense";
+"expenses_editor_required_empty_title" = "Aucune dépense obligatoire pour ce compte";
+"expenses_editor_required_empty_action" = "Ajouter une dépense";
 
 // APP_MODULE: NEW_EXPENSE_EDITOR
 "new_expense_editor_title" = "Ajouter une dépense";

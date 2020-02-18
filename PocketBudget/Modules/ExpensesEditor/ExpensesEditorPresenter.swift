@@ -32,6 +32,13 @@ class ExpensesEditorPresenterImpl: ExpensesEditorPresenter {
     let didRemoveExpense = PublishRelay<Expense>()
     let disposeBag = DisposeBag()
 
+    lazy var emptyViewModelByExpenseType: EmptyViewModel = {
+        return EmptyViewModel(
+            title: "expenses_editor_\(input.type.rawValue)_empty_title".localized,
+            actionTitle: "expenses_editor_\(input.type.rawValue)_empty_action".localized
+        )
+    }()
+
     init(view: ExpensesEditorView, with input: ExpensesEditorModuleInput) {
         self.view = view
         self.input = input
@@ -44,12 +51,8 @@ class ExpensesEditorPresenterImpl: ExpensesEditorPresenter {
             .asDriver(onErrorJustReturn: [])
             .do(onNext: { [weak self] in
                 guard let self = self else { return }
-                let emptyModel = EmptyViewModel(
-                    title: "expenses_editor_empty_title".localized,
-                    actionTitle: "expenses_editor_empty_action".localized
-                )
-                self.view?.evaluateEmptiness(for: $0, model: emptyModel) { actionSignal in
-                    actionSignal.emit(to: self.didTapAddRelay).disposed(by: self.disposeBag)
+                self.view?.evaluateEmptiness(for: $0, model: self.emptyViewModelByExpenseType) {
+                    $0.emit(to: self.didTapAddRelay).disposed(by: self.disposeBag)
                 }
             })
     }

@@ -9,6 +9,21 @@
 import UIKit
 
 extension UIFont.TextStyle {
+    var fontForStyle: UIFont? {
+        return UIFont(name: fontNameForStyle, size: sizeForStyle)
+    }
+
+    var fontNameForStyle: String {
+        switch self {
+        case .largeTitle, .title1, .title2, .title3, .headline:
+            return "Lato-Bold"
+        case .body:
+            return "Lato-Light"
+        default:
+            return "Lato-Regular"
+        }
+    }
+
     var sizeForStyle: CGFloat {
         switch self {
         case .title1:
