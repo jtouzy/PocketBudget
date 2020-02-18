@@ -57,6 +57,8 @@ extension AccountSettingsViewController {
         guard let presenter = presenter else { return }
         // Content driving
         tableView.bindContent(with: presenter.itemsDriver, cell: UITableViewCell.self) {
+            $1.imageView?.image = UIImage(systemName: $0.systemImageName)
+            $1.imageView?.tintColor = $0.systemImageColor
             $1.textLabel?.text = $0.title
             $1.detailTextLabel?.text = $0.subtitle
         }.disposed(by: disposeBag)

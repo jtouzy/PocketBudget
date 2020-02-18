@@ -12,6 +12,10 @@
 "accounts_editor_empty_action" = "Gérer mon premier compte";
 
 // APP_MODULE: ACCOUNT_SETTINGS
+"account_settings_fixed_incomes_title" = "Revenus fixes";
+"account_settings_fixed_incomes_description" = "Gérez ici les revenus fixes pour votre compte.";
+"account_settings_optional_incomes_title" = "Revenus facultatifs";
+"account_settings_optional_incomes_description" = "Gérez ici les revenus facultatifs pour votre compte.";
 "account_settings_required_expenses_title" = "Dépenses obligatoires";
 "account_settings_required_expenses_description" = "Gérez ici les dépenses obligatoires pour votre compte.";
 "account_settings_optional_expenses_title" = "Dépenses facultatives";

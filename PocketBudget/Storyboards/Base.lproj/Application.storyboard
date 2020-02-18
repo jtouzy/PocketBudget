@@ -87,7 +87,7 @@
                                                     <rect key="frame" x="20" y="31.5" width="35" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" name="MaterialGrey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

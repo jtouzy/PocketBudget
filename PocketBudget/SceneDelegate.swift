@@ -22,9 +22,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate {
     func applyGlobalStyles() {
-        guard let bodyFont = AppFont.font(fromStyle: .body) else { return }
+        guard
+            let headlineFont = AppFont.font(fromStyle: .headline),
+            let bodyFont = AppFont.font(fromStyle: .body)
+        else { return }
+        let headlineFontTextAttributes = [NSAttributedString.Key.font: headlineFont]
         let bodyFontTextAttributes = [NSAttributedString.Key.font: bodyFont]
-        UINavigationBar.appearance().titleTextAttributes = bodyFontTextAttributes
+        UINavigationBar.appearance().titleTextAttributes = headlineFontTextAttributes
         UIBarButtonItem.appearance().setTitleTextAttributes(bodyFontTextAttributes, for: .normal)
         TextField.appearance().font = bodyFont
     }

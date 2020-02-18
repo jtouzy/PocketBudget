@@ -17,7 +17,7 @@ extension UIFont.TextStyle {
         switch self {
         case .largeTitle, .title1, .title2, .title3, .headline:
             return "Lato-Bold"
-        case .body:
+        case .subheadline:
             return "Lato-Light"
         default:
             return "Lato-Regular"
