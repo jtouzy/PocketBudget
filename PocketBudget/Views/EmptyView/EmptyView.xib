@@ -14,16 +14,23 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="E5L-by-Cza">
-                    <rect key="frame" x="16" y="412" width="382" height="82.5"/>
+                    <rect key="frame" x="16" y="354" width="170.5" height="198.5"/>
                     <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Empty" translatesAutoresizingMaskIntoConstraints="NO" id="W65-6N-dmP">
+                            <rect key="frame" x="0.0" y="0.0" width="170.5" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="6W0-pl-4c2"/>
+                                <constraint firstAttribute="height" constant="100" id="ntq-M9-1fH"/>
+                            </constraints>
+                        </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tja-NJ-QTQ" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="382" height="33.5"/>
+                            <rect key="frame" x="0.0" y="116" width="170.5" height="33.5"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7o2-fK-KEj" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="49.5" width="382" height="33"/>
+                            <rect key="frame" x="0.0" y="165.5" width="170.5" height="33"/>
                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                             <state key="normal" title="Button"/>
                         </button>
@@ -44,4 +51,7 @@
             <point key="canvasLocation" x="139" y="81"/>
         </view>
     </objects>
+    <resources>
+        <image name="Empty" width="170.5" height="170.5"/>
+    </resources>
 </document>
