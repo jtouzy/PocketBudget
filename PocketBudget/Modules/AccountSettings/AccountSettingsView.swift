@@ -40,7 +40,17 @@ class AccountSettingsViewController: UIViewController {
 //
 extension AccountSettingsViewController {
     private func createBindings() {
+        createViewTitleBinding()
         createTableViewBinding()
+    }
+
+    private func createViewTitleBinding() {
+        guard let presenter = presenter else { return }
+        presenter.getSettingsTitle()
+            .subscribe(onNext: { [weak self] title in
+                self?.navigationItem.title = title
+            })
+            .disposed(by: disposeBag)
     }
 
     private func createTableViewBinding() {

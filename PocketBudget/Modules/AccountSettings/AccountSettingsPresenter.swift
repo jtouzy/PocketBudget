@@ -15,6 +15,7 @@ import RxSwift
 protocol AccountSettingsPresenter {
     var didSelectSettingsItem: PublishRelay<AccountSettingsItem> { get }
     var itemsDriver: Driver<[AccountSettingsItem]> { get }
+    func getSettingsTitle() -> Observable<String>
 }
 
 //
@@ -23,6 +24,7 @@ protocol AccountSettingsPresenter {
 class AccountSettingsPresenterImpl: AccountSettingsPresenter {
     weak var view: AccountSettingsView?
     lazy var wireframe: Wireframe = ApplicationWireframe.shared
+    lazy var interactor: AccountSettingsInteractor = AccountSettingsInteractorImpl()
 
     let input: AccountSettingsModuleInput
 
@@ -37,6 +39,11 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
         self.view = view
         self.input = input
         subscribeForSelectSettingsItemAction(didSelectSettingsItem)
+    }
+
+    func getSettingsTitle() -> Observable<String> {
+        return interactor.getAccount(identifiedBy: input.accountId)
+            .flatMap { Observable.just($0.title) }
     }
 }
 
