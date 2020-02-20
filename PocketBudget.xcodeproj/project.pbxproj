@@ -94,6 +94,10 @@
 		53F2BC6C23FC1BEA005D0433 /* Observable+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6B23FC1BEA005D0433 /* Observable+extensions.swift */; };
 		53F2BC6E23FC1C73005D0433 /* BusinessError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6D23FC1C73005D0433 /* BusinessError.swift */; };
 		53F2BC7023FC30AB005D0433 /* ExpensesEditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC6F23FC30AB005D0433 /* ExpensesEditorModels.swift */; };
+		53F2BC7623FF0C9F005D0433 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7523FF0C9F005D0433 /* Month.swift */; };
+		53F2BC7823FF0CF9005D0433 /* MonthsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7723FF0CF9005D0433 /* MonthsQuery.swift */; };
+		53F2BC7A23FF0EB2005D0433 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7923FF0EB2005D0433 /* Transaction.swift */; };
+		53F2BC7C23FF0F23005D0433 /* TransactionsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC7B23FF0F23005D0433 /* TransactionsQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -222,6 +226,10 @@
 		53F2BC6B23FC1BEA005D0433 /* Observable+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC6D23FC1C73005D0433 /* BusinessError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessError.swift; sourceTree = "<group>"; };
 		53F2BC6F23FC30AB005D0433 /* ExpensesEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorModels.swift; sourceTree = "<group>"; };
+		53F2BC7523FF0C9F005D0433 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		53F2BC7723FF0CF9005D0433 /* MonthsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthsQuery.swift; sourceTree = "<group>"; };
+		53F2BC7923FF0EB2005D0433 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		53F2BC7B23FF0F23005D0433 /* TransactionsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsQuery.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +323,8 @@
 				53E2EF9C23FA0DF700138545 /* Color.swift */,
 				5389CEB823F741F400990E88 /* Expense.swift */,
 				53F2BC5F23FBF173005D0433 /* ExpenseType.swift */,
+				53F2BC7523FF0C9F005D0433 /* Month.swift */,
+				53F2BC7923FF0EB2005D0433 /* Transaction.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -565,6 +575,8 @@
 			children = (
 				53E2EF5D23F9A4A500138545 /* AccountsQuery.swift */,
 				53E2EF6323F9A73100138545 /* ExpensesQuery.swift */,
+				53F2BC7723FF0CF9005D0433 /* MonthsQuery.swift */,
+				53F2BC7B23FF0F23005D0433 /* TransactionsQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -782,14 +794,17 @@
 				53F2BC5A23FB0D7E005D0433 /* TextField.swift in Sources */,
 				5389CEC923F7443A00990E88 /* UserDefaultsStorageKey.swift in Sources */,
 				53B7F05923F7235500700431 /* ExpensesEditorPresenter.swift in Sources */,
+				53F2BC7623FF0C9F005D0433 /* Month.swift in Sources */,
 				539CC5B923F9925300A908D3 /* AccountsEditorPresenter.swift in Sources */,
 				5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */,
 				539CC5AF23F97AE400A908D3 /* AccountSettingsModels.swift in Sources */,
 				53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */,
 				53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */,
+				53F2BC7A23FF0EB2005D0433 /* Transaction.swift in Sources */,
 				53E2EF8A23F9D4CC00138545 /* AppFont.swift in Sources */,
 				53E2EF9F23FA0E5B00138545 /* UIColor+extensions.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
+				53F2BC7823FF0CF9005D0433 /* MonthsQuery.swift in Sources */,
 				53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */,
 				53E2EF8F23F9DE2400138545 /* ColorSelector.swift in Sources */,
 				53E2EF6D23F9CA2400138545 /* UIFontTextStyle+extensions.swift in Sources */,
@@ -830,6 +845,7 @@
 				53F2BC6E23FC1C73005D0433 /* BusinessError.swift in Sources */,
 				5389CEFA23F82FA400990E88 /* ModalViewController.swift in Sources */,
 				5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */,
+				53F2BC7C23FF0F23005D0433 /* TransactionsQuery.swift in Sources */,
 				53E2EF8C23F9D7EA00138545 /* Button.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -909,6 +925,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -969,6 +986,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -993,10 +1011,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23A3PS5QB5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PocketBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1015,10 +1030,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 23A3PS5QB5;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = PocketBudget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -20,5 +20,13 @@ protocol ExpenseStorage {
     func removeExpense(identifiedBy id: String)
 }
 
-protocol DataStorage: AccountStorage, ExpenseStorage {
+protocol MonthStorage {
+    func get(by query: MonthsQuery) -> Observable<[Month]>
+}
+
+protocol TransactionStorage {
+    func get(by query: TransactionsQuery) -> Observable<[Transaction]>
+}
+
+protocol DataStorage: AccountStorage, ExpenseStorage, MonthStorage, TransactionStorage {
 }

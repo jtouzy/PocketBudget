@@ -9,4 +9,6 @@
 enum UserDefaultsStorageKey: String, CaseIterable {
     case accounts
     case expenses
+    case months
+    case transactions
 }

@@ -27,6 +27,21 @@ class MockDataStorage: DataStorage {
             accountId: "account_1"
         )
     ])
+    let monthSubject = BehaviorSubject<[Month]>(value: [
+        Month(
+            id: "02-2020",
+            isCurrent: true,
+            balance: 2000
+        )
+    ])
+    let transactionSubject = BehaviorSubject<[Transaction]>(value: [
+        Transaction(
+            id: "my_transaction_1",
+            monthId: "02-2020",
+            expenseId: "expense_1",
+            amount: 2000
+        )
+    ])
 }
 
 //
@@ -56,6 +71,24 @@ extension MockDataStorage {
     }
     func removeExpense(identifiedBy id: String) {
         remove(identifiedBy: id, from: expenseSubject)
+    }
+}
+
+//
+// MARK: MONTHSTORAGE IMPLEMENTATION
+//
+extension MockDataStorage {
+    func get(by query: MonthsQuery) -> Observable<[Month]> {
+        get(by: query, from: monthSubject)
+    }
+}
+
+//
+// MARK: TRANSACTIONSTORAGE IMPLEMENTATION
+//
+extension MockDataStorage {
+    func get(by query: TransactionsQuery) -> Observable<[Transaction]> {
+        get(by: query, from: transactionSubject)
     }
 }
 

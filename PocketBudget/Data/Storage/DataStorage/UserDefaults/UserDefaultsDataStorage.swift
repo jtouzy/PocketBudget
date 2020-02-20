@@ -44,6 +44,24 @@ extension UserDefaultsDataStorage {
     }
 }
 
+//
+// MARK: MONTHSTORAGE IMPLEMENTATION
+//
+extension UserDefaultsDataStorage {
+    func get(by query: MonthsQuery) -> Observable<[Month]> {
+        return getObservable(forKey: .months, by: query)
+    }
+}
+
+//
+// MARK: TRANSACTIONSTORAGE IMPLEMENTATION
+//
+extension UserDefaultsDataStorage {
+    func get(by query: TransactionsQuery) -> Observable<[Transaction]> {
+        return getObservable(forKey: .transactions, by: query)
+    }
+}
+
 extension UserDefaultsDataStorage {
     private func getObservable<T>(
         forKey key: UserDefaultsStorageKey,
