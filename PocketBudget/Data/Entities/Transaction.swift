@@ -9,12 +9,14 @@
 class Transaction: Codable {
     let id: String
     let monthId: String
-    let expenseId: String
+    let title: String
+    let expenseId: String?
     let amount: Double
 
-    init(id: String, monthId: String, expenseId: String, amount: Double) {
+    init(id: String, monthId: String, title: String, expenseId: String?, amount: Double) {
         self.id = id
         self.monthId = monthId
+        self.title = title
         self.expenseId = expenseId
         self.amount = amount
     }

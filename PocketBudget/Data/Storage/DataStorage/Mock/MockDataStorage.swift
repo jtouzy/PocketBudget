@@ -38,6 +38,7 @@ class MockDataStorage: DataStorage {
         Transaction(
             id: "my_transaction_1",
             monthId: "02-2020",
+            title: "Prêt immobilier",
             expenseId: "expense_1",
             amount: 2000
         )

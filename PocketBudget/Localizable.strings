@@ -28,6 +28,10 @@
 "expenses_editor_required_empty_title" = "Aucune dépense obligatoire pour ce compte";
 "expenses_editor_required_empty_action" = "Ajouter une dépense";
 
+// APP_MODULE: MONTH_BALANCE
+"month_balance_empty_title" = "Aucune transaction ce mois-ci";
+"month_balance_empty_action" = "Ajouter une transaction";
+
 // APP_MODULE: NEW_EXPENSE_EDITOR
 "new_expense_editor_title" = "Ajouter une dépense";
 "new_expense_editor_title_field" = "Définissez un nom";

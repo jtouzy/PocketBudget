@@ -8,6 +8,62 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Month Balance View Controller-->
+        <scene sceneID="Mqw-GS-1ee">
+            <objects>
+                <viewController storyboardIdentifier="MonthBalanceViewController" id="PzZ-8i-Oc4" customClass="MonthBalanceViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxB-5P-itz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0V4-T3-H9r">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="USu-4d-oGm" detailTextLabel="ymW-il-8mx" style="IBUITableViewCellStyleValue1" id="Xf6-jV-ts5">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xf6-jV-ts5" id="bgj-Bb-llG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="USu-4d-oGm" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
+                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ymW-il-8mx" customClass="Label" customModule="PocketBudget" customModuleProvider="target">
+                                                    <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zod-iD-Lbz" firstAttribute="bottom" secondItem="0V4-T3-H9r" secondAttribute="bottom" id="MCi-PN-tWm"/>
+                            <constraint firstItem="zod-iD-Lbz" firstAttribute="trailing" secondItem="0V4-T3-H9r" secondAttribute="trailing" id="P8g-xh-1MD"/>
+                            <constraint firstItem="0V4-T3-H9r" firstAttribute="leading" secondItem="zod-iD-Lbz" secondAttribute="leading" id="wT4-Vg-sV5"/>
+                            <constraint firstItem="0V4-T3-H9r" firstAttribute="top" secondItem="zod-iD-Lbz" secondAttribute="top" id="xRC-Wm-i8G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zod-iD-Lbz"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="0V4-T3-H9r" id="Mj2-tK-YD1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTg-Rn-Fsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2506" y="72"/>
+        </scene>
         <!--Accounts Editor View Controller-->
         <scene sceneID="DCD-wg-8EO">
             <objects>

@@ -23,6 +23,7 @@ enum ApplicationModule {
     case accountsEditor(input: AccountsEditorModuleInput)
     case accountSettings(input: AccountSettingsModuleInput)
     case expensesEditor(input: ExpensesEditorModuleInput)
+    case monthBalance(input: MonthBalanceModuleInput)
     case newExpenseEditor(input: NewExpenseEditorModuleInput)
 
     func build() -> UIViewController? {
@@ -45,7 +46,7 @@ extension ApplicationModule {
         switch self {
         case .accountsEditor:
             return .navigation(title: "accounts_editor_title".localized)
-        case .accountSettings, .expensesEditor, .newExpenseEditor:
+        case .accountSettings, .expensesEditor, .monthBalance, .newExpenseEditor:
             return .none
         }
     }
@@ -60,6 +61,8 @@ extension ApplicationModule {
             return assembleAccountSettings(with: input)
         case .expensesEditor(let input):
             return assembleExpensesEditor(with: input)
+        case .monthBalance(let input):
+            return assembleMonthBalance(with: input)
         case .newExpenseEditor(let input):
             return assembleNewExpenseEditor(with: input)
         }
