@@ -13,7 +13,7 @@ import UIKit
 //
 protocol Wireframe {
     func push(to module: ApplicationModule)
-    func present(module: ApplicationModule)
+    func present(module: ApplicationModule, options: PresentationOptions)
     func close()
 }
 
@@ -54,10 +54,12 @@ extension ApplicationWireframe: Wireframe {
         navigationController.pushViewController(viewController, animated: true)
     }
 
-    func present(module: ApplicationModule) {
+    func present(module: ApplicationModule, options: PresentationOptions = .automatic) {
         guard let viewController = module.build() else {
             return
         }
+        viewController.modalPresentationStyle = options.modalPresentationStyle
+        viewController.hero.isEnabled = options.isTransitionAnimationsEnabled
         topViewControllerInPresented?.present(viewController, animated: true, completion: nil)
         presentedViewController = viewController
         presentedViewController?.presentationController?.delegate = self

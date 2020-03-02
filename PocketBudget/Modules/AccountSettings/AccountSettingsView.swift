@@ -11,6 +11,13 @@ import RxSwift
 import UIKit
 
 //
+// MARK: VIEW SPECS
+//
+struct AccountSettingsSpecs {
+    static let viewAnimationId = "accountSettingsView"
+}
+
+//
 // MARK: VIEW PROTOCOL
 //
 protocol AccountSettingsView: class {
@@ -31,6 +38,7 @@ class AccountSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.hero.id = AccountSettingsSpecs.viewAnimationId
         createBindings()
     }
 }
@@ -41,6 +49,7 @@ class AccountSettingsViewController: UIViewController {
 extension AccountSettingsViewController {
     private func createBindings() {
         createViewTitleBinding()
+        createNavBarBinding()
         createTableViewBinding()
     }
 
@@ -50,6 +59,18 @@ extension AccountSettingsViewController {
             .subscribe(onNext: { [weak self] title in
                 self?.navigationItem.title = title
             })
+            .disposed(by: disposeBag)
+    }
+
+    private func createNavBarBinding() {
+        guard let presenter = presenter else { return }
+        let closeButton = UIBarButtonItem(
+            image: UIImage(systemName: "arrow.up"), style: .done, target: nil, action: nil
+        )
+        navigationItem.rightBarButtonItem = closeButton
+        closeButton.rx.tap
+            .asSignal()
+            .emit(to: presenter.didTapCloseRelay)
             .disposed(by: disposeBag)
     }
 

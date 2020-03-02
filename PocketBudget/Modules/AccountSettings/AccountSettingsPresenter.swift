@@ -13,6 +13,7 @@ import RxSwift
 // MARK: PRESENTER PROTOCOL
 //
 protocol AccountSettingsPresenter {
+    var didTapCloseRelay: PublishRelay<()> { get }
     var didSelectSettingsItem: PublishRelay<AccountSettingsItem> { get }
     var itemsDriver: Driver<[AccountSettingsItem]> { get }
     func getSettingsTitle() -> Observable<String>
@@ -28,6 +29,7 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
 
     let input: AccountSettingsModuleInput
 
+    let didTapCloseRelay = PublishRelay<()>()
     let didSelectSettingsItem = PublishRelay<AccountSettingsItem>()
     var itemsDriver: Driver<[AccountSettingsItem]> { settingItemsRelay.asDriver() }
     let settingItemsRelay = BehaviorRelay<[AccountSettingsItem]>(value: [
@@ -38,6 +40,7 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
     init(view: AccountSettingsView, with input: AccountSettingsModuleInput) {
         self.view = view
         self.input = input
+        subscribeForCloseAction(didTapCloseRelay)
         subscribeForSelectSettingsItemAction(didSelectSettingsItem)
     }
 
@@ -51,6 +54,12 @@ class AccountSettingsPresenterImpl: AccountSettingsPresenter {
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
 extension AccountSettingsPresenterImpl {
+    private func subscribeForCloseAction(_ stream: PublishRelay<()>) {
+        stream
+            .subscribe(onNext: { [weak self] in self?.wireframe.close() })
+            .disposed(by: disposeBag)
+    }
+
     private func subscribeForSelectSettingsItemAction(_ stream: PublishRelay<AccountSettingsItem>) {
         stream
             .subscribe(onNext: { [weak self] item in

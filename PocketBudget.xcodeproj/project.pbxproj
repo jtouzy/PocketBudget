@@ -15,6 +15,8 @@
 		538822E2240D060C00C4FA6F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E1240D060C00C4FA6F /* RxRelay */; };
 		538822E4240D060C00C4FA6F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E3240D060C00C4FA6F /* RxSwift */; };
 		538822E6240D060C00C4FA6F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E5240D060C00C4FA6F /* RxCocoa */; };
+		538822EB240D1A7600C4FA6F /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 538822EA240D1A7600C4FA6F /* Hero */; };
+		538822ED240D21CA00C4FA6F /* PresentationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822EC240D21CA00C4FA6F /* PresentationOptions.swift */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
 		5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */; };
@@ -144,6 +146,7 @@
 		538422A823F8B332006CFB29 /* NewExpenseEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExpenseEditorModels.swift; sourceTree = "<group>"; };
 		538422D023F8BBC3006CFB29 /* ExtendedFoundations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExtendedFoundations.xcodeproj; path = ExtendedFoundations/ExtendedFoundations.xcodeproj; sourceTree = "<group>"; };
 		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		538822EC240D21CA00C4FA6F /* PresentationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationOptions.swift; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationWireframe.swift; sourceTree = "<group>"; };
 		5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+ExpensesEditor.swift"; sourceTree = "<group>"; };
@@ -241,6 +244,7 @@
 				538422E523F96D41006CFB29 /* ExtendedFoundations.framework in Frameworks */,
 				538822E6240D060C00C4FA6F /* RxCocoa in Frameworks */,
 				538822E4240D060C00C4FA6F /* RxSwift in Frameworks */,
+				538822EB240D1A7600C4FA6F /* Hero in Frameworks */,
 				53F2BC5D23FB0D99005D0433 /* MaterialTextField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */,
+				538822EC240D21CA00C4FA6F /* PresentationOptions.swift */,
 			);
 			path = Wireframe;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				538822E1240D060C00C4FA6F /* RxRelay */,
 				538822E3240D060C00C4FA6F /* RxSwift */,
 				538822E5240D060C00C4FA6F /* RxCocoa */,
+				538822EA240D1A7600C4FA6F /* Hero */,
 			);
 			productName = PocketBudget;
 			productReference = 53B7F03023F7221400700431 /* PocketBudget.app */;
@@ -731,6 +737,7 @@
 			mainGroup = 53B7F02723F7221400700431;
 			packageReferences = (
 				538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */,
+				538822E9240D1A7600C4FA6F /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = 53B7F03123F7221400700431 /* Products */;
 			projectDirPath = "";
@@ -858,6 +865,7 @@
 				53F2BC6823FBFD47005D0433 /* NewExpenseEditorModuleInput.swift in Sources */,
 				5389CEBB23F7425600990E88 /* ExpensesEditorInteractor.swift in Sources */,
 				5389CEF123F7EA5100990E88 /* EmptyView.swift in Sources */,
+				538822ED240D21CA00C4FA6F /* PresentationOptions.swift in Sources */,
 				539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */,
 				53F2BC6C23FC1BEA005D0433 /* Observable+extensions.swift in Sources */,
 				53F2BC8523FF10AC005D0433 /* MonthBalanceModels.swift in Sources */,
@@ -1157,8 +1165,16 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				kind = exactVersion;
+				version = 5.0.1;
+			};
+		};
+		538822E9240D1A7600C4FA6F /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1178,6 +1194,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		538822EA240D1A7600C4FA6F /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 538822E9240D1A7600C4FA6F /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

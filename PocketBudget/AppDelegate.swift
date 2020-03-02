@@ -6,6 +6,7 @@
 //  Copyright © 2020 jtouzy. All rights reserved.
 //
 
+import Hero
 import UIKit
 
 @UIApplicationMain

@@ -14,6 +14,7 @@ import RxSwift
 // MARK: PRESENTER PROTOCOL
 //
 protocol MonthBalancePresenter {
+    var didTapGoToSettingsRelay: PublishRelay<()> { get }
     func getItemsDriver() -> Driver<[Transaction]>
 }
 
@@ -27,13 +28,13 @@ class MonthBalancePresenterImpl: MonthBalancePresenter {
 
     let input: MonthBalanceModuleInput
 
-    // TODO relays
+    let didTapGoToSettingsRelay = PublishRelay<()>()
     let disposeBag = DisposeBag()
 
     init(view: MonthBalanceView, with input: MonthBalanceModuleInput) {
         self.view = view
         self.input = input
-        // TODO call subscriptions
+        subscribeForNavigateToAccountSettings(didTapGoToSettingsRelay)
     }
 
     func getItemsDriver() -> Driver<[Transaction]> {
@@ -57,5 +58,15 @@ class MonthBalancePresenterImpl: MonthBalancePresenter {
 // MARK: PRESENTER PRIVATE FUNCTIONS
 //
 extension MonthBalancePresenterImpl {
-    // TODO private subscriptions
+    private func subscribeForNavigateToAccountSettings(_ stream: PublishRelay<()>) {
+        stream
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.wireframe.present(
+                    module: .accountSettings(input: AccountSettingsModuleInput(accountId: "account_1")),
+                    options: .fullScreen(transitionAnimations: true)
+                )
+            })
+            .disposed(by: disposeBag)
+    }
 }

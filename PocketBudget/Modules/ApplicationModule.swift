@@ -44,9 +44,11 @@ enum ApplicationModule {
 extension ApplicationModule {
     var embeddingType: EmbeddingType {
         switch self {
+        case .accountSettings:
+            return .navigation(title: "")
         case .accountsEditor:
             return .navigation(title: "accounts_editor_title".localized)
-        case .accountSettings, .expensesEditor, .monthBalance, .newExpenseEditor:
+        case .expensesEditor, .monthBalance, .newExpenseEditor:
             return .none
         }
     }

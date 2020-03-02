@@ -72,7 +72,8 @@ extension ExpensesEditorPresenterImpl {
                             accountId: self.input.accountId,
                             type: self.input.type
                         )
-                    )
+                    ),
+                    options: .automatic
                 )
             })
             .disposed(by: disposeBag)

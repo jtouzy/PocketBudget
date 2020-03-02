@@ -11,7 +11,7 @@ import RxSwift
 import UIKit
 
 //
-// MARK: VIEW CONSTANTS
+// MARK: VIEW SPECS
 //
 struct MonthBalanceSpecs {
     static let amountTopSpacing: CGFloat = 16
@@ -77,8 +77,10 @@ extension MonthBalanceViewController {
     }
 
     private func makeSettingsAccessorAnimation() {
-        guard let amountLabel = self.amountLabel else { return }
-        let baseButtonFrame = amountLabel.frame.updated(x: view.frame.maxX + 30)
+        guard let presenter = presenter, let amountLabel = amountLabel else { return }
+        let baseButtonFrame = amountLabel.frame.updated(
+            x: view.frame.maxX + 30, width: amountLabel.frame.height
+        )
         let settingsAccessor = UIButton(frame: baseButtonFrame)
         settingsAccessor.setImage(UIImage(systemName: "pencil"), for: .normal)
         settingsAccessor.alpha = 0
@@ -89,6 +91,11 @@ extension MonthBalanceViewController {
         settingsAccessor.layer.shadowOpacity = 0.5
         settingsAccessor.layer.shadowRadius = 5
         settingsAccessor.layer.shadowOffset = .zero
+        settingsAccessor.hero.id = AccountSettingsSpecs.viewAnimationId
+        settingsAccessor.rx.tap
+            .asSignal()
+            .emit(to: presenter.didTapGoToSettingsRelay)
+            .disposed(by: disposeBag)
         view.addSubview(settingsAccessor)
         self.settingsAccessor = settingsAccessor
         UIView.animate(withDuration: 0.5) { [weak self] in
