@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,9 @@
 		538422E523F96D41006CFB29 /* ExtendedFoundations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; };
 		538422E623F96D41006CFB29 /* ExtendedFoundations.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 538422D623F8BBC3006CFB29 /* ExtendedFoundations.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		538422EF23F972F7006CFB29 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 538422EE23F972F7006CFB29 /* Localizable.strings */; };
+		538822E2240D060C00C4FA6F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E1240D060C00C4FA6F /* RxRelay */; };
+		538822E4240D060C00C4FA6F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E3240D060C00C4FA6F /* RxSwift */; };
+		538822E6240D060C00C4FA6F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E5240D060C00C4FA6F /* RxCocoa */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
 		5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */; };
@@ -28,9 +31,6 @@
 		5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CED523F74B0000990E88 /* MockDataStorage.swift */; };
 		5389CEDE23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEDD23F760E500990E88 /* UserDefaultsDataStorage+Tests.swift */; };
 		5389CEE123F761C500990E88 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEE023F761C500990E88 /* UserDefaults+extensions.swift */; };
-		5389CEE223F7648A00990E88 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; };
-		5389CEE323F7648A00990E88 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; };
-		5389CEE423F7648A00990E88 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; };
 		5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEE623F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift */; };
 		5389CEE923F76AEA00990E88 /* NewExpenseEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEE823F76AEA00990E88 /* NewExpenseEditorView.swift */; };
 		5389CEEB23F76AF700990E88 /* NewExpenseEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEEA23F76AF700990E88 /* NewExpenseEditorPresenter.swift */; };
@@ -53,12 +53,6 @@
 		53B7F04023F7221800700431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03E23F7221800700431 /* LaunchScreen.storyboard */; };
 		53B7F05723F722CB00700431 /* ExpensesEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05623F722CB00700431 /* ExpensesEditorView.swift */; };
 		53B7F05923F7235500700431 /* ExpensesEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */; };
-		53B7F06123F727E400700431 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; };
-		53B7F06223F727E400700431 /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05C23F727DD00700431 /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		53B7F06423F727E600700431 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; };
-		53B7F06523F727E600700431 /* RxRelay.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05B23F727DD00700431 /* RxRelay.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		53B7F06623F727E700700431 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; };
-		53B7F06723F727E700700431 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 53B7F05D23F727DD00700431 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		53E2EF5623F99B0F00138545 /* UITableView+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */; };
 		53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF5D23F9A4A500138545 /* AccountsQuery.swift */; };
 		53E2EF6423F9A73100138545 /* ExpensesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF6323F9A73100138545 /* ExpensesQuery.swift */; };
@@ -138,10 +132,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				538422E623F96D41006CFB29 /* ExtendedFoundations.framework in Embed Frameworks */,
-				53B7F06523F727E600700431 /* RxRelay.framework in Embed Frameworks */,
 				53F2BC5E23FB0D99005D0433 /* MaterialTextField.framework in Embed Frameworks */,
-				53B7F06223F727E400700431 /* RxCocoa.framework in Embed Frameworks */,
-				53B7F06723F727E700700431 /* RxSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,9 +186,6 @@
 		53B7F04C23F7221800700431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53B7F05623F722CB00700431 /* ExpensesEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorView.swift; sourceTree = "<group>"; };
 		53B7F05823F7235500700431 /* ExpensesEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesEditorPresenter.swift; sourceTree = "<group>"; };
-		53B7F05B23F727DD00700431 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
-		53B7F05C23F727DD00700431 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		53B7F05D23F727DD00700431 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		53E2EF5523F99B0F00138545 /* UITableView+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+extensions.swift"; sourceTree = "<group>"; };
 		53E2EF5D23F9A4A500138545 /* AccountsQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsQuery.swift; sourceTree = "<group>"; };
 		53E2EF6323F9A73100138545 /* ExpensesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesQuery.swift; sourceTree = "<group>"; };
@@ -249,11 +237,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538822E2240D060C00C4FA6F /* RxRelay in Frameworks */,
 				538422E523F96D41006CFB29 /* ExtendedFoundations.framework in Frameworks */,
-				53B7F06123F727E400700431 /* RxCocoa.framework in Frameworks */,
+				538822E6240D060C00C4FA6F /* RxCocoa in Frameworks */,
+				538822E4240D060C00C4FA6F /* RxSwift in Frameworks */,
 				53F2BC5D23FB0D99005D0433 /* MaterialTextField.framework in Frameworks */,
-				53B7F06423F727E600700431 /* RxRelay.framework in Frameworks */,
-				53B7F06623F727E700700431 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +249,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5389CEE223F7648A00990E88 /* RxCocoa.framework in Frameworks */,
-				5389CEE323F7648A00990E88 /* RxRelay.framework in Frameworks */,
-				5389CEE423F7648A00990E88 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,9 +533,6 @@
 			isa = PBXGroup;
 			children = (
 				53F2BC5B23FB0D91005D0433 /* MaterialTextField.framework */,
-				53B7F05C23F727DD00700431 /* RxCocoa.framework */,
-				53B7F05B23F727DD00700431 /* RxRelay.framework */,
-				53B7F05D23F727DD00700431 /* RxSwift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -691,6 +673,11 @@
 			dependencies = (
 			);
 			name = PocketBudget;
+			packageProductDependencies = (
+				538822E1240D060C00C4FA6F /* RxRelay */,
+				538822E3240D060C00C4FA6F /* RxSwift */,
+				538822E5240D060C00C4FA6F /* RxCocoa */,
+			);
 			productName = PocketBudget;
 			productReference = 53B7F03023F7221400700431 /* PocketBudget.app */;
 			productType = "com.apple.product-type.application";
@@ -742,6 +729,9 @@
 				Base,
 			);
 			mainGroup = 53B7F02723F7221400700431;
+			packageReferences = (
+				538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 53B7F03123F7221400700431 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -1161,6 +1151,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		538822E1240D060C00C4FA6F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		538822E3240D060C00C4FA6F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		538822E5240D060C00C4FA6F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 538822E0240D060C00C4FA6F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53B7F02823F7221400700431 /* Project object */;
 }
