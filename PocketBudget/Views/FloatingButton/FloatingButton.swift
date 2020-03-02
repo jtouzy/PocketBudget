@@ -18,6 +18,11 @@ class FloatingButton: UIButton {
         super.init(frame: frame)
         configure(with: image)
     }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.size.width / 2
+    }
 }
 
 private extension FloatingButton {
@@ -27,7 +32,6 @@ private extension FloatingButton {
         }
         backgroundColor = .materialTeal
         tintColor = .white
-        layer.cornerRadius = frame.width / 2
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowRadius = 5

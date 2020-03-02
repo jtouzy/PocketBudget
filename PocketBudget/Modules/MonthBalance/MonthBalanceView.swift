@@ -15,10 +15,11 @@ import UIKit
 //
 struct MonthBalanceSpecs {
     static let amountTopSpacing: CGFloat = 16
-
-    static func tableViewTopSpacing(using amountLabel: Label) -> CGFloat {
-        return amountTopSpacing * 2 + amountLabel.frame.height
-    }
+    static let labelsSpacing: CGFloat = 4
+    static let settingsStartTrailingDistance: CGFloat = 30
+    static let settingsEndTrailingDistance: CGFloat = -16
+    static let settindsAndLabelAnimationDuration: TimeInterval = 0.2
+    static let tableViewAnimationDuration: TimeInterval = 0.5
 }
 private typealias Specs = MonthBalanceSpecs
 
@@ -34,14 +35,16 @@ protocol MonthBalanceView: class, UIEmptiable {
 class MonthBalanceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
-            tableView.isHidden = true
+            tableView.alpha = 0
             tableView.tableFooterView = UIView()
         }
     }
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
-    var amountLabel: Label?
+    var estimatedAmountPresentationLabel: Label?
+    var estimatedAmountLabel: Label?
     var emptyView: EmptyView?
     var settingsAccessor: FloatingButton?
+    var settingsAccessorTrailingConstraint: NSLayoutConstraint?
 
     let disposeBag = DisposeBag()
     var presenter: MonthBalancePresenter?
@@ -54,55 +57,94 @@ class MonthBalanceViewController: UIViewController {
 }
 
 //
+// MARK: PRIVATE CREATION FUNCTIONS
+//
+extension MonthBalanceViewController {
+    private func createPresentationLabel() {
+        guard let estimatedAmountLabel = estimatedAmountLabel else { return }
+        let presentationLabel = Label(frame: .zero, font: AppFont.font(fromStyle: .footnote))
+        presentationLabel.text = "month_balance_estimated_amount_title".localized
+        presentationLabel.textColor = .materialGrey
+        presentationLabel.alpha = 0
+        presentationLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(presentationLabel)
+        NSLayoutConstraint.activate([
+            presentationLabel.centerXAnchor.constraint(
+                equalTo: view.centerXAnchor
+            ),
+            presentationLabel.topAnchor.constraint(
+                equalTo: estimatedAmountLabel.bottomAnchor, constant: Specs.labelsSpacing
+            )
+        ])
+        self.estimatedAmountPresentationLabel = presentationLabel
+    }
+
+    private func createSettingsAccessor() {
+        guard let presenter = presenter, let estimatedAmountLabel = estimatedAmountLabel else { return }
+        let settingsAccessor = FloatingButton(frame: .zero, image: "pencil")
+        settingsAccessor.alpha = 0
+        settingsAccessor.hero.id = AccountSettingsSpecs.viewAnimationId
+        settingsAccessor.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(settingsAccessor)
+        let trailingConstraint = settingsAccessor.trailingAnchor.constraint(
+            equalTo: view.trailingAnchor, constant: Specs.settingsStartTrailingDistance
+        )
+        NSLayoutConstraint.activate([
+            settingsAccessor.topAnchor.constraint(equalTo: estimatedAmountLabel.topAnchor),
+            settingsAccessor.heightAnchor.constraint(equalTo: estimatedAmountLabel.heightAnchor),
+            settingsAccessor.widthAnchor.constraint(equalTo: estimatedAmountLabel.heightAnchor),
+            trailingConstraint
+        ])
+        view.layoutIfNeeded()
+        settingsAccessor.rx.tap
+            .asSignal()
+            .emit(to: presenter.didTapGoToSettingsRelay)
+            .disposed(by: disposeBag)
+        self.settingsAccessor = settingsAccessor
+        self.settingsAccessorTrailingConstraint = trailingConstraint
+    }
+}
+
+//
 // MARK: PRIVATE ANIMATION FUNCTIONS
 //
 extension MonthBalanceViewController {
     private func makeAppearanceAnimations() {
         makeAmountAnimation { [weak self] in
             guard let self = self else { return }
-            self.makeTableViewAnimation()
-            self.makeSettingsAccessorAnimation()
+            self.createPresentationLabel()
+            self.createSettingsAccessor()
+            self.makeSettingsAccessorAndPresentationLabelAnimation {
+                self.makeTableViewAnimation()
+            }
         }
     }
 
     private func makeAmountAnimation(completion: @escaping () -> Void) {
-        amountLabel = Label(frame: .zero)
-        amountLabel?.font = AppFont.font(fromStyle: .title1)
-        amountLabel?.text = "AmointText"
-        amountLabel?.fromCenterToTop(
+        estimatedAmountLabel = Label(frame: .zero, font: AppFont.font(fromStyle: .title1))
+        estimatedAmountLabel?.text = "AmointText"
+        estimatedAmountLabel?.fromCenterToTop(
             in: view,
             topDistance: Specs.amountTopSpacing,
             completion: completion
         )
     }
 
-    private func makeSettingsAccessorAnimation() {
-        guard let presenter = presenter, let amountLabel = amountLabel else { return }
-        let baseButtonFrame = amountLabel.frame.updated(
-            x: view.frame.maxX + 30, width: amountLabel.frame.height
-        )
-        let settingsAccessor = FloatingButton(frame: baseButtonFrame, image: "pencil")
-        settingsAccessor.alpha = 0
-        settingsAccessor.hero.id = AccountSettingsSpecs.viewAnimationId
-        settingsAccessor.rx.tap
-            .asSignal()
-            .emit(to: presenter.didTapGoToSettingsRelay)
-            .disposed(by: disposeBag)
-        view.addSubview(settingsAccessor)
-        self.settingsAccessor = settingsAccessor
-        UIView.animate(withDuration: 0.5) { [weak self] in
+    private func makeSettingsAccessorAndPresentationLabelAnimation(completion: @escaping () -> Void) {
+        settingsAccessorTrailingConstraint?.constant = Specs.settingsEndTrailingDistance
+        UIView.animate(withDuration: Specs.settindsAndLabelAnimationDuration, animations: { [weak self] in
             guard let self = self else { return }
-            self.settingsAccessor?.frame = baseButtonFrame.updated(x: self.view.frame.maxX - amountLabel.frame.height - 16)
+            self.estimatedAmountPresentationLabel?.alpha = 1
             self.settingsAccessor?.alpha = 1
-        }
+            self.view.layoutIfNeeded()
+        }, completion: { _ in completion() })
     }
 
     private func makeTableViewAnimation() {
-        guard let amountLabel = self.amountLabel else { return }
-        tableView.isHidden = false
-        tableView.alpha = 0
-        tableViewTopConstraint.constant = Specs.tableViewTopSpacing(using: amountLabel)
-        UIView.animate(withDuration: 0.5) { [weak self] in
+        guard let estimatedAmountPresentationLabel = self.estimatedAmountPresentationLabel else { return }
+        tableViewTopConstraint.isActive = false
+        tableView.topAnchor.constraint(equalTo: estimatedAmountPresentationLabel.bottomAnchor, constant: 16).isActive = true
+        UIView.animate(withDuration: Specs.tableViewAnimationDuration) { [weak self] in
             self?.tableView.alpha = 1
         }
     }

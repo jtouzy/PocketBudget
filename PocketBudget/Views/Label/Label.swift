@@ -17,8 +17,8 @@ class Label: UILocalizableLabel {
         font = AppFont.font(basedOn: font)
     }
 
-    override init(frame: CGRect) {
+    init(frame: CGRect, font: UIFont? = nil) {
         super.init(frame: frame)
-        font = AppFont.font(basedOn: font)
+        self.font = font ?? AppFont.font(basedOn: self.font)
     }
 }

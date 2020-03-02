@@ -31,6 +31,7 @@
 // APP_MODULE: MONTH_BALANCE
 "month_balance_empty_title" = "Aucune transaction ce mois-ci";
 "month_balance_empty_action" = "Ajouter une transaction";
+"month_balance_estimated_amount_title" = "Montant restant estimé";
 
 // APP_MODULE: NEW_EXPENSE_EDITOR
 "new_expense_editor_title" = "Ajouter une dépense";
