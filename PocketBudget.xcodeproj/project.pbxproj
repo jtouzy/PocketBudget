@@ -17,6 +17,7 @@
 		538822E6240D060C00C4FA6F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 538822E5240D060C00C4FA6F /* RxCocoa */; };
 		538822EB240D1A7600C4FA6F /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 538822EA240D1A7600C4FA6F /* Hero */; };
 		538822ED240D21CA00C4FA6F /* PresentationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822EC240D21CA00C4FA6F /* PresentationOptions.swift */; };
+		538822F0240D261E00C4FA6F /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822EF240D261E00C4FA6F /* FloatingButton.swift */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
 		5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */; };
@@ -147,6 +148,7 @@
 		538422D023F8BBC3006CFB29 /* ExtendedFoundations.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ExtendedFoundations.xcodeproj; path = ExtendedFoundations/ExtendedFoundations.xcodeproj; sourceTree = "<group>"; };
 		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		538822EC240D21CA00C4FA6F /* PresentationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationOptions.swift; sourceTree = "<group>"; };
+		538822EF240D261E00C4FA6F /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationWireframe.swift; sourceTree = "<group>"; };
 		5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+ExpensesEditor.swift"; sourceTree = "<group>"; };
@@ -274,6 +276,14 @@
 				538422D823F8BBC3006CFB29 /* ExtendedFoundationsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		538822EE240D260500C4FA6F /* FloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+				538822EF240D261E00C4FA6F /* FloatingButton.swift */,
+			);
+			path = FloatingButton;
 			sourceTree = "<group>";
 		};
 		5389CEAF23F7383400990E88 /* Modules */ = {
@@ -419,6 +429,7 @@
 				53E2EF9223F9E0F800138545 /* Button */,
 				53E2EF8D23F9DE0D00138545 /* ColorSelector */,
 				5389CEEF23F7EA1000990E88 /* EmptyView */,
+				538822EE240D260500C4FA6F /* FloatingButton */,
 				53E2EF6923F9C82600138545 /* Label */,
 				5389CEF823F82F8400990E88 /* ModalViewController */,
 				53F2BC5823FB0D69005D0433 /* TextField */,
@@ -829,6 +840,7 @@
 				53E2EF9F23FA0E5B00138545 /* UIColor+extensions.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
 				53F2BC7823FF0CF9005D0433 /* MonthsQuery.swift in Sources */,
+				538822F0240D261E00C4FA6F /* FloatingButton.swift in Sources */,
 				53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */,
 				53E2EF8F23F9DE2400138545 /* ColorSelector.swift in Sources */,
 				53E2EF6D23F9CA2400138545 /* UIFontTextStyle+extensions.swift in Sources */,

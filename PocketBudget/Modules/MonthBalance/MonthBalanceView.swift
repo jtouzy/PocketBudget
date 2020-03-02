@@ -41,7 +41,7 @@ class MonthBalanceViewController: UIViewController {
     @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     var amountLabel: Label?
     var emptyView: EmptyView?
-    var settingsAccessor: UIButton?
+    var settingsAccessor: FloatingButton?
 
     let disposeBag = DisposeBag()
     var presenter: MonthBalancePresenter?
@@ -81,16 +81,8 @@ extension MonthBalanceViewController {
         let baseButtonFrame = amountLabel.frame.updated(
             x: view.frame.maxX + 30, width: amountLabel.frame.height
         )
-        let settingsAccessor = UIButton(frame: baseButtonFrame)
-        settingsAccessor.setImage(UIImage(systemName: "pencil"), for: .normal)
+        let settingsAccessor = FloatingButton(frame: baseButtonFrame, image: "pencil")
         settingsAccessor.alpha = 0
-        settingsAccessor.backgroundColor = .materialTeal
-        settingsAccessor.tintColor = .white
-        settingsAccessor.layer.cornerRadius = settingsAccessor.frame.width / 2
-        settingsAccessor.layer.shadowColor = UIColor.gray.cgColor
-        settingsAccessor.layer.shadowOpacity = 0.5
-        settingsAccessor.layer.shadowRadius = 5
-        settingsAccessor.layer.shadowOffset = .zero
         settingsAccessor.hero.id = AccountSettingsSpecs.viewAnimationId
         settingsAccessor.rx.tap
             .asSignal()
