@@ -9,6 +9,8 @@
 import UIKit
 
 public extension UIView {
+    typealias CenterConstraints = (x: NSLayoutConstraint, y: NSLayoutConstraint)
+
     static func load<T: UIView>() -> T? {
         return UINib(nibName: T.identifier, bundle: .main)
             .instantiate(withOwner: self, options: nil).first as? T
@@ -30,17 +32,55 @@ public extension UIView {
     }
 
     @discardableResult
-    func addToCenter(of view: UIView, sized size: CGSize) -> [NSLayoutConstraint] {
+    func addToCenter(of view: UIView, sized size: CGSize? = nil) -> CenterConstraints {
         view.addSubview(self)
         translatesAutoresizingMaskIntoConstraints = false
-        let constraints = [
-            centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            widthAnchor.constraint(equalToConstant: size.width),
-            heightAnchor.constraint(equalToConstant: size.height)
-        ]
+        let centerXConstraint = centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        let centerYConstraint = centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        var constraints = [centerXConstraint, centerYConstraint]
+        if let size = size {
+            constraints.append(contentsOf: [
+                widthAnchor.constraint(equalToConstant: size.width),
+                heightAnchor.constraint(equalToConstant: size.height)
+            ])
+        }
         NSLayoutConstraint.activate(constraints)
-        return constraints
+        return (x: centerXConstraint, y: centerYConstraint)
+    }
+}
+
+public extension UIView {
+    func fromCenterToTop(in view: UIView, topDistance: CGFloat,
+                         fadeDuration: TimeInterval = 0.5, moveDuration: TimeInterval = 0.5,
+                         completion: (() -> Void)? = nil) {
+        alpha = 0
+        translatesAutoresizingMaskIntoConstraints = false
+        let centerConstraints = addToCenter(of: view)
+        let topConstraint = topAnchor.constraint(
+            equalTo: view.safeAreaLayoutGuide.topAnchor, constant: topDistance
+        )
+        view.layoutIfNeeded()
+        UIView.animate(
+            withDuration: fadeDuration,
+            delay: 0,
+            options: .curveEaseInOut,
+            animations: { [weak self] in
+                self?.alpha = 1
+            },
+            completion: { _ in
+                centerConstraints.y.isActive = false
+                topConstraint.isActive = true
+                UIView.animate(
+                    withDuration: moveDuration,
+                    delay: 0,
+                    options: .curveEaseInOut,
+                    animations: {
+                        view.layoutIfNeeded()
+                    },
+                    completion: { _ in completion?() }
+                )
+            }
+        )
     }
 }
 

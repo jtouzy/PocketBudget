@@ -58,6 +58,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="0V4-T3-H9r" id="Mj2-tK-YD1"/>
+                        <outlet property="tableViewTopConstraint" destination="xRC-Wm-i8G" id="znn-qk-nRo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rTg-Rn-Fsb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

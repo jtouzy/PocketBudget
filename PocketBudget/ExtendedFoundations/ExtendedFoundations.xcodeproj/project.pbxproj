@@ -16,6 +16,7 @@
 		538422EB23F970E4006CFB29 /* UILocalizableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422EA23F970E4006CFB29 /* UILocalizableLabel.swift */; };
 		538422ED23F971A0006CFB29 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422EC23F971A0006CFB29 /* String+extensions.swift */; };
 		538422F123F97350006CFB29 /* UILocalizableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538422F023F97350006CFB29 /* UILocalizableButton.swift */; };
+		538822E8240D186700C4FA6F /* CGRect+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822E7240D186700C4FA6F /* CGRect+extensions.swift */; };
 		53E2EF9B23FA00E900138545 /* CGSize+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */; };
 		53F2BC5223FAFE08005D0433 /* Mirror+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */; };
 		53F2BC5523FAFE69005D0433 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F2BC5423FAFE69005D0433 /* Query.swift */; };
@@ -46,6 +47,7 @@
 		538422EA23F970E4006CFB29 /* UILocalizableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILocalizableLabel.swift; sourceTree = "<group>"; };
 		538422EC23F971A0006CFB29 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
 		538422F023F97350006CFB29 /* UILocalizableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILocalizableButton.swift; sourceTree = "<group>"; };
+		538822E7240D186700C4FA6F /* CGRect+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect+extensions.swift"; sourceTree = "<group>"; };
 		53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGSize+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mirror+extensions.swift"; sourceTree = "<group>"; };
 		53F2BC5423FAFE69005D0433 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		538422D923F96C1A006CFB29 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				538822E7240D186700C4FA6F /* CGRect+extensions.swift */,
 				53E2EF9A23FA00E900138545 /* CGSize+extensions.swift */,
 				53F2BC7323FC377B005D0433 /* Locale+extensions.swift */,
 				53F2BC5123FAFE08005D0433 /* Mirror+extensions.swift */,
@@ -267,6 +270,7 @@
 				53E2EF9B23FA00E900138545 /* CGSize+extensions.swift in Sources */,
 				538422F123F97350006CFB29 /* UILocalizableButton.swift in Sources */,
 				538422E423F96CE5006CFB29 /* UIIdentifiable.swift in Sources */,
+				538822E8240D186700C4FA6F /* CGRect+extensions.swift in Sources */,
 				53F2BC7223FC332F005D0433 /* NumberFormatter+extensions.swift in Sources */,
 				53F2BC5223FAFE08005D0433 /* Mirror+extensions.swift in Sources */,
 				538422DD23F96C3F006CFB29 /* Optional+extensions.swift in Sources */,
