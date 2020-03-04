@@ -18,6 +18,8 @@
 		538822EB240D1A7600C4FA6F /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 538822EA240D1A7600C4FA6F /* Hero */; };
 		538822ED240D21CA00C4FA6F /* PresentationOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822EC240D21CA00C4FA6F /* PresentationOptions.swift */; };
 		538822F0240D261E00C4FA6F /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822EF240D261E00C4FA6F /* FloatingButton.swift */; };
+		538822F3240D3BA000C4FA6F /* MonthBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538822F2240D3BA000C4FA6F /* MonthBalanceCell.swift */; };
+		538822F5240D3BB800C4FA6F /* MonthBalanceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 538822F4240D3BB800C4FA6F /* MonthBalanceCell.xib */; };
 		5389CEAA23F72AE200990E88 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */; };
 		5389CEAC23F72BA100990E88 /* ApplicationWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */; };
 		5389CEAE23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */; };
@@ -149,6 +151,8 @@
 		538422EE23F972F7006CFB29 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		538822EC240D21CA00C4FA6F /* PresentationOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationOptions.swift; sourceTree = "<group>"; };
 		538822EF240D261E00C4FA6F /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		538822F2240D3BA000C4FA6F /* MonthBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthBalanceCell.swift; sourceTree = "<group>"; };
+		538822F4240D3BB800C4FA6F /* MonthBalanceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MonthBalanceCell.xib; sourceTree = "<group>"; };
 		5389CEA923F72AE200990E88 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		5389CEAB23F72BA100990E88 /* ApplicationWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationWireframe.swift; sourceTree = "<group>"; };
 		5389CEAD23F7356E00990E88 /* ApplicationModule+ExpensesEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+ExpensesEditor.swift"; sourceTree = "<group>"; };
@@ -284,6 +288,15 @@
 				538822EF240D261E00C4FA6F /* FloatingButton.swift */,
 			);
 			path = FloatingButton;
+			sourceTree = "<group>";
+		};
+		538822F1240D3B8D00C4FA6F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				538822F2240D3BA000C4FA6F /* MonthBalanceCell.swift */,
+				538822F4240D3BB800C4FA6F /* MonthBalanceCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		5389CEAF23F7383400990E88 /* Modules */ = {
@@ -662,6 +675,7 @@
 		53F2BC7D23FF1058005D0433 /* MonthBalance */ = {
 			isa = PBXGroup;
 			children = (
+				538822F1240D3B8D00C4FA6F /* Views */,
 				53F2BC8623FF10BC005D0433 /* ApplicationModule+MonthBalance.swift */,
 				53F2BC8823FF19BA005D0433 /* MonthBalanceInteractor.swift */,
 				53F2BC8423FF10AC005D0433 /* MonthBalanceModels.swift */,
@@ -789,6 +803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E2EF7B23F9CC6100138545 /* Lato-Black.ttf in Resources */,
+				538822F5240D3BB800C4FA6F /* MonthBalanceCell.xib in Resources */,
 				538422EF23F972F7006CFB29 /* Localizable.strings in Resources */,
 				53E2EF8323F9CC6100138545 /* Lato-BlackItalic.ttf in Resources */,
 				53E2EF8023F9CC6100138545 /* Lato-Hairline.ttf in Resources */,
@@ -867,6 +882,7 @@
 				5389CEF323F7EEF000990E88 /* UIEmptiable.swift in Sources */,
 				5389CEB723F741A000990E88 /* Account.swift in Sources */,
 				53F2BC6023FBF173005D0433 /* ExpenseType.swift in Sources */,
+				538822F3240D3BA000C4FA6F /* MonthBalanceCell.swift in Sources */,
 				539CC5B723F9924800A908D3 /* AccountsEditorView.swift in Sources */,
 				53F2BC8723FF10BC005D0433 /* ApplicationModule+MonthBalance.swift in Sources */,
 				53E2EF6B23F9C83B00138545 /* Label.swift in Sources */,

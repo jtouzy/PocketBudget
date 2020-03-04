@@ -36,6 +36,7 @@ class MonthBalanceViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.alpha = 0
+            tableView.registerNib(MonthBalanceCell.self)
             tableView.tableFooterView = UIView()
         }
     }
@@ -161,11 +162,11 @@ extension MonthBalanceViewController {
     private func createTableViewBinding() {
         guard let presenter = presenter else { return }
         // Content driving
-        tableView.bindContent(with: presenter.getItemsDriver(), cell: UITableViewCell.self) {
-            $1.textLabel?.text = $0.title
+        tableView.bindContent(with: presenter.getItemsDriver(), cell: MonthBalanceCell.self) {
+            $1.configure(transaction: $0)
             // $1.imageView?.image = UIImage(systemName: "number.circle.fill")
             // $1.imageView?.tintColor = $0.color
-            $1.detailTextLabel?.text = String($0.amount)
+            // $1.detailTextLabel?.text = String($0.amount)
         }.disposed(by: disposeBag)
         // Actions
         // tableView.bindDeletion(to: presenter.didRemoveExpense).disposed(by: disposeBag)
