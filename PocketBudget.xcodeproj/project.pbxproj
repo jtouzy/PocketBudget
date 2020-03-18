@@ -51,6 +51,15 @@
 		539CC5B723F9924800A908D3 /* AccountsEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5B623F9924800A908D3 /* AccountsEditorView.swift */; };
 		539CC5B923F9925300A908D3 /* AccountsEditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */; };
 		539CC5BB23F992E900A908D3 /* AccountsEditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */; };
+		53ACD125241FD776005B80D0 /* AppLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD124241FD776005B80D0 /* AppLauncher.swift */; };
+		53ACD12A241FD958005B80D0 /* ConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD129241FD958005B80D0 /* ConfigStorage.swift */; };
+		53ACD132241FDB94005B80D0 /* ConfigStorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD131241FDB94005B80D0 /* ConfigStorageKey.swift */; };
+		53ACD134241FDBA4005B80D0 /* UserDefaultsConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD133241FDBA4005B80D0 /* UserDefaultsConfigStorage.swift */; };
+		53ACD137241FE6B4005B80D0 /* AccountCreationWizardModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD136241FE6B4005B80D0 /* AccountCreationWizardModuleInput.swift */; };
+		53ACD139241FE6CF005B80D0 /* ApplicationModule+AccountCreationWizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD138241FE6CF005B80D0 /* ApplicationModule+AccountCreationWizard.swift */; };
+		53ACD13B241FE711005B80D0 /* AccountCreationWizardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD13A241FE711005B80D0 /* AccountCreationWizardView.swift */; };
+		53ACD141242221B7005B80D0 /* ACWAccountTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD140242221B7005B80D0 /* ACWAccountTitleView.swift */; };
+		53ACD14324222548005B80D0 /* AccountCreationWizardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ACD14224222548005B80D0 /* AccountCreationWizardPresenter.swift */; };
 		53B7F03423F7221400700431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03323F7221400700431 /* AppDelegate.swift */; };
 		53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B7F03523F7221400700431 /* SceneDelegate.swift */; };
 		53B7F03B23F7221400700431 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53B7F03923F7221400700431 /* Application.storyboard */; };
@@ -184,6 +193,15 @@
 		539CC5B623F9924800A908D3 /* AccountsEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorView.swift; sourceTree = "<group>"; };
 		539CC5B823F9925300A908D3 /* AccountsEditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorPresenter.swift; sourceTree = "<group>"; };
 		539CC5BA23F992E900A908D3 /* AccountsEditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsEditorModels.swift; sourceTree = "<group>"; };
+		53ACD124241FD776005B80D0 /* AppLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauncher.swift; sourceTree = "<group>"; };
+		53ACD129241FD958005B80D0 /* ConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigStorage.swift; sourceTree = "<group>"; };
+		53ACD131241FDB94005B80D0 /* ConfigStorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigStorageKey.swift; sourceTree = "<group>"; };
+		53ACD133241FDBA4005B80D0 /* UserDefaultsConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConfigStorage.swift; sourceTree = "<group>"; };
+		53ACD136241FE6B4005B80D0 /* AccountCreationWizardModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationWizardModuleInput.swift; sourceTree = "<group>"; };
+		53ACD138241FE6CF005B80D0 /* ApplicationModule+AccountCreationWizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApplicationModule+AccountCreationWizard.swift"; sourceTree = "<group>"; };
+		53ACD13A241FE711005B80D0 /* AccountCreationWizardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationWizardView.swift; sourceTree = "<group>"; };
+		53ACD140242221B7005B80D0 /* ACWAccountTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACWAccountTitleView.swift; sourceTree = "<group>"; };
+		53ACD14224222548005B80D0 /* AccountCreationWizardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreationWizardPresenter.swift; sourceTree = "<group>"; };
 		53B7F03023F7221400700431 /* PocketBudget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBudget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53B7F03323F7221400700431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53B7F03523F7221400700431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -303,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEB123F7385300990E88 /* ApplicationModule.swift */,
+				53ACD135241FE68E005B80D0 /* AccountCreationWizard */,
 				539CC5B123F9920900A908D3 /* AccountsEditor */,
 				539CC5A523F97A7900A908D3 /* AccountSettings */,
 				53B7F05523F7222A00700431 /* ExpensesEditor */,
@@ -324,6 +343,7 @@
 		5389CEB323F738A100990E88 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				53ACD12B241FD9E9005B80D0 /* UserDefaults */,
 				53F2BC6B23FC1BEA005D0433 /* Observable+extensions.swift */,
 				53E2EF9E23FA0E5B00138545 /* UIColor+extensions.swift */,
 				53E2EF6C23F9CA2400138545 /* UIFontTextStyle+extensions.swift */,
@@ -493,6 +513,43 @@
 			path = AccountsEditor;
 			sourceTree = "<group>";
 		};
+		53ACD128241FD93A005B80D0 /* ConfigStorage */ = {
+			isa = PBXGroup;
+			children = (
+				53ACD129241FD958005B80D0 /* ConfigStorage.swift */,
+				53ACD131241FDB94005B80D0 /* ConfigStorageKey.swift */,
+				53ACD133241FDBA4005B80D0 /* UserDefaultsConfigStorage.swift */,
+			);
+			path = ConfigStorage;
+			sourceTree = "<group>";
+		};
+		53ACD12B241FD9E9005B80D0 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		53ACD135241FE68E005B80D0 /* AccountCreationWizard */ = {
+			isa = PBXGroup;
+			children = (
+				53ACD136241FE6B4005B80D0 /* AccountCreationWizardModuleInput.swift */,
+				53ACD14224222548005B80D0 /* AccountCreationWizardPresenter.swift */,
+				53ACD13A241FE711005B80D0 /* AccountCreationWizardView.swift */,
+				53ACD138241FE6CF005B80D0 /* ApplicationModule+AccountCreationWizard.swift */,
+				53ACD13F24222192005B80D0 /* Views */,
+			);
+			path = AccountCreationWizard;
+			sourceTree = "<group>";
+		};
+		53ACD13F24222192005B80D0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				53ACD140242221B7005B80D0 /* ACWAccountTitleView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		53B7F02723F7221400700431 = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +575,7 @@
 				53B7F04123F7221800700431 /* Info.plist */,
 				538422EE23F972F7006CFB29 /* Localizable.strings */,
 				53B7F03323F7221400700431 /* AppDelegate.swift */,
+				53ACD124241FD776005B80D0 /* AppLauncher.swift */,
 				53B7F03523F7221400700431 /* SceneDelegate.swift */,
 				538422D023F8BBC3006CFB29 /* ExtendedFoundations.xcodeproj */,
 				5389CEBC23F7428100990E88 /* Data */,
@@ -570,6 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				5389CEBF23F742BE00990E88 /* ApplicationStorage.swift */,
+				53ACD128241FD93A005B80D0 /* ConfigStorage */,
 				53E2EF5B23F9A46D00138545 /* DataStorage */,
 				53E2EF5C23F9A48200138545 /* Queries */,
 			);
@@ -836,6 +895,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F2BC6423FBFCC9005D0433 /* AccountSettingsModuleInput.swift in Sources */,
+				53ACD12A241FD958005B80D0 /* ConfigStorage.swift in Sources */,
 				539CC5B523F9922400A908D3 /* ApplicationModule+AccountsEditor.swift in Sources */,
 				53E2EF6423F9A73100138545 /* ExpensesQuery.swift in Sources */,
 				53B7F03423F7221400700431 /* AppDelegate.swift in Sources */,
@@ -852,13 +912,17 @@
 				53E2EF5E23F9A4A500138545 /* AccountsQuery.swift in Sources */,
 				53F2BC7A23FF0EB2005D0433 /* Transaction.swift in Sources */,
 				53E2EF8A23F9D4CC00138545 /* AppFont.swift in Sources */,
+				53ACD132241FDB94005B80D0 /* ConfigStorageKey.swift in Sources */,
 				53E2EF9F23FA0E5B00138545 /* UIColor+extensions.swift in Sources */,
+				53ACD13B241FE711005B80D0 /* AccountCreationWizardView.swift in Sources */,
 				539CC5A923F97AAC00A908D3 /* AccountSettingsView.swift in Sources */,
 				53F2BC7823FF0CF9005D0433 /* MonthsQuery.swift in Sources */,
 				538822F0240D261E00C4FA6F /* FloatingButton.swift in Sources */,
 				53E2EF6823F9AE8100138545 /* AccountsEditorInteractor.swift in Sources */,
+				53ACD141242221B7005B80D0 /* ACWAccountTitleView.swift in Sources */,
 				53E2EF8F23F9DE2400138545 /* ColorSelector.swift in Sources */,
 				53E2EF6D23F9CA2400138545 /* UIFontTextStyle+extensions.swift in Sources */,
+				53ACD134241FDBA4005B80D0 /* UserDefaultsConfigStorage.swift in Sources */,
 				53F2BC8123FF1091005D0433 /* MonthBalancePresenter.swift in Sources */,
 				5389CEC023F742BE00990E88 /* ApplicationStorage.swift in Sources */,
 				5389CEBE23F7429400990E88 /* DataStorage.swift in Sources */,
@@ -875,7 +939,9 @@
 				5389CECB23F7446700990E88 /* UserDefaults+extension.swift in Sources */,
 				5389CED623F74B0000990E88 /* MockDataStorage.swift in Sources */,
 				53F2BC6623FBFCFE005D0433 /* ExpensesEditorModuleInput.swift in Sources */,
+				53ACD137241FE6B4005B80D0 /* AccountCreationWizardModuleInput.swift in Sources */,
 				53F2BC7F23FF1081005D0433 /* MonthBalanceView.swift in Sources */,
+				53ACD139241FE6CF005B80D0 /* ApplicationModule+AccountCreationWizard.swift in Sources */,
 				539CC5AB23F97ABA00A908D3 /* AccountSettingsPresenter.swift in Sources */,
 				5389CEE723F76AD200990E88 /* ApplicationModule+NewExpenseEditor.swift in Sources */,
 				53F2BC6223FBFCA2005D0433 /* AccountsEditorModuleInput.swift in Sources */,
@@ -888,6 +954,7 @@
 				53E2EF6B23F9C83B00138545 /* Label.swift in Sources */,
 				538422A923F8B332006CFB29 /* NewExpenseEditorModels.swift in Sources */,
 				53E2EF9723F9F60C00138545 /* ColorSelectorCell.swift in Sources */,
+				53ACD14324222548005B80D0 /* AccountCreationWizardPresenter.swift in Sources */,
 				53B7F03623F7221400700431 /* SceneDelegate.swift in Sources */,
 				5389CEEB23F76AF700990E88 /* NewExpenseEditorPresenter.swift in Sources */,
 				53F2BC6823FBFD47005D0433 /* NewExpenseEditorModuleInput.swift in Sources */,
@@ -899,6 +966,7 @@
 				53F2BC8523FF10AC005D0433 /* MonthBalanceModels.swift in Sources */,
 				53B7F05723F722CB00700431 /* ExpensesEditorView.swift in Sources */,
 				539CC5AD23F97AD700A908D3 /* ApplicationModule+AccountSettings.swift in Sources */,
+				53ACD125241FD776005B80D0 /* AppLauncher.swift in Sources */,
 				538422A523F8AD58006CFB29 /* KeyboardLayoutConstraint.swift in Sources */,
 				53F2BC6E23FC1C73005D0433 /* BusinessError.swift in Sources */,
 				5389CEFA23F82FA400990E88 /* ModalViewController.swift in Sources */,

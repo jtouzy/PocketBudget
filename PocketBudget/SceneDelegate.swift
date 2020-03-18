@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         applyGlobalStyles()
-        window = ApplicationWireframe.shared.initializeWindow(with: windowScene)
+        window = AppLauncher.shared.start(on: windowScene)
     }
 }
 

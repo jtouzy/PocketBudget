@@ -8,6 +8,48 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Account Title View Controller-->
+        <scene sceneID="JPp-w4-afH">
+            <objects>
+                <viewController storyboardIdentifier="ACWAccountTitleViewController" id="r9v-xO-NMp" customClass="ACWAccountTitleViewController" customModule="PocketBudget" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6dE-qW-ZNS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lbg-kf-6Q3" customClass="Button" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="813" width="382" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="localizedKey" value="acw_account_title_action"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Osc-lf-Q1k" customClass="TextField" customModule="PocketBudget" customModuleProvider="target">
+                                <rect key="frame" x="16" y="763" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lbg-kf-6Q3" firstAttribute="top" secondItem="Osc-lf-Q1k" secondAttribute="bottom" constant="16" id="4T6-WC-2s3"/>
+                            <constraint firstItem="Osc-lf-Q1k" firstAttribute="trailing" secondItem="Lbg-kf-6Q3" secondAttribute="trailing" id="D4B-6P-8ka"/>
+                            <constraint firstItem="1nD-zT-RNg" firstAttribute="bottom" secondItem="Lbg-kf-6Q3" secondAttribute="bottom" constant="16" id="FBk-wX-KZE" customClass="KeyboardLayoutConstraint" customModule="PocketBudget" customModuleProvider="target"/>
+                            <constraint firstItem="1nD-zT-RNg" firstAttribute="trailing" secondItem="Lbg-kf-6Q3" secondAttribute="trailing" constant="16" id="NkO-tY-6iO"/>
+                            <constraint firstItem="Lbg-kf-6Q3" firstAttribute="leading" secondItem="1nD-zT-RNg" secondAttribute="leading" constant="16" id="prx-1s-5mG"/>
+                            <constraint firstItem="Osc-lf-Q1k" firstAttribute="leading" secondItem="Lbg-kf-6Q3" secondAttribute="leading" id="wQM-Yb-d0Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1nD-zT-RNg"/>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="Lbg-kf-6Q3" id="pup-w5-DNU"/>
+                        <outlet property="titleTextField" destination="Osc-lf-Q1k" id="h2Q-7Y-fcd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vo3-ng-8pI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3288" y="-604"/>
+        </scene>
         <!--Month Balance View Controller-->
         <scene sceneID="Mqw-GS-1ee">
             <objects>

@@ -20,6 +20,7 @@ enum EmbeddingType {
 // MARK: APPLICATION MODULES
 //
 enum ApplicationModule {
+    case accountCreationWizard(input: AccountCreationWizardModuleInput)
     case accountsEditor(input: AccountsEditorModuleInput)
     case accountSettings(input: AccountSettingsModuleInput)
     case expensesEditor(input: ExpensesEditorModuleInput)
@@ -44,10 +45,10 @@ enum ApplicationModule {
 extension ApplicationModule {
     var embeddingType: EmbeddingType {
         switch self {
-        case .accountSettings:
-            return .navigation(title: "")
         case .accountsEditor:
             return .navigation(title: "accounts_editor_title".localized)
+        case .accountCreationWizard, .accountSettings:
+            return .navigation(title: "")
         case .expensesEditor, .monthBalance, .newExpenseEditor:
             return .none
         }
@@ -57,6 +58,8 @@ extension ApplicationModule {
 extension ApplicationModule {
     private func buildController() -> UIViewController? {
         switch self {
+        case .accountCreationWizard(let input):
+            return assembleAccountCreationWizard(with: input)
         case .accountsEditor(let input):
             return assembleAccountsEditor(with: input)
         case .accountSettings(let input):

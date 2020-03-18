@@ -29,11 +29,9 @@ class ApplicationWireframe: NSObject {
         return (presented as? UINavigationController)?.topViewController ?? presented
     }
 
-    func initializeWindow(with windowScene: UIWindowScene) -> UIWindow {
+    func initializeWindow(on windowScene: UIWindowScene, with module: ApplicationModule) -> UIWindow {
         let window = UIWindow(windowScene: windowScene)
-        presentedViewController = ApplicationModule.monthBalance(
-            input: MonthBalanceModuleInput(monthId: "02-2020")
-        ).build()
+        presentedViewController = module.build()
         window.rootViewController = presentedViewController
         window.makeKeyAndVisible()
         return window

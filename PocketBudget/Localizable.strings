@@ -6,6 +6,10 @@
   Copyright © 2020 jtouzy. All rights reserved.
 */
 
+// APP_MODULE: ACCOUNT_CREATION_WIZARD
+"acw_account_title_title" = "Créer un compte";
+"acw_account_title_action" = "Suivant";
+
 // APP_MODULE: ACCOUNTS_EDITOR
 "accounts_editor_title" = "Gérez vos comptes";
 "accounts_editor_empty_title" = "Vous n'avez aucun compte";
