@@ -1,2 +1,2 @@
-class MyClass {
+class MyClassAndMore {
 }
