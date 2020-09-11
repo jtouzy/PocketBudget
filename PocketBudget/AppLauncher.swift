@@ -27,7 +27,7 @@ extension AppLauncher {
         )
         if configStorage.applicationHasBeenStartedBefore() {
             firstModule = ApplicationModule.monthBalance(
-                input: MonthBalanceModuleInput(monthId: "02-2020")
+                input: MonthBalanceModuleInput(monthId: "03-2020")
             )
         }
         return wireframe.initializeWindow(on: windowScene, with: firstModule)
